@@ -1,0 +1,23 @@
+[
+    {
+        "name": "John Doe",
+        "age": 30,
+        "occupation": "Software Engineer",
+        "hobbies": ["coding", "gaming", "hiking"],
+        "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/a3/Aino_Icon.png"
+    },
+    {
+        "name": "Jane Smith",
+        "age": 25,
+        "occupation": "Graphic Designer",
+        "hobbies": ["drawing", "traveling", "cooking"],
+        "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/a3/Aino_Icon.png"
+    },
+    {
+        "name": "Alice Johnson",
+        "age": 28,
+        "occupation": "Data Scientist",
+        "hobbies": ["data analysis", "machine learning", "yoga"],
+        "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/a3/Aino_Icon.png"
+    }
+]

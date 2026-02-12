@@ -1,34 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import localData from './assets/data.json'
+import CharacterGrid from './components/CharacterGrid/CharacterGrid'
+import CharacterSlots from './components/CharacterSlots/CharacterSlots'
+import Grid from '@mui/material/Grid';
+import ConfigPanel from './components/ConfigPanel/ConfigPanel'
+import TopBar from './components/TopBar/TopBar'
+import Stack from '@mui/material/Stack'
+import ZZZFilterConfig from './components/ZZZ/ZZZFilterConfig/ZZZFilterConfig'
+import AppTheme from './theme/AppTheme'
+
+const DUMMY_CHARACTERS = [
+  { id: 0, name: 'Character 1', image: 'https://static.wikia.nocookie.net/gensin-impact/images/a/a3/Aino_Icon.png' },
+  { id: 1, name: 'Character 2', image: 'https://static.wikia.nocookie.net/gensin-impact/images/a/a3/Aino_Icon.png' },
+  { id: 2, name: 'Character 3', image: 'https://static.wikia.nocookie.net/gensin-impact/images/a/a3/Aino_Icon.png' },
+  { id: 3, name: 'Character 4', image: 'https://static.wikia.nocookie.net/gensin-impact/images/a/a3/Aino_Icon.png' },
+  { id: 4, name: 'Character 5', image: 'https://static.wikia.nocookie.net/gensin-impact/images/a/a3/Aino_Icon.png' },
+  { id: 5, name: 'Character 6', image: 'https://static.wikia.nocookie.net/gensin-impact/images/a/a3/Aino_Icon.png' },
+  { id: 6, name: 'Character 7', image: 'https://static.wikia.nocookie.net/gensin-impact/images/a/a3/Aino_Icon.png' },
+  { id: 7, name: 'Character 8', image: 'https://static.wikia.nocookie.net/gensin-impact/images/a/a3/Aino_Icon.png' },
+  { id: 8, name: 'Character 9', image: 'https://static.wikia.nocookie.net/gensin-impact/images/a/a3/Aino_Icon.png' },
+  { id: 9, name: 'Character 10', image: 'https://static.wikia.nocookie.net/gensin-impact/images/a/a3/Aino_Icon.png' },
+]
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <AppTheme>
+      <TopBar />
+      <Grid container spacing={4} margin={3}>
+        <Grid size={5}>
+          <Stack spacing={4}>
+            <CharacterSlots selectedCharacters={DUMMY_CHARACTERS.slice(0, 3)} />
+            <ConfigPanel>
+              <ZZZFilterConfig />
+            </ConfigPanel>
+          </Stack>
+        </Grid>
+        <Grid size={7}>
+          <CharacterGrid characters={DUMMY_CHARACTERS} />
+        </Grid>
+      </Grid>
+    </AppTheme>
   )
 }
 
