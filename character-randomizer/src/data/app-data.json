@@ -1,0 +1,152 @@
+{
+  "Zenless Zone Zero": {
+    "teamCharacterCount": 3,
+    "filters": [
+      {
+        "name": "Attribute",
+        "values": ["Physical", "Fire", "Ice", "Electric", "Ether", "Frost", "Honed Edge", "Auric Ink"]
+      },
+      {
+        "name": "Specialty",
+        "values": ["Attack", "Stun", "Anomaly", "Support", "Defense", "Rupture"]
+      },
+      {
+        "name": "Rank",
+        "values": ["S", "A"]
+      },
+      {
+        "name": "Faction",
+        "values": ["Spook Shack", "Cunning Hares"]
+      }
+    ],
+    "characters": [
+      {
+        "id": 0,
+        "name": "Alexandrina Sebastiane",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a8/Agent_Alexandrina_Sebastiane_Icon.png"
+      },
+      {
+        "id": 1,
+        "name": "Alice Thymefield",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/7/7e/Agent_Alice_Thymefield_Icon.png"
+      },
+      {
+        "id": 2,
+        "name": "Alexandrina Sebastiane",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a8/Agent_Alexandrina_Sebastiane_Icon.png"
+      },
+      {
+        "id": 3,
+        "name": "Alice Thymefield",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/7/7e/Agent_Alice_Thymefield_Icon.png"
+      },
+      {
+        "id": 4,
+        "name": "Alexandrina Sebastiane",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a8/Agent_Alexandrina_Sebastiane_Icon.png"
+      },
+      {
+        "id": 5,
+        "name": "Alice Thymefield",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/7/7e/Agent_Alice_Thymefield_Icon.png"
+      },
+      {
+        "id": 6,
+        "name": "Alexandrina Sebastiane",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a8/Agent_Alexandrina_Sebastiane_Icon.png"
+      },
+      {
+        "id": 7,
+        "name": "Alice Thymefield",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/7/7e/Agent_Alice_Thymefield_Icon.png"
+      },
+      {
+        "id": 8,
+        "name": "Alexandrina Sebastiane",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a8/Agent_Alexandrina_Sebastiane_Icon.png"
+      },
+      {
+        "id": 9,
+        "name": "Alice Thymefield",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/7/7e/Agent_Alice_Thymefield_Icon.png"
+      }
+    ]
+  },
+  "Wuthering Waves": {
+    "teamCharacterCount": 4,
+    "filters": [
+      {
+        "name": "Attribute",
+        "values": ["Fusion", "Glacio", "Aero", "Electro", "Spectro", "Havoc"]
+      },
+      {
+        "name": "Weapon",
+        "values": ["Sword", "Broadblade", "Gauntlet", "Pistol", "Rectifier"]
+      },
+      {
+        "name": "Rarity",
+        "values": [5, 4]
+      },
+      {
+        "name": "Affiliation",
+        "values": ["The Black Shores", "Startorch Academy"]
+      },
+      {
+        "name": "Faction",
+        "values": ["Black Shores", "Roya Tribe"]
+      }
+    ],
+    "characters": [
+      {
+        "id": 0,
+        "name": "Aalto",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/1/1c/Resonator_Aalto.png"
+      },
+      {
+        "id": 1,
+        "name": "Aemeath",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/e/e8/Resonator_Aemeath.png"
+      },
+      {
+        "id": 2,
+        "name": "Aalto",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/1/1c/Resonator_Aalto.png"
+      },
+      {
+        "id": 3,
+        "name": "Aemeath",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/e/e8/Resonator_Aemeath.png"
+      },
+      {
+        "id": 4,
+        "name": "Aalto",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/1/1c/Resonator_Aalto.png"
+      },
+      {
+        "id": 5,
+        "name": "Aemeath",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/e/e8/Resonator_Aemeath.png"
+      },
+      {
+        "id": 6,
+        "name": "Aalto",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/1/1c/Resonator_Aalto.png"
+      },
+      {
+        "id": 7,
+        "name": "Aemeath",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/e/e8/Resonator_Aemeath.png"
+      },
+      {
+        "id": 8,
+        "name": "Aalto",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/1/1c/Resonator_Aalto.png"
+      },
+      {
+        "id": 9,
+        "name": "Aemeath",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/e/e8/Resonator_Aemeath.png"
+      }
+    ]
+  }
+}

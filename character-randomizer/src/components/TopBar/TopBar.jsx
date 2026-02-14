@@ -9,9 +9,10 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { AppContext } from '../../store/app-context'
+import appData from '../../data/app-data.json'
 
 function TopBar() {
-  const { changeGame } = useContext(AppContext)
+  const { setCurrentGame } = useContext(AppContext)
 
   return (
     <AppBar position="static">
@@ -35,10 +36,10 @@ function TopBar() {
 
           {/* <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}> */}
           <Box sx={{ flexGrow: 1, display: 'flex' }}>
-            {["Zenless Zone Zero", "Wuthering Waves"].map((game) => (
+            {Object.keys(appData).map((game) => (
               <Button
                 key={game}
-                onClick={() => changeGame(game)}
+                onClick={() => setCurrentGame(game)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
                 variant="text"
                 size="small"

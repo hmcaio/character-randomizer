@@ -3,7 +3,7 @@ import SelectionConfig from "../SelectionConfig/SelectionConfig"
 import FilterConfig from "../FilterConfig/FilterConfig"
 import Grid from "@mui/material/Grid"
 
-function ConfigPanel({children}) {
+function ConfigPanel() {
   return (
     <Paper variant="elevation" elevation={3} sx={{ padding: '16px' }}>
       <Grid container spacing={2}>
@@ -11,9 +11,7 @@ function ConfigPanel({children}) {
           <SelectionConfig />
         </Grid>
         <Grid size={12}>
-          <FilterConfig>
-            {children}
-          </FilterConfig>
+          <FilterConfig />
         </Grid>
       </Grid>
     </Paper>
