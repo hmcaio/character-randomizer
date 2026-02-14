@@ -8,6 +8,7 @@ import TopBar from './components/TopBar/TopBar'
 import Stack from '@mui/material/Stack'
 import ZZZFilterConfig from './components/ZZZ/ZZZFilterConfig/ZZZFilterConfig'
 import AppTheme from './theme/AppTheme'
+import AppContextProvider from './store/app-context';
 
 const DUMMY_CHARACTERS = [
   { id: 0, name: 'Character 1', image: 'https://static.wikia.nocookie.net/gensin-impact/images/a/a3/Aino_Icon.png' },
@@ -25,20 +26,22 @@ const DUMMY_CHARACTERS = [
 function App() {
   return (
     <AppTheme>
-      <TopBar />
-      <Grid container spacing={4} margin={3}>
-        <Grid size={5}>
-          <Stack spacing={4}>
-            <CharacterSlots selectedCharacters={DUMMY_CHARACTERS.slice(0, 3)} />
-            <ConfigPanel>
-              <ZZZFilterConfig />
-            </ConfigPanel>
-          </Stack>
+      <AppContextProvider>
+        <TopBar />
+        <Grid container spacing={4} margin={3}>
+          <Grid size={5}>
+            <Stack spacing={4}>
+              <CharacterSlots selectedCharacters={DUMMY_CHARACTERS.slice(0, 3)} />
+              <ConfigPanel>
+                <ZZZFilterConfig />
+              </ConfigPanel>
+            </Stack>
+          </Grid>
+          <Grid size={7}>
+            <CharacterGrid characters={DUMMY_CHARACTERS} />
+          </Grid>
         </Grid>
-        <Grid size={7}>
-          <CharacterGrid characters={DUMMY_CHARACTERS} />
-        </Grid>
-      </Grid>
+      </AppContextProvider>
     </AppTheme>
   )
 }

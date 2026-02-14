@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useContext } from 'react'
 
 import AppBar from '@mui/material/AppBar'
 import Container from '@mui/material/Container'
@@ -8,13 +8,10 @@ import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton'
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { AppContext } from '../../store/app-context'
 
 function TopBar() {
-  const [selectedGame, setSelectedGame] = useState(null)
-
-  const handleGameSelectionChanged = () => {
-    setSelectedGame(null);
-  };
+  const { changeGame } = useContext(AppContext)
 
   return (
     <AppBar position="static">
@@ -41,7 +38,7 @@ function TopBar() {
             {["Zenless Zone Zero", "Wuthering Waves"].map((game) => (
               <Button
                 key={game}
-                onClick={handleGameSelectionChanged}
+                onClick={() => changeGame(game)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
                 variant="text"
                 size="small"
