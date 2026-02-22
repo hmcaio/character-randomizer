@@ -7,7 +7,9 @@ import { AppContext } from '../../store/app-context';
 
 function CharacterSlots() {
   const { currentGame, characterSlots } = useContext(AppContext)
-  const selectedCharacters = useState([])
+  const { selectedCharacters, setSelectedCharacters} = useState([])
+
+  console.log("from CharacterSlots selectedCharacters?.length=" + selectedCharacters?.length + ", characterSlots=" + characterSlots)
 
   return (
     <Paper variant="elevation" elevation={3} sx={{ padding: '16px' }}>
@@ -17,9 +19,14 @@ function CharacterSlots() {
         cols={characterSlots}
         gap={16}
       >
-        {selectedCharacters.map((character) => (
+        {selectedCharacters
+        ? selectedCharacters.map((character) => (
           <CharacterCard key={character.id} character={character} />
-        ))}
+        ))
+        : (Array.from({ length: characterSlots })).map((character, index) => (
+          <CharacterCard key={index} />
+        ))
+        }
       </ImageList>
 
       <Button variant="contained" onClick={() => { }} sx={{ marginY: '16px' }}>
