@@ -1,16 +1,20 @@
 import { createContext, useState } from "react";
 import appData from "../data/app-data.json"
+import useLocalStorage from "../hooks/useLocalStorage";
 
 export const AppContext = createContext({
   currentGame: "",
   characterSlots: 1,
+  owned: [],
   setCurrentGame: () => {},
-  setCharacterSlots: () => {}
+  setCharacterSlots: () => {},
+  setOwned: () => {}
 })
 
 export default function AppContextProvider({ children }) {
-  const [currentGame, setCurrentGame] = useState(Object.keys(appData)[0])
-  const [characterSlots, setCharacterSlots] = useState(appData[currentGame].teamCharacterCount)
+  const [currentGame, setCurrentGame] = useLocalStorage("currentGame", Object.keys(appData)[0])
+  const [characterSlots, setCharacterSlots] = useState(appData[currentGame].teamCharacterCount)  // TODO: Local storage
+  const [owned, setOwned] = useState([])  // TODO: Local storage
 
   function handleGameChange(selectedGame) {
     setCurrentGame(() => selectedGame)
@@ -22,11 +26,18 @@ export default function AppContextProvider({ children }) {
     console.log("Slots changed " + numberOfSlots);
   }
 
+  function handleOwnedChange(owned) {
+    setOwned(owned)
+    console.log("Owned changed " + owned);
+  }
+
   const ctxValue = {
     currentGame: currentGame,
     characterSlots: characterSlots,
+    owned: owned,
     setCurrentGame: handleGameChange,
-    setCharacterSlots: handleCharacterSlotsChange
+    setCharacterSlots: handleCharacterSlotsChange,
+    setOwned: handleOwnedChange
   }
 
   return (
