@@ -12,7 +12,7 @@ import { AppContext } from '../../store/app-context'
 import appData from '../../data/app-data.json'
 
 function TopBar() {
-  const { setCurrentGame } = useContext(AppContext)
+  const { setSelectedGame } = useContext(AppContext)
 
   return (
     <AppBar position="static">
@@ -39,7 +39,7 @@ function TopBar() {
             {Object.keys(appData).map((game) => (
               <Button
                 key={game}
-                onClick={() => setCurrentGame(game)}
+                onClick={() => setSelectedGame(game)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
                 variant="text"
                 size="small"

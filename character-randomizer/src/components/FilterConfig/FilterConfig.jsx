@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
 function FilterConfig() {
-  const { currentGame } = useContext(AppContext)
+  const { selectedGame } = useContext(AppContext)
   const [attributes, setAttributes] = useState([]);
 
   const handleAttributesChange = (filterName, selectedAttributes) => {
@@ -20,7 +20,7 @@ function FilterConfig() {
   return (
     <Paper variant="elevation" elevation={3} sx={{ padding: '16px' }}>
       <Stack spacing={2} divider={<Divider orientation="horizontal" flexItem />}>
-        {appData[currentGame].filters.map((filter) => (
+        {appData[selectedGame].filters.map((filter) => (
           <FilterToggleButtons
             key={filter.name}
             filterName={filter.name}

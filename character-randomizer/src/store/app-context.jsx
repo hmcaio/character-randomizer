@@ -3,21 +3,21 @@ import appData from "../data/app-data.json"
 import useLocalStorage from "../hooks/useLocalStorage";
 
 export const AppContext = createContext({
-  currentGame: "",
+  selectedGame: "",
   characterSlots: 1,
   owned: [],
-  setCurrentGame: () => {},
+  setSelectedGame: () => {},
   setCharacterSlots: () => {},
   setOwned: () => {}
 })
 
 export default function AppContextProvider({ children }) {
-  const [currentGame, setCurrentGame] = useLocalStorage("currentGame", Object.keys(appData)[0])
-  const [characterSlots, setCharacterSlots] = useState(appData[currentGame].teamCharacterCount)  // TODO: Local storage
+  const [selectedGame, setSelectedGame] = useLocalStorage("selectedGame", Object.keys(appData)[0])
+  const [characterSlots, setCharacterSlots] = useState(appData[selectedGame].teamCharacterCount)  // TODO: Local storage
   const [owned, setOwned] = useState([])  // TODO: Local storage
 
   function handleGameChange(selectedGame) {
-    setCurrentGame(() => selectedGame)
+    setSelectedGame(() => selectedGame)
     console.log("Game changed " + selectedGame);
   }
 
@@ -32,10 +32,10 @@ export default function AppContextProvider({ children }) {
   }
 
   const ctxValue = {
-    currentGame: currentGame,
+    selectedGame: selectedGame,
     characterSlots: characterSlots,
     owned: owned,
-    setCurrentGame: handleGameChange,
+    setSelectedGame: handleGameChange,
     setCharacterSlots: handleCharacterSlotsChange,
     setOwned: handleOwnedChange
   }

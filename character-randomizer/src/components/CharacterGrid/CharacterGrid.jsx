@@ -8,7 +8,7 @@ import appData from "../../data/app-data.json"
 import { AppContext } from '../../store/app-context'
 
 function CharacterGrid() {
-  const { currentGame } = useContext(AppContext)
+  const { selectedGame } = useContext(AppContext)
 
   console.log("from CharacterGrid")
 
@@ -26,7 +26,7 @@ function CharacterGrid() {
         spacing={2}
         sx={{ marginTop: '16px' }}
       >
-        {appData[currentGame].characters.map((character) => (
+        {appData[selectedGame].characters.map((character) => (
           <Grid key={character.id}>
             <CharacterCard key={character.id} character={character} status={character.id % 2 === 0 ? 'owned' : 'not owned'} />
           </Grid>

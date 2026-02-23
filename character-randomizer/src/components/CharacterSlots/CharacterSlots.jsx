@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import { AppContext } from '../../store/app-context';
 
 function CharacterSlots() {
-  const { currentGame, characterSlots } = useContext(AppContext)
+  const { selectedGame, characterSlots } = useContext(AppContext)
   const { selectedCharacters, setSelectedCharacters} = useState([])
 
   console.log("from CharacterSlots selectedCharacters?.length=" + selectedCharacters?.length + ", characterSlots=" + characterSlots)
