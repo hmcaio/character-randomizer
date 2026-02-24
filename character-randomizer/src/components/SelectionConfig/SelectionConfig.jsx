@@ -1,26 +1,26 @@
-import { useState } from 'react'
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import { useContext } from 'react'
+import ToggleButton from '@mui/material/ToggleButton'
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import Paper from "@mui/material/Paper"
-import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography'
+import Stack from '@mui/material/Stack'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import Switch from '@mui/material/Switch'
+import Button from '@mui/material/Button'
+import Container from '@mui/material/Container'
+import { AppContext } from '../../store/app-context'
 
 function SelectionConfig() {
-  const [characterQuantity, setCharacterQuantity] = useState('team');
-  const [isAllowRepetition, setIsAllowRepetition] = useState(true);
+  const { randomizerConfig, setRandomizerConfig } = useContext(AppContext)
 
-  const handleCharacterQuantity = (event, newCharacterQuantity) => {
+  const handleCharacterQuantityChange = (event, newCharacterQuantity) => {
     if (newCharacterQuantity !== null) {
-      setCharacterQuantity(newCharacterQuantity);
+      setRandomizerConfig({ ...randomizerConfig, characterSlots: newCharacterQuantity })
     }
   };
 
   const handleAllowRepetition = (event) => {
-    setIsAllowRepetition(event.target.checked);
+    setRandomizerConfig({ ...randomizerConfig, isRepetitionAllowed: event.target.checked })
   }
 
   return (
@@ -28,19 +28,19 @@ function SelectionConfig() {
       <Stack spacing={2}>
         <Container sx={{ display: 'flex', justifyContent: 'flex-start', paddingX: 0 }}>
           <ToggleButtonGroup
-            value={characterQuantity}
+            value={randomizerConfig.characterSlots}
             exclusive
-            onChange={handleCharacterQuantity}
+            onChange={handleCharacterQuantityChange}
             aria-label="character quantity"
           >
-            <ToggleButton value="team" aria-label="team">
-              <Typography sx={{ textTransform: 'none' }}>
-                Team
-              </Typography>
-            </ToggleButton>
             <ToggleButton value="single" aria-label="single">
               <Typography sx={{ textTransform: 'none' }}>
                 Single
+              </Typography>
+            </ToggleButton>
+            <ToggleButton value="team" aria-label="team">
+              <Typography sx={{ textTransform: 'none' }}>
+                Team
               </Typography>
             </ToggleButton>
           </ToggleButtonGroup>
@@ -48,13 +48,13 @@ function SelectionConfig() {
 
         <Container sx={{ display: 'flex', justifyContent: 'flex-start', paddingX: 0 }}>
           <FormControlLabel
-            control={<Switch checked={isAllowRepetition} onChange={handleAllowRepetition}/>}
+            control={<Switch checked={randomizerConfig.isRepetitionAllowed} onChange={handleAllowRepetition}/>}
             label="Allow repetition"
           />
         </Container>
 
         <Container sx={{ display: 'flex', justifyContent: 'flex-start', paddingX: 0 }}>
-          <Button variant="text" size="small" disabled={isAllowRepetition}>
+          <Button variant="text" size="small" disabled={randomizerConfig.isRepetitionAllowed}>
             Reset Pool
           </Button>
         </Container>
