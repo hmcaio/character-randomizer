@@ -16,7 +16,7 @@ export const AppContext = createContext({
 export default function AppContextProvider({ children }) {
   const [selectedGame, setSelectedGame] = useState(() => localStorage.getItem("selectedGame") || Object.keys(appData)[0])
   const [randomizerConfig, setRandomizerConfig] = useLocalStorage2("config", { characterSlots: "team", isRepetitionAllowed: false })
-  const [owned, setOwned] = useLocalStorage2("owned", [])
+  const [owned, setOwned] = useLocalStorage2("owned", appData[selectedGame].characters.map((c) => c.id))
   const [selected, setSelected] = useLocalStorage2("selected", [])
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function AppContextProvider({ children }) {
     console.log("selectedGame=" + selectedGame + ", newRandomizedConfig=" + newRandomizedConfig)
     setRandomizerConfig(newRandomizedConfig)
 
-    const newOwned = JSON.parse(localStorage.getItem(selectedGame + ".owned")) || []
+    const newOwned = JSON.parse(localStorage.getItem(selectedGame + ".owned")) || appData[selectedGame].characters.map((c) => c.id)
     console.log("selectedGame=" + selectedGame + ", newOwned=" + newOwned)
     setOwned(newOwned)
 

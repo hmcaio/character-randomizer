@@ -9,9 +9,11 @@ import Switch from '@mui/material/Switch'
 import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
 import { AppContext } from '../../store/app-context'
+import ButtonGroup from '@mui/material/ButtonGroup'
+import appData from "../../data/app-data.json"
 
 function SelectionConfig() {
-  const { randomizerConfig, setRandomizerConfig, setSelected, setOwned } = useContext(AppContext)
+  const { selectedGame, randomizerConfig, setRandomizerConfig, setSelected, setOwned } = useContext(AppContext)
 
   const handleCharacterQuantityChange = (event, newCharacterQuantity) => {
     if (newCharacterQuantity !== null) {
@@ -51,18 +53,26 @@ function SelectionConfig() {
             control={<Switch checked={randomizerConfig.isRepetitionAllowed} onChange={handleAllowRepetition}/>}
             label="Allow repetition"
           />
-        </Container>
-
-        <Container sx={{ display: 'flex', justifyContent: 'flex-start', paddingX: 0 }}>
           <Button variant="text" size="small" onClick={() => setSelected([])} disabled={randomizerConfig.isRepetitionAllowed}>
             Reset Pool
           </Button>
         </Container>
 
-        <Container sx={{ display: 'flex', justifyContent: 'flex-start', paddingX: 0 }}>
-          <Button variant="outlined" size="small" onClick={() => setOwned([])}>
-            Reset owned
+        {/* <Container sx={{ display: 'flex', justifyContent: 'flex-start', paddingX: 0 }}>
+          <Button variant="text" size="small" onClick={() => setSelected([])} disabled={randomizerConfig.isRepetitionAllowed}>
+            Reset Pool
           </Button>
+        </Container> */}
+
+        <Container sx={{ display: 'flex', justifyContent: 'flex-start', paddingX: 0 }}>
+          <ButtonGroup variant='contained'>
+            <Button size="small" onClick={() => setOwned(appData[selectedGame].characters.map((c) => c.id))}>
+              Select all
+            </Button>
+            <Button size="small" onClick={() => setOwned([])}>
+              Select none
+            </Button>
+          </ButtonGroup>
         </Container>
 
       </Stack>

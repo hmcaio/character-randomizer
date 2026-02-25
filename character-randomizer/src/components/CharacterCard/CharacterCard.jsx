@@ -5,8 +5,6 @@ import PersonIcon from '@mui/icons-material/Person';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 function CharacterCard({ character, owned, selected, onClick }) {
-  console.log("character=" + character)
-
   const characterName = character ? character.name : "character"
   const opacity = owned ? 1 : 0.5
   const characterImg = character
