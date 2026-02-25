@@ -1,6 +1,5 @@
 import { useContext } from 'react'
 import classes from './CharacterGrid.module.css';
-import ImageList from '@mui/material/ImageList';
 import CharacterCard from '../CharacterCard/CharacterCard'
 import Grid from '@mui/material/Grid';
 import Paper from "@mui/material/Paper"
@@ -8,18 +7,20 @@ import appData from "../../data/app-data.json"
 import { AppContext } from '../../store/app-context'
 
 function CharacterGrid() {
-  const { selectedGame } = useContext(AppContext)
+  const { selectedGame, owned, setOwned, selected } = useContext(AppContext)
 
   console.log("from CharacterGrid")
 
+  function handleClick(characterId) {
+    if (owned.includes(characterId)) {
+      setOwned(owned.filter((item) => item !== characterId))
+    } else {
+      setOwned([...owned, characterId])
+    }
+  }
+
   return (
     <Paper variant="elevation" elevation={3} sx={{ padding: '16px' }} >
-      {/* <ImageList id="character-grid" cols={5} gap={16}>
-        {characters.map((character) => (
-          <CharacterCard key={character.id} character={character} />
-        ))}
-      </ImageList> */}
-
       <Grid 
         container
         justifyContent="center"
@@ -28,7 +29,13 @@ function CharacterGrid() {
       >
         {appData[selectedGame].characters.map((character) => (
           <Grid key={character.id}>
-            <CharacterCard key={character.id} character={character} status={character.id % 2 === 0 ? 'owned' : 'not owned'} />
+            <CharacterCard 
+              key={character.id}
+              character={character}
+              owned={owned.includes(character.id)}
+              selected={selected.includes(character.id)}
+              onClick={handleClick}
+            />
           </Grid>
         ))}
       </Grid>

@@ -22,3 +22,4 @@ Inspired by [Genshin Impact Team Randomizer by Pustur](https://github.com/Pustur
 - [Using localStorage with React Hooks](https://blog.logrocket.com/using-localstorage-react-hooks/)
 - [Material UI docs](https://mui.com/material-ui/getting-started/)
 - [MUI Theme Creator](https://zenoo.github.io/mui-theme-creator/)
+- [Fisher–Yates shuffle algorithm](https://en.wikipedia.org/wiki/Fisher–Yates_shuffle)

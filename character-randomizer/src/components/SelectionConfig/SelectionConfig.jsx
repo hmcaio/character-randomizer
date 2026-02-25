@@ -11,7 +11,7 @@ import Container from '@mui/material/Container'
 import { AppContext } from '../../store/app-context'
 
 function SelectionConfig() {
-  const { randomizerConfig, setRandomizerConfig } = useContext(AppContext)
+  const { randomizerConfig, setRandomizerConfig, setSelected, setOwned } = useContext(AppContext)
 
   const handleCharacterQuantityChange = (event, newCharacterQuantity) => {
     if (newCharacterQuantity !== null) {
@@ -54,13 +54,13 @@ function SelectionConfig() {
         </Container>
 
         <Container sx={{ display: 'flex', justifyContent: 'flex-start', paddingX: 0 }}>
-          <Button variant="text" size="small" disabled={randomizerConfig.isRepetitionAllowed}>
+          <Button variant="text" size="small" onClick={() => setSelected([])} disabled={randomizerConfig.isRepetitionAllowed}>
             Reset Pool
           </Button>
         </Container>
 
         <Container sx={{ display: 'flex', justifyContent: 'flex-start', paddingX: 0 }}>
-          <Button variant="outlined" size="small">
+          <Button variant="outlined" size="small" onClick={() => setOwned([])}>
             Reset owned
           </Button>
         </Container>
