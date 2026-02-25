@@ -2,12 +2,13 @@
 
 A web tool for randomizing game characters.  
 This project was created for learning and fun purposes.  
+Game and character information is taken from [Fandom Wiki pages](https://www.fandom.com).  
 Inspired by [Genshin Impact Team Randomizer by Pustur](https://github.com/Pustur/genshin-impact-team-randomizer).
 
 ## Supported games
 
-- Zenless Zone Zero
-- Wuthering Waves
+- [Zenless Zone Zero](https://zenless-zone-zero.fandom.com/wiki/Agent/List)
+- [Wuthering Waves](https://wutheringwaves.fandom.com/wiki/Resonator/List)
 
 ## Technology
 
