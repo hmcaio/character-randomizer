@@ -7,7 +7,7 @@ import appData from "../../data/app-data.json"
 import { AppContext } from '../../store/app-context'
 
 function CharacterGrid() {
-  const { selectedGame, owned, setOwned, selected, randomizerConfig } = useContext(AppContext)
+  const { selectedGame, owned, setOwned, selectionHistory, randomizerConfig } = useContext(AppContext)
 
   console.log("from CharacterGrid")
 
@@ -33,7 +33,7 @@ function CharacterGrid() {
               key={character.id}
               character={character}
               owned={owned.includes(character.id)}
-              selected={!randomizerConfig.isRepetitionAllowed && selected.includes(character.id)}
+              selected={!randomizerConfig.isRepetitionAllowed && selectionHistory.includes(character.id)}
               onClick={handleClick}
             />
           </Grid>

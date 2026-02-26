@@ -29,12 +29,11 @@ function getRandomizedCharacters(allCharacters, owned, selectedCharacters, n) {
 }
 
 function CharacterSlots() {
-  const { selectedGame, randomizerConfig, owned, selected, setSelected } = useContext(AppContext)
-  const [ selectedCharacters, setSelectedCharacters ] = useState([])
+  const { selectedGame, randomizerConfig, owned, selectionHistory, setSelectionHistory, selected, setSelected } = useContext(AppContext)
   const characterSlots = randomizerConfig.characterSlots === "single" ? 1 : appData[selectedGame].teamCharacterCount
   const [snackBarOpen, setSnackBarOpen] = useState(false)
 
-  console.log("from CharacterSlots selectedCharacters.length=" + selectedCharacters.length + ", selectedGame=" + selectedGame + ", characterSlots=" + randomizerConfig.characterSlots)
+  console.log("from CharacterSlots selectedCharacters.length=" + selected.length + ", selectedGame=" + selectedGame + ", characterSlots=" + randomizerConfig.characterSlots)
 
   function handleRandomizeClick() {
     if (randomizerConfig.isRepetitionAllowed) {
@@ -45,25 +44,25 @@ function CharacterSlots() {
         characterSlots
       )
       console.log(`randomizedCharacters=${JSON.stringify(randomizedCharacters.map((c) => c.id))}`)
-      setSelectedCharacters(randomizedCharacters)
+      setSelected(randomizedCharacters)
 
     } else {
-      let updatedSelected = [...selected]
-      if (updatedSelected.length === owned.length) {
-        updatedSelected = []
+      let updatedSelectionHistory = [...selectionHistory]
+      if (updatedSelectionHistory.length === owned.length) {
+        updatedSelectionHistory = []
         setSnackBarOpen(true)
       }
 
       const randomizedCharacters = getRandomizedCharacters(
         appData[selectedGame].characters,
         owned,
-        updatedSelected,
+        updatedSelectionHistory,
         characterSlots
       )
 
-      console.log(`randomizedCharacters=${JSON.stringify(randomizedCharacters.map((c) => c.id))}, new=${JSON.stringify([...(new Set([...updatedSelected, ...(randomizedCharacters.map((c) => c.id))]))])}`)
-      setSelectedCharacters(randomizedCharacters)
-      setSelected([...(new Set([...updatedSelected, ...(randomizedCharacters.map((c) => c.id))]))])
+      console.log(`randomizedCharacters=${JSON.stringify(randomizedCharacters.map((c) => c.id))}, new=${JSON.stringify([...(new Set([...updatedSelectionHistory, ...(randomizedCharacters.map((c) => c.id))]))])}`)
+      setSelected(randomizedCharacters)
+      setSelectionHistory([...(new Set([...updatedSelectionHistory, ...(randomizedCharacters.map((c) => c.id))]))])
     }
   }
 
@@ -82,8 +81,8 @@ function CharacterSlots() {
         cols={characterSlots}
         gap={16}
       >
-        {selectedCharacters.length !== 0
-          ? selectedCharacters.map((character) => (
+        {selected.length !== 0
+          ? selected.map((character) => (
             <CharacterCard key={character.id} character={character} />
           ))
           : (Array.from({ length: characterSlots })).map((character, index) => (

@@ -6,10 +6,12 @@ export const AppContext = createContext({
   selectedGame: "",
   randomizerConfig: { characterSlots: "team", isRepetitionAllowed: false },
   owned: [],
+  selectionHistory: [],
   selected: [],
   setSelectedGame: () => {},
   setRandomizerConfig: () => {},
   setOwned: () => {},
+  setSelectionHistory: () => {},
   setSelected: () => {}
 })
 
@@ -17,6 +19,7 @@ export default function AppContextProvider({ children }) {
   const [selectedGame, setSelectedGame] = useState(() => localStorage.getItem("selectedGame") || Object.keys(appData)[0])
   const [randomizerConfig, setRandomizerConfig] = useLocalStorage2("config", { characterSlots: "team", isRepetitionAllowed: false })
   const [owned, setOwned] = useLocalStorage2("owned", appData[selectedGame].characters.map((c) => c.id))
+  const [selectionHistory, setSelectionHistory] = useLocalStorage2("selectionHistory", [])
   const [selected, setSelected] = useLocalStorage2("selected", [])
 
   useEffect(() => {
@@ -29,6 +32,10 @@ export default function AppContextProvider({ children }) {
     const newOwned = JSON.parse(localStorage.getItem(selectedGame + ".owned")) || appData[selectedGame].characters.map((c) => c.id)
     console.log("selectedGame=" + selectedGame + ", newOwned=" + newOwned)
     setOwned(newOwned)
+
+    const newSelectionHistory = JSON.parse(localStorage.getItem(selectedGame + ".selectionHistory")) || []
+    console.log("selectedGame=" + selectedGame + ", newSelectionHistory=" + newSelectionHistory)
+    setSelectionHistory(newSelectionHistory)
 
     const newSelected = JSON.parse(localStorage.getItem(selectedGame + ".selected")) || []
     console.log("selectedGame=" + selectedGame + ", newSelected=" + newSelected)
@@ -51,6 +58,11 @@ export default function AppContextProvider({ children }) {
     console.log("Owned changed " + owned)
   }
 
+  function handleSelectionHistoryChange(selectionHistory) {
+    setSelectionHistory(selectionHistory)
+    console.log("SelectionHistory changed " + selectionHistory)
+  }
+
   function handleSelectedChange(selected) {
     setSelected(selected)
     console.log("Selected changed " + selected)
@@ -60,10 +72,12 @@ export default function AppContextProvider({ children }) {
     selectedGame: selectedGame,
     randomizerConfig: randomizerConfig,
     owned: owned,
+    selectionHistory: selectionHistory,
     selected: selected,
     setSelectedGame: handleGameChange,
     setRandomizerConfig: handleRandomizerConfigChange,
     setOwned: handleOwnedChange,
+    setSelectionHistory: handleSelectionHistoryChange,
     setSelected: handleSelectedChange
   }
 

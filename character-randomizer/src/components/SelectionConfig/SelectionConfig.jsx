@@ -13,11 +13,12 @@ import ButtonGroup from '@mui/material/ButtonGroup'
 import appData from "../../data/app-data.json"
 
 function SelectionConfig() {
-  const { selectedGame, randomizerConfig, setRandomizerConfig, setSelected, setOwned } = useContext(AppContext)
+  const { selectedGame, randomizerConfig, setRandomizerConfig, setSelectionHistory, setSelected, setOwned } = useContext(AppContext)
 
   const handleCharacterQuantityChange = (event, newCharacterQuantity) => {
     if (newCharacterQuantity !== null) {
       setRandomizerConfig({ ...randomizerConfig, characterSlots: newCharacterQuantity })
+      setSelected([])
     }
   };
 
@@ -53,7 +54,7 @@ function SelectionConfig() {
             control={<Switch checked={randomizerConfig.isRepetitionAllowed} onChange={handleAllowRepetition}/>}
             label="Allow repetition"
           />
-          <Button variant="text" size="small" onClick={() => setSelected([])} disabled={randomizerConfig.isRepetitionAllowed}>
+          <Button variant="text" size="small" onClick={() => setSelectionHistory([])} disabled={randomizerConfig.isRepetitionAllowed}>
             Reset Pool
           </Button>
         </Container>
