@@ -1,37 +1,58 @@
 import classes from './CharacterCard.module.css';
-import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
 import PersonIcon from '@mui/icons-material/Person';
+import Box from '@mui/material/Box';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
 
 function CharacterCard({ character, owned, selected, onClick }) {
-  const characterName = character ? character.name : "character"
+  const characterName = character ? character.name : "Character"
   const opacity = owned ? 1 : 0.5
   const characterImg = character
-    ? <img
-        src={`${character.img}?w=128&h=128&fit=crop&auto=format`}
-        srcSet={`${character.img}?w=128&h=128&fit=crop&auto=format&dpr=2 2x`}
-        alt={characterName}
-        loading="lazy"
+    ? <CardMedia
+        component="img"
+        height='128'
+        image={`${character.img}?w=160&fit=crop&auto=format`}
+        sx={{ 
+          objectFit: 'cover', // Ensures the image fills the height nicely
+        }}
       />
-    : <PersonIcon sx={{ width: 128, height: 128 }} />
+    : <PersonIcon
+        style={{ height: 'inherit', width: 'inherit' }}
+      />
 
   return (
-    <ImageListItem
-      sx={{ width: 128, height: 128, opacity: opacity }}
+    <Card
+      sx={{ height: '100%', display: 'flex', flexDirection: 'column', opacity: opacity }}
       onClick={() => onClick(character.id)}
       style={{ cursor: 'pointer' }}
     >
-      {characterImg}
-      <ImageListItemBar
-        title={characterName}
-        position='below'
-        sx={{ alignItems: 'center' }}
-        actionIcon={
-          selected && <CheckCircleIcon sx={{ color: 'lightgreen' }} />
-        }
-      />
-    </ImageListItem>
+      <Box 
+        sx={{ 
+          position: 'relative'
+        }}
+      >
+        {characterImg}
+        {selected && <CheckCircleIcon sx={{ 
+          position: 'absolute',
+          top: 8,
+          right: 8,
+          color: 'lightgreen',
+          // color: 'primary-main',
+          backgroundColor: 'black',
+          borderRadius: '50%',
+          boxShadow: 2
+        }} />}
+      </Box>
+      
+      <CardContent sx={{ flexGrow: 1 }}>
+        <Typography variant="subtitle1" noWrap align='center'>
+          {characterName}
+        </Typography>
+      </CardContent>
+    </Card>
   )
 }
 
