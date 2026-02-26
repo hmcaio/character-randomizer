@@ -5,6 +5,9 @@ import Paper from "@mui/material/Paper"
 import Button from '@mui/material/Button';
 import { AppContext } from '../../store/app-context';
 import appData from "../../data/app-data.json"
+import Snackbar from '@mui/material/Snackbar';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i >= 1; i--) {
@@ -29,8 +32,47 @@ function CharacterSlots() {
   const { selectedGame, randomizerConfig, owned, selected, setSelected } = useContext(AppContext)
   const [ selectedCharacters, setSelectedCharacters ] = useState([])
   const characterSlots = randomizerConfig.characterSlots === "single" ? 1 : appData[selectedGame].teamCharacterCount
+  const [snackBarOpen, setSnackBarOpen] = useState(false)
 
   console.log("from CharacterSlots selectedCharacters.length=" + selectedCharacters.length + ", selectedGame=" + selectedGame + ", characterSlots=" + randomizerConfig.characterSlots)
+
+  function handleRandomizeClick() {
+    if (randomizerConfig.isRepetitionAllowed) {
+      const randomizedCharacters = getRandomizedCharacters(
+        appData[selectedGame].characters,
+        owned,
+        [],
+        characterSlots
+      )
+      console.log(`randomizedCharacters=${JSON.stringify(randomizedCharacters.map((c) => c.id))}`)
+      setSelectedCharacters(randomizedCharacters)
+
+    } else {
+      let updatedSelected = [...selected]
+      if (updatedSelected.length === owned.length) {
+        updatedSelected = []
+        setSnackBarOpen(true)
+      }
+
+      const randomizedCharacters = getRandomizedCharacters(
+        appData[selectedGame].characters,
+        owned,
+        updatedSelected,
+        characterSlots
+      )
+
+      console.log(`randomizedCharacters=${JSON.stringify(randomizedCharacters.map((c) => c.id))}, new=${JSON.stringify([...(new Set([...updatedSelected, ...(randomizedCharacters.map((c) => c.id))]))])}`)
+      setSelectedCharacters(randomizedCharacters)
+      setSelected([...(new Set([...updatedSelected, ...(randomizedCharacters.map((c) => c.id))]))])
+    }
+  }
+
+  function handleCloseSnackBar(event, reason) {
+    if (reason === 'clickaway') {
+      return
+    }
+    setSnackBarOpen(false)
+  }
 
   return (
     <Paper variant="elevation" elevation={3} sx={{ padding: '16px' }}>
@@ -53,20 +95,28 @@ function CharacterSlots() {
       <Button
         variant="contained"
         sx={{ marginY: '16px' }}
-        onClick={() => {
-          const randomizedCharacters = getRandomizedCharacters(
-            appData[selectedGame].characters,
-            owned,
-            randomizerConfig.isRepetitionAllowed ? [] : selected,
-            characterSlots
-          )
-          console.log(`randomizedCharacters=${JSON.stringify(randomizedCharacters.map((c) => c.id))}, new=${JSON.stringify([...(new Set([...selected, ...(randomizedCharacters.map((c) => c.id))]))])}`)
-          setSelectedCharacters(randomizedCharacters)
-          setSelected([...(new Set([...selected, ...(randomizedCharacters.map((c) => c.id))]))])
-        }}
+        onClick={handleRandomizeClick}
       >
         Randomize
       </Button>
+
+      <Snackbar
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+        open={snackBarOpen}
+        autoHideDuration={4000}
+        onClose={handleCloseSnackBar}
+        message="All characters randomized. The pool was reset."
+        action={
+          <IconButton
+            size="small"
+            aria-label="close"
+            color="inherit"
+            onClick={handleCloseSnackBar}
+          >
+            <CloseIcon fontSize="small" />
+          </IconButton>
+        }
+      />
 
     </Paper>
   )
