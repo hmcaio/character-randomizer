@@ -495,7 +495,7 @@
         "attribute": "Aero",
         "weapon": "Pistols",
         "rarity": "4",
-        "affiliation": "The Black Shores",
+        "affiliation": ["The Black Shores"],
         "faction": "Black Shores"
       },
       {
@@ -505,7 +505,7 @@
         "attribute": "Fusion",
         "weapon": "Sword",
         "rarity": "5",
-        "affiliation": "Startorch Academy",
+        "affiliation": ["Startorch Academy"],
         "faction": "Roya Tribe"
       },
       {
@@ -515,7 +515,7 @@
         "attribute": "Electro",
         "weapon": "Broadblade",
         "rarity": "5",
-        "affiliation": "Septimont",
+        "affiliation": ["Septimont", "Rinascita"],
         "faction": "Ephor's Palace"
       },
       {
@@ -525,7 +525,7 @@
         "attribute": "Glacio",
         "weapon": "Rectifier",
         "rarity": "4",
-        "affiliation": "Jinzhou",
+        "affiliation": ["Jinzhou", "Huanglong"],
         "faction": "Huaxu Academy"
       },
       {
@@ -535,7 +535,7 @@
         "attribute": "Fusion",
         "weapon": "Sword",
         "rarity": "5",
-        "affiliation": "Ragunna",
+        "affiliation": ["Ragunna", "Rinascita"],
         "faction": "Troupe of Fools"
       },
       {
@@ -545,7 +545,7 @@
         "attribute": "Electro",
         "weapon": "Rectifier",
         "rarity": "4",
-        "affiliation": "The Black Shores",
+        "affiliation": ["The Black Shores"],
         "faction": "Mengzhou"
       },
       {
@@ -555,7 +555,7 @@
         "attribute": "Electro",
         "weapon": "Broadblade",
         "rarity": "5",
-        "affiliation": "Ghost Hounds",
+        "affiliation": ["Ghost Hounds"],
         "faction": "Jinzhou"
       },
       {
@@ -565,7 +565,7 @@
         "attribute": "Havoc",
         "weapon": "Sword",
         "rarity": "5",
-        "affiliation": "The Black Shores",
+        "affiliation": ["The Black Shores"],
         "faction": "Black Shores"
       },
       {
@@ -575,7 +575,7 @@
         "attribute": "Havoc",
         "weapon": "Rectifier",
         "rarity": "5",
-        "affiliation": "Fisalia Family",
+        "affiliation": ["Fisalia Family"],
         "faction": "Ragunna"
       },
       {
@@ -585,7 +585,7 @@
         "attribute": "Glacio",
         "weapon": "Pistols",
         "rarity": "5",
-        "affiliation": "Ragunna",
+        "affiliation": ["Ragunna", "Rinascita"],
         "faction": "Montelli Family"
       },
       {
@@ -595,7 +595,7 @@
         "attribute": "Aero",
         "weapon": "Sword",
         "rarity": "5",
-        "affiliation": "Ragunna",
+        "affiliation": ["Ragunna", "Rinascita"],
         "faction": "Order of the Deep"
       },
       {
@@ -605,7 +605,7 @@
         "attribute": "Fusion",
         "weapon": "Sword",
         "rarity": "5",
-        "affiliation": "Jinzhou",
+        "affiliation": ["Jinzhou", "Huanglong"],
         "faction": "City Hall"
       },
       {
@@ -615,7 +615,7 @@
         "attribute": "Havoc",
         "weapon": "Broadblade",
         "rarity": "5",
-        "affiliation": "Startorch Academy",
+        "affiliation": ["Startorch Academy"],
         "faction": "Black Shores"
       },
       {
@@ -625,7 +625,7 @@
         "attribute": "Fusion",
         "weapon": "Pistols",
         "rarity": "4",
-        "affiliation": "Jinzhou",
+        "affiliation": ["Jinzhou", "Huanglong"],
         "faction": "Public Security Bureau"
       },
       {
@@ -635,7 +635,7 @@
         "attribute": "Aero",
         "weapon": "Pistols",
         "rarity": "5",
-        "affiliation": "Ragunna",
+        "affiliation": ["Ragunna", "Rinascita"],
         "faction": "NA"
       },
       {
@@ -645,7 +645,7 @@
         "attribute": "Havoc",
         "weapon": "Sword",
         "rarity": "4",
-        "affiliation": "Jinzhou",
+        "affiliation": ["Jinzhou", "Huanglong"],
         "faction": "Midnight Rangers"
       },
       {
@@ -655,7 +655,7 @@
         "attribute": "Fusion",
         "weapon": "Rectifier",
         "rarity": "5",
-        "affiliation": "The Black Shores",
+        "affiliation": ["The Black Shores"],
         "faction": "Black Shores"
       },
       {
@@ -665,7 +665,7 @@
         "attribute": "Fusion",
         "weapon": "Pistols",
         "rarity": "5",
-        "affiliation": "The Black Shores",
+        "affiliation": ["The Black Shores"],
         "faction": "Septimont"
       },
       {
@@ -675,7 +675,7 @@
         "attribute": "Aero",
         "weapon": "Gauntlets",
         "rarity": "5",
-        "affiliation": "Septimont",
+        "affiliation": ["Septimont", "Rinascita"],
         "faction": "Tetragon Temple"
       },
       {
@@ -685,7 +685,7 @@
         "attribute": "Aero",
         "weapon": "Gauntlets",
         "rarity": "5",
-        "affiliation": "Jinzhou",
+        "affiliation": ["Jinzhou", "Huanglong"],
         "faction": "NA"
       },
       {
@@ -695,7 +695,7 @@
         "attribute": "Spectro",
         "weapon": "Broadblade",
         "rarity": "5",
-        "affiliation": "Jinzhou",
+        "affiliation": ["Jinzhou", "Huanglong"],
         "faction": "City Hall"
       },
       {
@@ -705,7 +705,7 @@
         "attribute": "Aero",
         "weapon": "Broadblade",
         "rarity": "5",
-        "affiliation": "Jinzhou",
+        "affiliation": ["Jinzhou", "Huanglong"],
         "faction": "Midnight Rangers"
       },
       {
@@ -715,7 +715,7 @@
         "attribute": "Glacio",
         "weapon": "Gauntlets",
         "rarity": "5",
-        "affiliation": "Jinzhou",
+        "affiliation": ["Jinzhou", "Huanglong"],
         "faction": "Liondance Troupe"
       },
       {
@@ -725,7 +725,7 @@
         "attribute": "Electro",
         "weapon": "Broadblade",
         "rarity": "4",
-        "affiliation": "Yuezhou",
+        "affiliation": ["Yuezhou", "Huanglong"],
         "faction": "Lollo Logistics"
       },
       {
@@ -735,7 +735,7 @@
         "attribute": "Fusion",
         "weapon": "Broadblade",
         "rarity": "5",
-        "affiliation": "Septimont",
+        "affiliation": ["Septimont", "Rinascita"],
         "faction": "House Silva"
       },
       {
@@ -745,7 +745,7 @@
         "attribute": "Spectro",
         "weapon": "Pistols",
         "rarity": "5",
-        "affiliation": "Startorch Academy",
+        "affiliation": ["Startorch Academy"],
         "faction": "Lawless Zone"
       },
       {
@@ -755,7 +755,7 @@
         "attribute": "Fusion",
         "weapon": "Broadblade",
         "rarity": "5",
-        "affiliation": "Spacetrek Collective",
+        "affiliation": ["Spacetrek Collective"],
         "faction": "Startorch Academy"
       },
       {
@@ -765,7 +765,7 @@
         "attribute": "Fusion",
         "weapon": "Pistols",
         "rarity": "4",
-        "affiliation": "Jinzhou",
+        "affiliation": ["Jinzhou", "Huanglong"],
         "faction": "Huaxu Academy"
       },
       {
@@ -775,7 +775,7 @@
         "attribute": "Spectro",
         "weapon": "Rectifier",
         "rarity": "5",
-        "affiliation": "Ragunna",
+        "affiliation": ["Ragunna", "Rinascita"],
         "faction": "Order of the Deep"
       },
       {
@@ -785,7 +785,7 @@
         "attribute": "Havoc",
         "weapon": "Rectifier",
         "rarity": "5",
-        "affiliation": "Fractsidus",
+        "affiliation": ["Fractsidus"],
         "faction": "NA"
       },
       {
@@ -795,7 +795,7 @@
         "attribute": "Aero",
         "weapon": "Sword",
         "rarity": "5",
-        "affiliation": "Mingting",
+        "affiliation": ["Mingting", "Huanglong"],
         "faction": "Chongzhou"
       },
       {
@@ -805,7 +805,7 @@
         "attribute": "Havoc",
         "weapon": "Gauntlets",
         "rarity": "5",
-        "affiliation": "Troupe of Fools",
+        "affiliation": ["Troupe of Fools"],
         "faction": "Ragunna"
       },
       {
@@ -815,7 +815,7 @@
         "attribute": "Aero",
         "weapon": "Sword",
         "rarity": "5",
-        "affiliation": "Unknown",
+        "affiliation": ["Unknown"],
         "faction": "Black Shores"
       },
       {
@@ -825,7 +825,7 @@
         "attribute": "Havoc",
         "weapon": "Sword",
         "rarity": "5",
-        "affiliation": "Unknown",
+        "affiliation": ["Unknown"],
         "faction": "Black Shores"
       },
       {
@@ -835,7 +835,7 @@
         "attribute": "Spectro",
         "weapon": "Sword",
         "rarity": "5",
-        "affiliation": "Unknown",
+        "affiliation": ["Unknown"],
         "faction": "Black Shores"
       },
       {
@@ -845,7 +845,7 @@
         "attribute": "Glacio",
         "weapon": "Sword",
         "rarity": "4",
-        "affiliation": "Jinzhou",
+        "affiliation": ["Jinzhou", "Huanglong"],
         "faction": "City Hall"
       },
       {
@@ -855,7 +855,7 @@
         "attribute": "Spectro",
         "weapon": "Rectifier",
         "rarity": "5",
-        "affiliation": "The Black Shores",
+        "affiliation": ["The Black Shores"],
         "faction": "Black Shores"
       },
       {
@@ -865,7 +865,7 @@
         "attribute": "Havoc",
         "weapon": "Broadblade",
         "rarity": "4",
-        "affiliation": "Jinzhou",
+        "affiliation": ["Jinzhou", "Huanglong"],
         "faction": "Ministry of Development"
       },
       {
@@ -875,7 +875,7 @@
         "attribute": "Spectro",
         "weapon": "Rectifier",
         "rarity": "5",
-        "affiliation": "Jinzhou",
+        "affiliation": ["Jinzhou", "Huanglong"],
         "faction": "Pioneer Association"
       },
       {
@@ -885,7 +885,7 @@
         "attribute": "Electro",
         "weapon": "Gauntlets",
         "rarity": "5",
-        "affiliation": "Jinzhou",
+        "affiliation": ["Jinzhou", "Huanglong"],
         "faction": "Huaxu Academy"
       },
       {
@@ -895,7 +895,7 @@
         "attribute": "Aero",
         "weapon": "Sword",
         "rarity": "4",
-        "affiliation": "Jinzhou",
+        "affiliation": ["Jinzhou", "Huanglong"],
         "faction": "Midnight Rangers"
       },
       {
@@ -905,7 +905,7 @@
         "attribute": "Electro",
         "weapon": "Rectifier",
         "rarity": "5",
-        "affiliation": "Jinzhou",
+        "affiliation": ["Jinzhou", "Huanglong"],
         "faction": "Public Security Bureau"
       },
       {
@@ -915,7 +915,7 @@
         "attribute": "Glacio",
         "weapon": "Gauntlets",
         "rarity": "4",
-        "affiliation": "Chongzhou",
+        "affiliation": ["Chongzhou", "Huanglong"],
         "faction": "NA"
       },
       {
@@ -925,7 +925,7 @@
         "attribute": "Electro",
         "weapon": "Gauntlets",
         "rarity": "4",
-        "affiliation": "Jinzhou",
+        "affiliation": ["Jinzhou", "Huanglong"],
         "faction": "Yuanwu Boxing Gym"
       },
       {
@@ -935,7 +935,7 @@
         "attribute": "Spectro",
         "weapon": "Gauntlets",
         "rarity": "5",
-        "affiliation": "Ragunna",
+        "affiliation": ["Ragunna", "Rinascita"],
         "faction": "Montelli Family"
       },
       {
@@ -945,7 +945,7 @@
         "attribute": "Glacio",
         "weapon": "Rectifier",
         "rarity": "5",
-        "affiliation": "Jinzhou",
+        "affiliation": ["Jinzhou", "Huanglong"],
         "faction": "NA"
       }
     ]
