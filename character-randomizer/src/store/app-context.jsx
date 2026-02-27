@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import appData from "../data/app-data.json"
-import useLocalStorage2 from "../hooks/useLocalStorage2";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 export const AppContext = createContext({
   selectedGame: "",
@@ -17,10 +17,10 @@ export const AppContext = createContext({
 
 export default function AppContextProvider({ children }) {
   const [selectedGame, setSelectedGame] = useState(() => localStorage.getItem("selectedGame") || Object.keys(appData)[0])
-  const [randomizerConfig, setRandomizerConfig] = useLocalStorage2("config", { characterSlots: "team", isRepetitionAllowed: false })
-  const [owned, setOwned] = useLocalStorage2("owned", appData[selectedGame].characters.map((c) => c.id))
-  const [selectionHistory, setSelectionHistory] = useLocalStorage2("selectionHistory", [])
-  const [selected, setSelected] = useLocalStorage2("selected", [])
+  const [randomizerConfig, setRandomizerConfig] = useLocalStorage("config", { characterSlots: "team", isRepetitionAllowed: false })
+  const [owned, setOwned] = useLocalStorage("owned", appData[selectedGame].characters.map((c) => c.id))
+  const [selectionHistory, setSelectionHistory] = useLocalStorage("selectionHistory", [])
+  const [selected, setSelected] = useLocalStorage("selected", [])
 
   useEffect(() => {
     localStorage.setItem("selectedGame", selectedGame)
