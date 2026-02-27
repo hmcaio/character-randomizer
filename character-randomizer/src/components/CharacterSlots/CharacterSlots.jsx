@@ -75,7 +75,7 @@ function CharacterSlots() {
   }
 
   return (
-    <Paper variant="elevation" elevation={3} sx={{ padding: '16px' }}>
+    <Paper variant="elevation" elevation={3} sx={{ paddingY: 2, paddingX: 4 }}>
       <Stack direction="column" spacing={2}>
         <Stack
           direction="row"

@@ -15,7 +15,7 @@ function TopBar() {
   const { setSelectedGame } = useContext(AppContext)
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ borderRadius: '.4rem' }}>
       <Container>
         <Toolbar disableGutters>
           <Typography
