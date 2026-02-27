@@ -52,7 +52,7 @@ function TopBar() {
           <IconButton
             color="inherit"
             size="small"
-            href="https://github.com"
+            href="https://github.com/hmcaio/character-randomizer"
             aria-label="GitHub"
             sx={{ alignSelf: 'center' }}
           >
