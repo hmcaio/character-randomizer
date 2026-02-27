@@ -6,6 +6,7 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import Tooltip from '@mui/material/Tooltip';
 
 function CharacterCard({ character, owned, selected, onClick }) {
   const characterName = character ? character.name : "Character"
@@ -48,9 +49,11 @@ function CharacterCard({ character, owned, selected, onClick }) {
       </Box>
       
       <CardContent sx={{ flexGrow: 1 }}>
-        <Typography variant="subtitle1" noWrap align='center'>
-          {characterName}
-        </Typography>
+        <Tooltip title={characterName}>
+          <Typography variant="subtitle1" noWrap align='center'>
+            {characterName}
+          </Typography>
+        </Tooltip>
       </CardContent>
     </Card>
   )

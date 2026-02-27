@@ -1,6 +1,4 @@
 import { useContext, useState } from 'react'
-import CharacterCard from "../CharacterCard/CharacterCard"
-import ImageList from '@mui/material/ImageList';
 import Paper from "@mui/material/Paper"
 import Button from '@mui/material/Button';
 import { AppContext } from '../../store/app-context';
@@ -8,6 +6,9 @@ import appData from "../../data/app-data.json"
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import Stack from '@mui/material/Stack';
+import CharacterSlot from '../CharacterSlot/CharacterSlot';
+import Container from '@mui/material/Container';
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i >= 1; i--) {
@@ -75,29 +76,27 @@ function CharacterSlots() {
 
   return (
     <Paper variant="elevation" elevation={3} sx={{ padding: '16px' }}>
-      <ImageList
-        id="character-slots"
-        sx={{ width: '100%', height: 'fit-content', marginX: 'auto' }}
-        cols={characterSlots}
-        gap={16}
-      >
-        {selected.length !== 0
-          ? selected.map((character) => (
-            <CharacterCard key={character.id} character={character} />
-          ))
-          : (Array.from({ length: characterSlots })).map((character, index) => (
-            <CharacterCard key={index} />
-          ))
-        }
-      </ImageList>
+      <Stack direction="column" spacing={2}>
+        <Stack
+          direction="row"
+          spacing={2}
+          justifyContent="center"
+        >
+          {Array.from({ length: characterSlots }, (v, i) => i).map((i) => i < selected.length
+            ? <CharacterSlot key={selected[i].id} character={selected[i]} />
+            : <CharacterSlot key={i} />
+          )}
+        </Stack>
 
-      <Button
-        variant="contained"
-        sx={{ marginY: '16px' }}
-        onClick={handleRandomizeClick}
-      >
-        Randomize
-      </Button>
+        <Container>
+          <Button
+            variant="contained"
+            onClick={handleRandomizeClick}
+          >
+            Randomize
+          </Button>
+        </Container>
+      </Stack>
 
       <Snackbar
         anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
@@ -116,7 +115,6 @@ function CharacterSlots() {
           </IconButton>
         }
       />
-
     </Paper>
   )
 }

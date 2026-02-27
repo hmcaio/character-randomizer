@@ -1,7 +1,7 @@
 import { useContext } from 'react'
-import classes from './CharacterGrid.module.css';
+import classes from './CharacterGrid.module.css'
 import CharacterCard from '../CharacterCard/CharacterCard'
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Grid'
 import Paper from "@mui/material/Paper"
 import appData from "../../data/app-data.json"
 import { AppContext } from '../../store/app-context'

@@ -10,9 +10,9 @@ function ConfigPanel() {
         <Grid size={12}>
           <SelectionConfig />
         </Grid>
-        <Grid size={12}>
+        {/* <Grid size={12}>
           <FilterConfig />
-        </Grid>
+        </Grid> */}
       </Grid>
     </Paper>
   )
