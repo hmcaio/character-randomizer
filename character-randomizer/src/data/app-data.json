@@ -1,0 +1,953 @@
+{
+  "Zenless Zone Zero": {
+    "teamCharacterCount": 3,
+    "filters": [
+      {
+        "name": "Attribute",
+        "values": [
+          "Physical",
+          "Fire",
+          "Ice",
+          "Electric",
+          "Ether",
+          "Frost",
+          "Honed Edge",
+          "Auric Ink"
+        ]
+      },
+      {
+        "name": "Specialty",
+        "values": ["Attack", "Stun", "Anomaly", "Support", "Defense", "Rupture"]
+      },
+      {
+        "name": "Rank",
+        "values": ["S", "A"]
+      },
+      {
+        "name": "Faction",
+        "values": ["Spook Shack", "Cunning Hares"]
+      }
+    ],
+    "characters": [
+      {
+        "id": "Alexandrina Sebastiane",
+        "name": "Alexandrina Sebastiane",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a8/Agent_Alexandrina_Sebastiane_Icon.png",
+        "rank": "S",
+        "attribute": "Electric",
+        "specialty": "Support",
+        "faction": "Victoria Housekeeping Co."
+      },
+      {
+        "id": "Alice Thymefield",
+        "name": "Alice Thymefield",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/7/7e/Agent_Alice_Thymefield_Icon.png",
+        "rank": "S",
+        "attribute": "Physical",
+        "specialty": "Anomaly",
+        "faction": "Spook Shack"
+      },
+      {
+        "id": "Anby Demara",
+        "name": "Anby Demara",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/b/b1/Agent_Anby_Demara_Icon.png",
+        "rank": "A",
+        "attribute": "Electric",
+        "specialty": "Stun",
+        "faction": "Cunning Hares"
+      },
+      {
+        "id": "Anton Ivanov",
+        "name": "Anton Ivanov",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/1/13/Agent_Anton_Ivanov_Icon.png",
+        "rank": "A",
+        "attribute": "Electric",
+        "specialty": "Attack",
+        "faction": "Belobog Heavy Industries"
+      },
+      {
+        "id": "Asaba Harumasa",
+        "name": "Asaba Harumasa",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/f/fe/Agent_Asaba_Harumasa_Icon.png",
+        "rank": "S",
+        "attribute": "Electric",
+        "specialty": "Attack",
+        "faction": "Hollow Special Operations Section 6"
+      },
+      {
+        "id": "Astra Yao",
+        "name": "Astra Yao",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/b/b8/Agent_Astra_Yao_Icon.png",
+        "rank": "S",
+        "attribute": "Ether",
+        "specialty": "Support",
+        "faction": "Stars of Lyra"
+      },
+      {
+        "id": "Banyue",
+        "name": "Banyue",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/7/70/Agent_Banyue_Icon.png",
+        "rank": "S",
+        "attribute": "Fire",
+        "specialty": "Rupture",
+        "faction": "Krampus Compliance Authority"
+      },
+      {
+        "id": "Ben Bigger",
+        "name": "Ben Bigger",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/b/ba/Agent_Ben_Bigger_Icon.png",
+        "rank": "A",
+        "attribute": "Fire",
+        "specialty": "Defense",
+        "faction": "Belobog Heavy Industries"
+      },
+      {
+        "id": "Billy Kid",
+        "name": "Billy Kid",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/9/99/Agent_Billy_Kid_Icon.png",
+        "rank": "A",
+        "attribute": "Physical",
+        "specialty": "Attack",
+        "faction": "Cunning Hares"
+      },
+      {
+        "id": "Burnice White",
+        "name": "Burnice White",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/f/f9/Agent_Burnice_White_Icon.png",
+        "rank": "S",
+        "attribute": "Fire",
+        "specialty": "Anomaly",
+        "faction": "Sons of Calydon"
+      },
+      {
+        "id": "Caesar King",
+        "name": "Caesar King",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/af/Agent_Caesar_King_Icon.png",
+        "rank": "S",
+        "attribute": "Physical",
+        "specialty": "Defense",
+        "faction": "Sons of Calydon"
+      },
+      {
+        "id": "Corin Wickes",
+        "name": "Corin Wickes",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/e/e4/Agent_Corin_Wickes_Icon.png",
+        "rank": "A",
+        "attribute": "Physical",
+        "specialty": "Attack",
+        "faction": "Victoria Housekeeping Co."
+      },
+      {
+        "id": "Dialyn",
+        "name": "Dialyn",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/2/25/Agent_Dialyn_Icon.png",
+        "rank": "S",
+        "attribute": "Physical",
+        "specialty": "Stun",
+        "faction": "Krampus Compliance Authority"
+      },
+      {
+        "id": "Ellen Joe",
+        "name": "Ellen Joe",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/e/ed/Agent_Ellen_Joe_Icon.png",
+        "rank": "S",
+        "attribute": "Ice",
+        "specialty": "Attack",
+        "faction": "Victoria Housekeeping Co."
+      },
+      {
+        "id": "Evelyn Chevalier",
+        "name": "Evelyn Chevalier",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/1/17/Agent_Evelyn_Chevalier_Icon.png",
+        "rank": "S",
+        "attribute": "Fire",
+        "specialty": "Attack",
+        "faction": "Stars of Lyra"
+      },
+      {
+        "id": "Grace Howard",
+        "name": "Grace Howard",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/e/e6/Agent_Grace_Howard_Icon.png",
+        "rank": "S",
+        "attribute": "Electric",
+        "specialty": "Anomaly",
+        "faction": "Belobog Heavy Industries"
+      },
+      {
+        "id": "Hoshimi Miyabi",
+        "name": "Hoshimi Miyabi",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/9/94/Agent_Hoshimi_Miyabi_Icon.png",
+        "rank": "S",
+        "attribute": "Frost",
+        "specialty": "Anomaly",
+        "faction": "Hollow Special Operations Section 6"
+      },
+      {
+        "id": "Hugo Vlad",
+        "name": "Hugo Vlad",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/9/99/Agent_Hugo_Vlad_Icon.png",
+        "rank": "S",
+        "attribute": "Ice",
+        "specialty": "Attack",
+        "faction": "Mockingbird"
+      },
+      {
+        "id": "Jane Doe",
+        "name": "Jane Doe",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/e/e7/Agent_Jane_Doe_Icon.png",
+        "rank": "S",
+        "attribute": "Physical",
+        "specialty": "Anomaly",
+        "faction": "Criminal Investigation Special Response Team (Jane Doe)"
+      },
+      {
+        "id": "Ju Fufu",
+        "name": "Ju Fufu",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/4a/Agent_Ju_Fufu_Icon.png",
+        "rank": "S",
+        "attribute": "Fire",
+        "specialty": "Stun",
+        "faction": "Yunkui Summit"
+      },
+      {
+        "id": "Koleda Belobog",
+        "name": "Koleda Belobog",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a8/Agent_Koleda_Belobog_Icon.png",
+        "rank": "S",
+        "attribute": "Fire",
+        "specialty": "Stun",
+        "faction": "Belobog Heavy Industries"
+      },
+      {
+        "id": "Komano Manato",
+        "name": "Komano Manato",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/7/7c/Agent_Komano_Manato_Icon.png",
+        "rank": "A",
+        "attribute": "Fire",
+        "specialty": "Rupture",
+        "faction": "Spook Shack"
+      },
+      {
+        "id": "Lighter",
+        "name": "Lighter",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/b/b5/Agent_Lighter_Icon.png",
+        "rank": "S",
+        "attribute": "Fire",
+        "specialty": "Stun",
+        "faction": "Sons of Calydon"
+      },
+      {
+        "id": "Lucia Elowen",
+        "name": "Lucia Elowen",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/f/ff/Agent_Lucia_Elowen_Icon.png",
+        "rank": "S",
+        "attribute": "Ether",
+        "specialty": "Support",
+        "faction": "Spook Shack"
+      },
+      {
+        "id": "Luciana de Montefio",
+        "name": "Luciana de Montefio",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/b/b8/Agent_Luciana_de_Montefio_Icon.png",
+        "rank": "A",
+        "attribute": "Fire",
+        "specialty": "Support",
+        "faction": "Sons of Calydon"
+      },
+      {
+        "id": "Nekomiya Mana",
+        "name": "Nekomiya Mana",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/d/d0/Agent_Nekomiya_Mana_Icon.png",
+        "rank": "S",
+        "attribute": "Physical",
+        "specialty": "Attack",
+        "faction": "Cunning Hares"
+      },
+      {
+        "id": "Nicole Demara",
+        "name": "Nicole Demara",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/2/21/Agent_Nicole_Demara_Icon.png",
+        "rank": "A",
+        "attribute": "Ether",
+        "specialty": "Support",
+        "faction": "Cunning Hares"
+      },
+      {
+        "id": "Orphie Magnusson & Magus",
+        "name": "Orphie Magnusson & Magus",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/6/63/Agent_Orphie_Magnusson_%26_Magus_Icon.png",
+        "rank": "S",
+        "attribute": "Fire",
+        "specialty": "Attack",
+        "faction": "Obol Squad"
+      },
+      {
+        "id": "Pan Yinhu",
+        "name": "Pan Yinhu",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/ab/Agent_Pan_Yinhu_Icon.png",
+        "rank": "A",
+        "attribute": "Physical",
+        "specialty": "Defense",
+        "faction": "Yunkui Summit"
+      },
+      {
+        "id": "Piper Wheel",
+        "name": "Piper Wheel",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/c/ca/Agent_Piper_Wheel_Icon.png",
+        "rank": "A",
+        "attribute": "Physical",
+        "specialty": "Anomaly",
+        "faction": "Sons of Calydon"
+      },
+      {
+        "id": "Pulchra Fellini",
+        "name": "Pulchra Fellini",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/8/8c/Agent_Pulchra_Fellini_Icon.png",
+        "rank": "A",
+        "attribute": "Physical",
+        "specialty": "Stun",
+        "faction": "Sons of Calydon"
+      },
+      {
+        "id": "Qingyi",
+        "name": "Qingyi",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/3/39/Agent_Qingyi_Icon.png",
+        "rank": "S",
+        "attribute": "Electric",
+        "specialty": "Stun",
+        "faction": "Criminal Investigation Special Response Team"
+      },
+      {
+        "id": "Seed",
+        "name": "Seed",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/f/fb/Agent_Seed_Icon.png",
+        "rank": "S",
+        "attribute": "Electric",
+        "specialty": "Attack",
+        "faction": "Obol Squad"
+      },
+      {
+        "id": "Seth Lowell",
+        "name": "Seth Lowell",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/6/6d/Agent_Seth_Lowell_Icon.png",
+        "rank": "A",
+        "attribute": "Electric",
+        "specialty": "Defense",
+        "faction": "Criminal Investigation Special Response Team"
+      },
+      {
+        "id": "Soldier 0 - Anby",
+        "name": "Soldier 0 - Anby",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/9/95/Agent_Soldier_0_-_Anby_Icon.png",
+        "rank": "S",
+        "attribute": "Electric",
+        "specialty": "Attack",
+        "faction": "Defense Force - Silver Squad"
+      },
+      {
+        "id": "Soldier 11",
+        "name": "Soldier 11",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/6/62/Agent_Soldier_11_Icon.png",
+        "rank": "S",
+        "attribute": "Fire",
+        "specialty": "Attack",
+        "faction": "Obol Squad"
+      },
+      {
+        "id": "Soukaku",
+        "name": "Soukaku",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/8/89/Agent_Soukaku_Icon.png",
+        "rank": "A",
+        "attribute": "Ice",
+        "specialty": "Support",
+        "faction": "Hollow Special Operations Section 6"
+      },
+      {
+        "id": "Sunna",
+        "name": "Sunna",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/0/0f/Agent_Sunna_Icon.png",
+        "rank": "S",
+        "attribute": "Physical",
+        "specialty": "Support",
+        "faction": "Angels of Delusion"
+      },
+      {
+        "id": "Trigger",
+        "name": "Trigger",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/d/df/Agent_Trigger_Icon.png",
+        "rank": "S",
+        "attribute": "Electric",
+        "specialty": "Stun",
+        "faction": "Obol Squad"
+      },
+      {
+        "id": "Tsukishiro Yanagi",
+        "name": "Tsukishiro Yanagi",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/8/8c/Agent_Tsukishiro_Yanagi_Icon.png",
+        "rank": "S",
+        "attribute": "Electric",
+        "specialty": "Anomaly",
+        "faction": "Hollow Special Operations Section 6"
+      },
+      {
+        "id": "Ukinami Yuzuha",
+        "name": "Ukinami Yuzuha",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/f/fc/Agent_Ukinami_Yuzuha_Icon.png",
+        "rank": "S",
+        "attribute": "Physical",
+        "specialty": "Support",
+        "faction": "Spook Shack"
+      },
+      {
+        "id": "Vivian Banshee",
+        "name": "Vivian Banshee",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/d/d5/Agent_Vivian_Banshee_Icon.png",
+        "rank": "S",
+        "attribute": "Ether",
+        "specialty": "Anomaly",
+        "faction": "Mockingbird"
+      },
+      {
+        "id": "Von Lycaon",
+        "name": "Von Lycaon",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/2/2f/Agent_Von_Lycaon_Icon.png",
+        "rank": "S",
+        "attribute": "Ice",
+        "specialty": "Stun",
+        "faction": "Victoria Housekeeping Co."
+      },
+      {
+        "id": "Ye Shunguang",
+        "name": "Ye Shunguang",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/9/94/Agent_Ye_Shunguang_Icon.png",
+        "rank": "S",
+        "attribute": "Honed Edge",
+        "specialty": "Attack",
+        "faction": "Yunkui Summit"
+      },
+      {
+        "id": "Yidhari Murphy",
+        "name": "Yidhari Murphy",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/6/6f/Agent_Yidhari_Murphy_Icon.png",
+        "rank": "S",
+        "attribute": "Ice",
+        "specialty": "Rupture",
+        "faction": "Spook Shack"
+      },
+      {
+        "id": "Yixuan",
+        "name": "Yixuan",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/f/f7/Agent_Yixuan_Icon.png",
+        "rank": "S",
+        "attribute": "Auric Ink",
+        "specialty": "Rupture",
+        "faction": "Yunkui Summit"
+      },
+      {
+        "id": "Zhao",
+        "name": "Zhao",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/d/d4/Agent_Zhao_Icon.png",
+        "rank": "S",
+        "attribute": "Ice",
+        "specialty": "Defense",
+        "faction": "Krampus Compliance Authority"
+      },
+      {
+        "id": "Zhu Yuan",
+        "name": "Zhu Yuan",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/f/fb/Agent_Zhu_Yuan_Icon.png",
+        "rank": "S",
+        "attribute": "Ether",
+        "specialty": "Attack",
+        "faction": "Criminal Investigation Special Response Team"
+      }
+    ]
+  },
+  "Wuthering Waves": {
+    "teamCharacterCount": 4,
+    "filters": [
+      {
+        "name": "Attribute",
+        "values": ["Fusion", "Glacio", "Aero", "Electro", "Spectro", "Havoc"]
+      },
+      {
+        "name": "Weapon",
+        "values": ["Sword", "Broadblade", "Gauntlet", "Pistol", "Rectifier"]
+      },
+      {
+        "name": "Rarity",
+        "values": [5, 4]
+      },
+      {
+        "name": "Affiliation",
+        "values": ["The Black Shores", "Startorch Academy"]
+      },
+      {
+        "name": "Faction",
+        "values": ["Black Shores", "Roya Tribe"]
+      }
+    ],
+    "characters": [
+      {
+        "id": "Aalto",
+        "name": "Aalto",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/1/1c/Resonator_Aalto.png",
+        "attribute": "Aero",
+        "weapon": "Pistols",
+        "rarity": "4",
+        "affiliation": ["The Black Shores"],
+        "faction": "Black Shores"
+      },
+      {
+        "id": "Aemeath",
+        "name": "Aemeath",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/e/e8/Resonator_Aemeath.png",
+        "attribute": "Fusion",
+        "weapon": "Sword",
+        "rarity": "5",
+        "affiliation": ["Startorch Academy"],
+        "faction": "Roya Tribe"
+      },
+      {
+        "id": "Augusta",
+        "name": "Augusta",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/a/a5/Resonator_Augusta.png",
+        "attribute": "Electro",
+        "weapon": "Broadblade",
+        "rarity": "5",
+        "affiliation": ["Septimont", "Rinascita"],
+        "faction": "Ephor's Palace"
+      },
+      {
+        "id": "Baizhi",
+        "name": "Baizhi",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/2/2a/Resonator_Baizhi.png",
+        "attribute": "Glacio",
+        "weapon": "Rectifier",
+        "rarity": "4",
+        "affiliation": ["Jinzhou", "Huanglong"],
+        "faction": "Huaxu Academy"
+      },
+      {
+        "id": "Brant",
+        "name": "Brant",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/d/df/Resonator_Brant.png",
+        "attribute": "Fusion",
+        "weapon": "Sword",
+        "rarity": "5",
+        "affiliation": ["Ragunna", "Rinascita"],
+        "faction": "Troupe of Fools"
+      },
+      {
+        "id": "Buling",
+        "name": "Buling",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/7/70/Resonator_Buling.png",
+        "attribute": "Electro",
+        "weapon": "Rectifier",
+        "rarity": "4",
+        "affiliation": ["The Black Shores"],
+        "faction": "Mengzhou"
+      },
+      {
+        "id": "Calcharo",
+        "name": "Calcharo",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/1/16/Resonator_Calcharo.png",
+        "attribute": "Electro",
+        "weapon": "Broadblade",
+        "rarity": "5",
+        "affiliation": ["Ghost Hounds"],
+        "faction": "Jinzhou"
+      },
+      {
+        "id": "Camellya",
+        "name": "Camellya",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/9/9f/Resonator_Camellya.png",
+        "attribute": "Havoc",
+        "weapon": "Sword",
+        "rarity": "5",
+        "affiliation": ["The Black Shores"],
+        "faction": "Black Shores"
+      },
+      {
+        "id": "Cantarella",
+        "name": "Cantarella",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/c/cd/Resonator_Cantarella.png",
+        "attribute": "Havoc",
+        "weapon": "Rectifier",
+        "rarity": "5",
+        "affiliation": ["Fisalia Family"],
+        "faction": "Ragunna"
+      },
+      {
+        "id": "Carlotta",
+        "name": "Carlotta",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/d/d6/Resonator_Carlotta.png",
+        "attribute": "Glacio",
+        "weapon": "Pistols",
+        "rarity": "5",
+        "affiliation": ["Ragunna", "Rinascita"],
+        "faction": "Montelli Family"
+      },
+      {
+        "id": "Cartethyia",
+        "name": "Cartethyia",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/d/d6/Resonator_Cartethyia.png",
+        "attribute": "Aero",
+        "weapon": "Sword",
+        "rarity": "5",
+        "affiliation": ["Ragunna", "Rinascita"],
+        "faction": "Order of the Deep"
+      },
+      {
+        "id": "Changli",
+        "name": "Changli",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/1/11/Resonator_Changli.png",
+        "attribute": "Fusion",
+        "weapon": "Sword",
+        "rarity": "5",
+        "affiliation": ["Jinzhou", "Huanglong"],
+        "faction": "City Hall"
+      },
+      {
+        "id": "Chisa",
+        "name": "Chisa",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/d/d7/Resonator_Chisa.png",
+        "attribute": "Havoc",
+        "weapon": "Broadblade",
+        "rarity": "5",
+        "affiliation": ["Startorch Academy"],
+        "faction": "Black Shores"
+      },
+      {
+        "id": "Chixia",
+        "name": "Chixia",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/1/10/Resonator_Chixia.png",
+        "attribute": "Fusion",
+        "weapon": "Pistols",
+        "rarity": "4",
+        "affiliation": ["Jinzhou", "Huanglong"],
+        "faction": "Public Security Bureau"
+      },
+      {
+        "id": "Ciaccona",
+        "name": "Ciaccona",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/2/24/Resonator_Ciaccona.png",
+        "attribute": "Aero",
+        "weapon": "Pistols",
+        "rarity": "5",
+        "affiliation": ["Ragunna", "Rinascita"],
+        "faction": "NA"
+      },
+      {
+        "id": "Danjin",
+        "name": "Danjin",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/1/1f/Resonator_Danjin.png",
+        "attribute": "Havoc",
+        "weapon": "Sword",
+        "rarity": "4",
+        "affiliation": ["Jinzhou", "Huanglong"],
+        "faction": "Midnight Rangers"
+      },
+      {
+        "id": "Encore",
+        "name": "Encore",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/4/42/Resonator_Encore.png",
+        "attribute": "Fusion",
+        "weapon": "Rectifier",
+        "rarity": "5",
+        "affiliation": ["The Black Shores"],
+        "faction": "Black Shores"
+      },
+      {
+        "id": "Galbrena",
+        "name": "Galbrena",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/5/57/Resonator_Galbrena.png",
+        "attribute": "Fusion",
+        "weapon": "Pistols",
+        "rarity": "5",
+        "affiliation": ["The Black Shores"],
+        "faction": "Septimont"
+      },
+      {
+        "id": "Iuno",
+        "name": "Iuno",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/8/8c/Resonator_Iuno.png",
+        "attribute": "Aero",
+        "weapon": "Gauntlets",
+        "rarity": "5",
+        "affiliation": ["Septimont", "Rinascita"],
+        "faction": "Tetragon Temple"
+      },
+      {
+        "id": "Jianxin",
+        "name": "Jianxin",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/0/00/Resonator_Jianxin.png",
+        "attribute": "Aero",
+        "weapon": "Gauntlets",
+        "rarity": "5",
+        "affiliation": ["Jinzhou", "Huanglong"],
+        "faction": "NA"
+      },
+      {
+        "id": "Jinhsi",
+        "name": "Jinhsi",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/f/f5/Resonator_Jinhsi.png",
+        "attribute": "Spectro",
+        "weapon": "Broadblade",
+        "rarity": "5",
+        "affiliation": ["Jinzhou", "Huanglong"],
+        "faction": "City Hall"
+      },
+      {
+        "id": "Jiyan",
+        "name": "Jiyan",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/d/da/Resonator_Jiyan.png",
+        "attribute": "Aero",
+        "weapon": "Broadblade",
+        "rarity": "5",
+        "affiliation": ["Jinzhou", "Huanglong"],
+        "faction": "Midnight Rangers"
+      },
+      {
+        "id": "Lingyang",
+        "name": "Lingyang",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/3/39/Resonator_Lingyang.png",
+        "attribute": "Glacio",
+        "weapon": "Gauntlets",
+        "rarity": "5",
+        "affiliation": ["Jinzhou", "Huanglong"],
+        "faction": "Liondance Troupe"
+      },
+      {
+        "id": "Lumi",
+        "name": "Lumi",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/f/f3/Resonator_Lumi.png",
+        "attribute": "Electro",
+        "weapon": "Broadblade",
+        "rarity": "4",
+        "affiliation": ["Yuezhou", "Huanglong"],
+        "faction": "Lollo Logistics"
+      },
+      {
+        "id": "Lupa",
+        "name": "Lupa",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/d/d1/Resonator_Lupa.png",
+        "attribute": "Fusion",
+        "weapon": "Broadblade",
+        "rarity": "5",
+        "affiliation": ["Septimont", "Rinascita"],
+        "faction": "House Silva"
+      },
+      {
+        "id": "Lynae",
+        "name": "Lynae",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/3/34/Resonator_Lynae.png",
+        "attribute": "Spectro",
+        "weapon": "Pistols",
+        "rarity": "5",
+        "affiliation": ["Startorch Academy"],
+        "faction": "Lawless Zone"
+      },
+      {
+        "id": "Mornye",
+        "name": "Mornye",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/2/25/Resonator_Mornye.png",
+        "attribute": "Fusion",
+        "weapon": "Broadblade",
+        "rarity": "5",
+        "affiliation": ["Spacetrek Collective"],
+        "faction": "Startorch Academy"
+      },
+      {
+        "id": "Mortefi",
+        "name": "Mortefi",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/4/4f/Resonator_Mortefi.png",
+        "attribute": "Fusion",
+        "weapon": "Pistols",
+        "rarity": "4",
+        "affiliation": ["Jinzhou", "Huanglong"],
+        "faction": "Huaxu Academy"
+      },
+      {
+        "id": "Phoebe",
+        "name": "Phoebe",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/b/b7/Resonator_Phoebe.png",
+        "attribute": "Spectro",
+        "weapon": "Rectifier",
+        "rarity": "5",
+        "affiliation": ["Ragunna", "Rinascita"],
+        "faction": "Order of the Deep"
+      },
+      {
+        "id": "Phrolova",
+        "name": "Phrolova",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/a/a2/Resonator_Phrolova.png",
+        "attribute": "Havoc",
+        "weapon": "Rectifier",
+        "rarity": "5",
+        "affiliation": ["Fractsidus"],
+        "faction": "NA"
+      },
+      {
+        "id": "Qiuyuan",
+        "name": "Qiuyuan",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/d/da/Resonator_Qiuyuan.png",
+        "attribute": "Aero",
+        "weapon": "Sword",
+        "rarity": "5",
+        "affiliation": ["Mingting", "Huanglong"],
+        "faction": "Chongzhou"
+      },
+      {
+        "id": "Roccia",
+        "name": "Roccia",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/1/1a/Resonator_Roccia.png",
+        "attribute": "Havoc",
+        "weapon": "Gauntlets",
+        "rarity": "5",
+        "affiliation": ["Troupe of Fools"],
+        "faction": "Ragunna"
+      },
+      {
+        "id": "Rover-Aero",
+        "name": "Rover-Aero",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/4/47/Resonator_Rover.png",
+        "attribute": "Aero",
+        "weapon": "Sword",
+        "rarity": "5",
+        "affiliation": ["Unknown"],
+        "faction": "Black Shores"
+      },
+      {
+        "id": "Rover-Havoc",
+        "name": "Rover-Havoc",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/4/47/Resonator_Rover.png",
+        "attribute": "Havoc",
+        "weapon": "Sword",
+        "rarity": "5",
+        "affiliation": ["Unknown"],
+        "faction": "Black Shores"
+      },
+      {
+        "id": "Rover-Spectro",
+        "name": "Rover-Spectro",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/4/47/Resonator_Rover.png",
+        "attribute": "Spectro",
+        "weapon": "Sword",
+        "rarity": "5",
+        "affiliation": ["Unknown"],
+        "faction": "Black Shores"
+      },
+      {
+        "id": "Sanhua",
+        "name": "Sanhua",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/d/d4/Resonator_Sanhua.png",
+        "attribute": "Glacio",
+        "weapon": "Sword",
+        "rarity": "4",
+        "affiliation": ["Jinzhou", "Huanglong"],
+        "faction": "City Hall"
+      },
+      {
+        "id": "Shorekeeper",
+        "name": "Shorekeeper",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/d/da/Resonator_Shorekeeper.png",
+        "attribute": "Spectro",
+        "weapon": "Rectifier",
+        "rarity": "5",
+        "affiliation": ["The Black Shores"],
+        "faction": "Black Shores"
+      },
+      {
+        "id": "Taoqi",
+        "name": "Taoqi",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/6/66/Resonator_Taoqi.png",
+        "attribute": "Havoc",
+        "weapon": "Broadblade",
+        "rarity": "4",
+        "affiliation": ["Jinzhou", "Huanglong"],
+        "faction": "Ministry of Development"
+      },
+      {
+        "id": "Verina",
+        "name": "Verina",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/4/4d/Resonator_Verina.png",
+        "attribute": "Spectro",
+        "weapon": "Rectifier",
+        "rarity": "5",
+        "affiliation": ["Jinzhou", "Huanglong"],
+        "faction": "Pioneer Association"
+      },
+      {
+        "id": "Xiangli Yao",
+        "name": "Xiangli Yao",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/1/16/Resonator_Xiangli_Yao.png",
+        "attribute": "Electro",
+        "weapon": "Gauntlets",
+        "rarity": "5",
+        "affiliation": ["Jinzhou", "Huanglong"],
+        "faction": "Huaxu Academy"
+      },
+      {
+        "id": "Yangyang",
+        "name": "Yangyang",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/c/cf/Resonator_Yangyang.png",
+        "attribute": "Aero",
+        "weapon": "Sword",
+        "rarity": "4",
+        "affiliation": ["Jinzhou", "Huanglong"],
+        "faction": "Midnight Rangers"
+      },
+      {
+        "id": "Yinlin",
+        "name": "Yinlin",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/4/41/Resonator_Yinlin.png",
+        "attribute": "Electro",
+        "weapon": "Rectifier",
+        "rarity": "5",
+        "affiliation": ["Jinzhou", "Huanglong"],
+        "faction": "Public Security Bureau"
+      },
+      {
+        "id": "Youhu",
+        "name": "Youhu",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/9/93/Resonator_Youhu.png",
+        "attribute": "Glacio",
+        "weapon": "Gauntlets",
+        "rarity": "4",
+        "affiliation": ["Chongzhou", "Huanglong"],
+        "faction": "NA"
+      },
+      {
+        "id": "Yuanwu",
+        "name": "Yuanwu",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/d/d6/Resonator_Yuanwu.png",
+        "attribute": "Electro",
+        "weapon": "Gauntlets",
+        "rarity": "4",
+        "affiliation": ["Jinzhou", "Huanglong"],
+        "faction": "Yuanwu Boxing Gym"
+      },
+      {
+        "id": "Zani",
+        "name": "Zani",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/1/12/Resonator_Zani.png",
+        "attribute": "Spectro",
+        "weapon": "Gauntlets",
+        "rarity": "5",
+        "affiliation": ["Ragunna", "Rinascita"],
+        "faction": "Montelli Family"
+      },
+      {
+        "id": "Zhezhi",
+        "name": "Zhezhi",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/a/a0/Resonator_Zhezhi.png",
+        "attribute": "Glacio",
+        "weapon": "Rectifier",
+        "rarity": "5",
+        "affiliation": ["Jinzhou", "Huanglong"],
+        "faction": "NA"
+      }
+    ]
+  }
+}
