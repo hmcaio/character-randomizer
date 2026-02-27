@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import appData from "../data/app-data.json"
 
-function useLocalStorage2(key, defaultValue) {
+function useLocalStorage(key, defaultValue) {
   const [value, setValueInternal] = useState(() => {
     const selectedGame = localStorage.getItem("selectedGame") || Object.keys(appData)[0]
     return JSON.parse(localStorage.getItem(selectedGame + "." + key)) || defaultValue
@@ -16,4 +16,4 @@ function useLocalStorage2(key, defaultValue) {
   return [value, setValue]
 }
 
-export default useLocalStorage2
+export default useLocalStorage
