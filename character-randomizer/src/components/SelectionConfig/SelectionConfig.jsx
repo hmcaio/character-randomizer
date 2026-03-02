@@ -11,6 +11,10 @@ import Container from '@mui/material/Container'
 import { AppContext } from '../../store/app-context'
 import ButtonGroup from '@mui/material/ButtonGroup'
 import appData from "../../data/app-data.json"
+import Accordion from '@mui/material/Accordion'
+import AccordionSummary from '@mui/material/AccordionSummary'
+import AccordionDetails from '@mui/material/AccordionDetails'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 function SelectionConfig() {
   const { selectedGame, randomizerConfig, setRandomizerConfig, setSelectionHistory, setSelected, setOwned } = useContext(AppContext)
@@ -26,57 +30,73 @@ function SelectionConfig() {
     setRandomizerConfig({ ...randomizerConfig, isRepetitionAllowed: event.target.checked })
   }
 
+  const selectionConfigContent = (
+    <Stack spacing={2}>
+      <Container sx={{ display: 'flex', justifyContent: 'flex-start', paddingX: 0 }}>
+        <ToggleButtonGroup
+          value={randomizerConfig.characterSlots}
+          exclusive
+          onChange={handleCharacterQuantityChange}
+          aria-label="character quantity"
+        >
+          <ToggleButton value="single" aria-label="single">
+            <Typography sx={{ textTransform: 'none' }}>
+              Single
+            </Typography>
+          </ToggleButton>
+          <ToggleButton value="team" aria-label="team">
+            <Typography sx={{ textTransform: 'none' }}>
+              Team
+            </Typography>
+          </ToggleButton>
+        </ToggleButtonGroup>
+      </Container>
+
+      <Container sx={{ display: 'flex', justifyContent: 'flex-start', paddingX: 0 }}>
+        <FormControlLabel
+          control={<Switch checked={randomizerConfig.isRepetitionAllowed} onChange={handleAllowRepetition}/>}
+          label="Allow repetition"
+        />
+        <Button variant="text" size="small" onClick={() => setSelectionHistory([])} disabled={randomizerConfig.isRepetitionAllowed}>
+          Reset Pool
+        </Button>
+      </Container>
+
+      {/* <Container sx={{ display: 'flex', justifyContent: 'flex-start', paddingX: 0 }}>
+        <Button variant="text" size="small" onClick={() => setSelected([])} disabled={randomizerConfig.isRepetitionAllowed}>
+          Reset Pool
+        </Button>
+      </Container> */}
+
+      <Container sx={{ display: 'flex', justifyContent: 'flex-start', paddingX: 0 }}>
+        <ButtonGroup variant='contained'>
+          <Button size="small" onClick={() => setOwned(appData[selectedGame].characters.map((c) => c.id))}>
+            Select all
+          </Button>
+          <Button size="small" onClick={() => setOwned([])}>
+            Select none
+          </Button>
+        </ButtonGroup>
+      </Container>
+    </Stack>
+  )
+
   return (
     <Paper variant="elevation" elevation={3} sx={{ padding: '16px' }}>
-      <Stack spacing={2}>
-        <Container sx={{ display: 'flex', justifyContent: 'flex-start', paddingX: 0 }}>
-          <ToggleButtonGroup
-            value={randomizerConfig.characterSlots}
-            exclusive
-            onChange={handleCharacterQuantityChange}
-            aria-label="character quantity"
-          >
-            <ToggleButton value="single" aria-label="single">
-              <Typography sx={{ textTransform: 'none' }}>
-                Single
-              </Typography>
-            </ToggleButton>
-            <ToggleButton value="team" aria-label="team">
-              <Typography sx={{ textTransform: 'none' }}>
-                Team
-              </Typography>
-            </ToggleButton>
-          </ToggleButtonGroup>
-        </Container>
+      <Container sx={{ display: { xs: 'none', md: 'block' }}}>
+        {selectionConfigContent}
+      </Container>
 
-        <Container sx={{ display: 'flex', justifyContent: 'flex-start', paddingX: 0 }}>
-          <FormControlLabel
-            control={<Switch checked={randomizerConfig.isRepetitionAllowed} onChange={handleAllowRepetition}/>}
-            label="Allow repetition"
-          />
-          <Button variant="text" size="small" onClick={() => setSelectionHistory([])} disabled={randomizerConfig.isRepetitionAllowed}>
-            Reset Pool
-          </Button>
-        </Container>
-
-        {/* <Container sx={{ display: 'flex', justifyContent: 'flex-start', paddingX: 0 }}>
-          <Button variant="text" size="small" onClick={() => setSelected([])} disabled={randomizerConfig.isRepetitionAllowed}>
-            Reset Pool
-          </Button>
-        </Container> */}
-
-        <Container sx={{ display: 'flex', justifyContent: 'flex-start', paddingX: 0 }}>
-          <ButtonGroup variant='contained'>
-            <Button size="small" onClick={() => setOwned(appData[selectedGame].characters.map((c) => c.id))}>
-              Select all
-            </Button>
-            <Button size="small" onClick={() => setOwned([])}>
-              Select none
-            </Button>
-          </ButtonGroup>
-        </Container>
-
-      </Stack>
+      <Container sx={{ display: { xs: 'block', md: 'none' }}}>
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <Typography component="span">Settings</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            {selectionConfigContent}
+          </AccordionDetails>
+        </Accordion>
+      </Container>
     </Paper>
   )
 }

@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import appData from "../data/app-data.json"
 import useLocalStorage from "../hooks/useLocalStorage";
+import log from 'loglevel'
 
 export const AppContext = createContext({
   selectedGame: "",
@@ -8,11 +9,13 @@ export const AppContext = createContext({
   owned: [],
   selectionHistory: [],
   selected: [],
+  isDrawerOpen: false,
   setSelectedGame: () => {},
   setRandomizerConfig: () => {},
   setOwned: () => {},
   setSelectionHistory: () => {},
-  setSelected: () => {}
+  setSelected: () => {},
+  setIsDrawerOpen: () => {}
 })
 
 export default function AppContextProvider({ children }) {
@@ -21,51 +24,57 @@ export default function AppContextProvider({ children }) {
   const [owned, setOwned] = useLocalStorage("owned", appData[selectedGame].characters.map((c) => c.id))
   const [selectionHistory, setSelectionHistory] = useLocalStorage("selectionHistory", [])
   const [selected, setSelected] = useLocalStorage("selected", [])
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
   useEffect(() => {
     localStorage.setItem("selectedGame", selectedGame)
 
     const newRandomizedConfig = JSON.parse(localStorage.getItem(selectedGame + ".config")) || { characterSlots: "team", isRepetitionAllowed: false }
-    console.log("selectedGame=" + selectedGame + ", newRandomizedConfig=" + newRandomizedConfig)
+    log.debug("selectedGame=" + selectedGame + ", newRandomizedConfig=" + newRandomizedConfig)
     setRandomizerConfig(newRandomizedConfig)
 
     const newOwned = JSON.parse(localStorage.getItem(selectedGame + ".owned")) || appData[selectedGame].characters.map((c) => c.id)
-    console.log("selectedGame=" + selectedGame + ", newOwned=" + newOwned)
+    log.debug("selectedGame=" + selectedGame + ", newOwned=" + newOwned)
     setOwned(newOwned)
 
     const newSelectionHistory = JSON.parse(localStorage.getItem(selectedGame + ".selectionHistory")) || []
-    console.log("selectedGame=" + selectedGame + ", newSelectionHistory=" + newSelectionHistory)
+    log.debug("selectedGame=" + selectedGame + ", newSelectionHistory=" + newSelectionHistory)
     setSelectionHistory(newSelectionHistory)
 
     const newSelected = JSON.parse(localStorage.getItem(selectedGame + ".selected")) || []
-    console.log("selectedGame=" + selectedGame + ", newSelected=" + newSelected)
+    log.debug("selectedGame=" + selectedGame + ", newSelected=" + newSelected)
     setSelected(newSelected)
 
   }, [selectedGame])
 
   function handleGameChange(selectedGame) {
     setSelectedGame(() => selectedGame)
-    console.log("Game changed " + selectedGame)
+    log.debug("Game changed " + selectedGame)
   }
 
   function handleRandomizerConfigChange(config) {
     setRandomizerConfig(config)
-    console.log("RandomizerConfig changed " + config)
+    log.debug("RandomizerConfig changed " + config)
   }
 
   function handleOwnedChange(owned) {
     setOwned(owned)
-    console.log("Owned changed " + owned)
+    log.debug("Owned changed " + owned)
   }
 
   function handleSelectionHistoryChange(selectionHistory) {
     setSelectionHistory(selectionHistory)
-    console.log("SelectionHistory changed " + selectionHistory)
+    log.debug("SelectionHistory changed " + selectionHistory)
   }
 
   function handleSelectedChange(selected) {
     setSelected(selected)
-    console.log("Selected changed " + selected)
+    log.debug("Selected changed " + selected)
+  }
+
+  function handleDrawerStateChange(isDrawerOpen) {
+    setIsDrawerOpen(isDrawerOpen)
+    log.debug("isDrawerOpen changed " + isDrawerOpen)
   }
 
   const ctxValue = {
@@ -74,11 +83,13 @@ export default function AppContextProvider({ children }) {
     owned: owned,
     selectionHistory: selectionHistory,
     selected: selected,
+    isDrawerOpen: isDrawerOpen,
     setSelectedGame: handleGameChange,
     setRandomizerConfig: handleRandomizerConfigChange,
     setOwned: handleOwnedChange,
     setSelectionHistory: handleSelectionHistoryChange,
-    setSelected: handleSelectedChange
+    setSelected: handleSelectedChange,
+    setIsDrawerOpen: handleDrawerStateChange
   }
 
   return (

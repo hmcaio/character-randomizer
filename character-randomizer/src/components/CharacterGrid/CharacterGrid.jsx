@@ -5,11 +5,12 @@ import Grid from '@mui/material/Grid'
 import Paper from "@mui/material/Paper"
 import appData from "../../data/app-data.json"
 import { AppContext } from '../../store/app-context'
+import log from 'loglevel'
 
 function CharacterGrid() {
   const { selectedGame, owned, setOwned, selectionHistory, randomizerConfig } = useContext(AppContext)
 
-  console.log("from CharacterGrid")
+  log.debug("from CharacterGrid")
 
   function handleClick(characterId) {
     if (owned.includes(characterId)) {
@@ -28,7 +29,7 @@ function CharacterGrid() {
         columns={60}
       >
         {appData[selectedGame].characters.map((character) => (
-          <Grid key={character.id} size={{ xs: 30, sm: 20, md: 15, lg: 12 }}>
+          <Grid key={character.id} size={{ xs: 20, sm: 12, md: 15, lg: 12 }}>
             <CharacterCard 
               key={character.id}
               character={character}
