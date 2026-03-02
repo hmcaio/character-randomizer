@@ -9,11 +9,13 @@ export const AppContext = createContext({
   owned: [],
   selectionHistory: [],
   selected: [],
+  isDrawerOpen: false,
   setSelectedGame: () => {},
   setRandomizerConfig: () => {},
   setOwned: () => {},
   setSelectionHistory: () => {},
-  setSelected: () => {}
+  setSelected: () => {},
+  setIsDrawerOpen: () => {}
 })
 
 export default function AppContextProvider({ children }) {
@@ -22,6 +24,7 @@ export default function AppContextProvider({ children }) {
   const [owned, setOwned] = useLocalStorage("owned", appData[selectedGame].characters.map((c) => c.id))
   const [selectionHistory, setSelectionHistory] = useLocalStorage("selectionHistory", [])
   const [selected, setSelected] = useLocalStorage("selected", [])
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
   useEffect(() => {
     localStorage.setItem("selectedGame", selectedGame)
@@ -69,17 +72,24 @@ export default function AppContextProvider({ children }) {
     log.debug("Selected changed " + selected)
   }
 
+  function handleDrawerStateChange(isDrawerOpen) {
+    setIsDrawerOpen(isDrawerOpen)
+    log.debug("isDrawerOpen changed " + isDrawerOpen)
+  }
+
   const ctxValue = {
     selectedGame: selectedGame,
     randomizerConfig: randomizerConfig,
     owned: owned,
     selectionHistory: selectionHistory,
     selected: selected,
+    isDrawerOpen: isDrawerOpen,
     setSelectedGame: handleGameChange,
     setRandomizerConfig: handleRandomizerConfigChange,
     setOwned: handleOwnedChange,
     setSelectionHistory: handleSelectionHistoryChange,
-    setSelected: handleSelectedChange
+    setSelected: handleSelectedChange,
+    setIsDrawerOpen: handleDrawerStateChange
   }
 
   return (

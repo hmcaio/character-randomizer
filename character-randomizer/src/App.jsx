@@ -6,12 +6,15 @@ import ConfigPanel from './components/ConfigPanel/ConfigPanel'
 import TopBar from './components/TopBar/TopBar'
 import AppTheme from './theme/AppTheme'
 import AppContextProvider from './store/app-context';
+import MenuDrawer from './components/MenuDrawer/MenuDrawer';
 
 function App() {
   return (
     <AppTheme>
       <AppContextProvider>
         <TopBar />
+        <MenuDrawer />
+
         <Grid
           container
           spacing={2}
@@ -21,10 +24,11 @@ function App() {
             <CharacterSlots />
           </Grid>
 
-          <Grid size={5}>
+          <Grid size={{ xs: 12, md: 5 }}>
             <ConfigPanel />
           </Grid>
-          <Grid size={7}>
+          
+          <Grid size={{ xs: 12, md: 7 }}>
             <CharacterGrid />
           </Grid>
         </Grid>

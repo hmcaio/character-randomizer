@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid"
 
 function ConfigPanel() {
   return (
-    <Paper variant="elevation" elevation={3} sx={{ padding: '16px' }}>
+    // <Paper variant="elevation" elevation={3} sx={{ padding: '16px' }}>
       <Grid container spacing={2}>
         <Grid size={12}>
           <SelectionConfig />
@@ -14,7 +14,7 @@ function ConfigPanel() {
           <FilterConfig />
         </Grid> */}
       </Grid>
-    </Paper>
+    // </Paper>
   )
 }
 
