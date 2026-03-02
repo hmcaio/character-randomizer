@@ -1,5 +1,4 @@
 import classes from './CharacterCard.module.css';
-import PersonIcon from '@mui/icons-material/Person';
 import Box from '@mui/material/Box';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import Card from '@mui/material/Card';
@@ -7,22 +6,12 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
+import { useState } from 'react';
+import Skeleton from '@mui/material/Skeleton';
 
 function CharacterCard({ character, owned, selected, onClick }) {
-  const characterName = character ? character.name : "Character"
+  const [isLoaded, setIsLoaded] = useState(false)
   const opacity = owned ? 1 : 0.5
-  const characterImg = character
-    ? <CardMedia
-        component="img"
-        height='128'
-        image={`${character.img}?w=160&fit=crop&auto=format`}
-        sx={{ 
-          objectFit: 'cover', // Ensures the image fills the height nicely
-        }}
-      />
-    : <PersonIcon
-        style={{ height: 'inherit', width: 'inherit' }}
-      />
 
   return (
     <Card
@@ -35,7 +24,24 @@ function CharacterCard({ character, owned, selected, onClick }) {
           position: 'relative'
         }}
       >
-        {characterImg}
+        {!isLoaded && 
+          <Skeleton
+            variant='rectangular'
+            height={128}
+            animation='wave'
+          />
+        }
+        <CardMedia
+          component="img"
+          height='128'
+          image={`${character.img}?w=160&fit=crop&auto=format`}
+          sx={{ 
+            objectFit: 'cover', // Ensures the image fills the height nicely
+            display: isLoaded ? 'block' : 'none'
+          }}
+          onLoad={() => setIsLoaded(true)}
+          onError={() => console.log(`CharacterCard error ${character.name}`)}
+        />
         {selected && <CheckCircleIcon sx={{ 
           position: 'absolute',
           top: 8,
@@ -49,9 +55,9 @@ function CharacterCard({ character, owned, selected, onClick }) {
       </Box>
       
       <CardContent sx={{ flexGrow: 1 }}>
-        <Tooltip title={characterName}>
+        <Tooltip title={character.name}>
           <Typography variant="subtitle1" noWrap align='center'>
-            {characterName}
+            {character.name}
           </Typography>
         </Tooltip>
       </CardContent>

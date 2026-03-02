@@ -3,22 +3,37 @@ import CardMedia from '@mui/material/CardMedia'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import Tooltip from '@mui/material/Tooltip'
+import Skeleton from '@mui/material/Skeleton';
 import profileSvg from '../../assets/user-svgrepo-com.svg'
+import { useState } from 'react'
 
 function CharacterSlot({ character }) {
+  const [isLoaded, setIsLoaded] = useState(false)
   const characterName = character ? character.name : "Character"
 
   console.log(`CharacterSlot ${character}`)
   
   const characterImg = character
-    ? <CardMedia
-        component="img"
-        height='128'
-        image={`${character.img}?w=160&fit=crop&auto=format`}
-        sx={{ 
-          objectFit: 'cover', // Ensures the image fills the height nicely
-        }}
-      />
+    ? <>
+        {!isLoaded && 
+          <Skeleton
+            variant='rectangular'
+            height={128}
+            animation='wave'
+          />
+        }
+        <CardMedia
+          component="img"
+          height='128'
+          image={`${character.img}?w=160&fit=crop&auto=format`}
+          sx={{ 
+            objectFit: 'cover', // Ensures the image fills the height nicely
+            display: isLoaded ? 'block' : 'none'
+          }}
+          onLoad={() => setIsLoaded(true)}
+          onError={() => console.log(`CharacterSlot error ${character.name}`)}
+        />
+      </>
     : <CardMedia
         component="img"
         height='128'
