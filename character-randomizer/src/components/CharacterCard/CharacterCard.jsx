@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import { useState } from 'react';
 import Skeleton from '@mui/material/Skeleton';
+import log from 'loglevel'
 
 function CharacterCard({ character, owned, selected, onClick }) {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -40,7 +41,7 @@ function CharacterCard({ character, owned, selected, onClick }) {
             display: isLoaded ? 'block' : 'none'
           }}
           onLoad={() => setIsLoaded(true)}
-          onError={() => console.log(`CharacterCard error ${character.name}`)}
+          onError={() => log.debug(`CharacterCard error ${character.name}`)}
         />
         {selected && <CheckCircleIcon sx={{ 
           position: 'absolute',

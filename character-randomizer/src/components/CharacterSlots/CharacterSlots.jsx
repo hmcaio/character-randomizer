@@ -9,6 +9,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import Stack from '@mui/material/Stack';
 import CharacterSlot from '../CharacterSlot/CharacterSlot';
 import Container from '@mui/material/Container';
+import log from 'loglevel'
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i >= 1; i--) {
@@ -19,12 +20,12 @@ function shuffleArray(array) {
 }
 
 function getRandomizedCharacters(allCharacters, owned, selectedCharacters, n) {
-  console.log(`getRandomizedCharacters allCharacters=${JSON.stringify(allCharacters.map((c) => c.id))}, owned=${JSON.stringify(owned)}, selectedCharacters=${JSON.stringify(selectedCharacters)}, n=${n}`)
+  log.debug(`getRandomizedCharacters allCharacters=${JSON.stringify(allCharacters.map((c) => c.id))}, owned=${JSON.stringify(owned)}, selectedCharacters=${JSON.stringify(selectedCharacters)}, n=${n}`)
 
   const pool = allCharacters
     .filter((character) => owned.includes(character.id) && !selectedCharacters.includes(character.id))
 
-  console.log(`getRandomizedCharacters pool=${JSON.stringify(pool.map((c) => c.id))}`)
+  log.debug(`getRandomizedCharacters pool=${JSON.stringify(pool.map((c) => c.id))}`)
 
   return shuffleArray(pool).slice(0, n)
 }
@@ -34,7 +35,7 @@ function CharacterSlots() {
   const characterSlots = randomizerConfig.characterSlots === "single" ? 1 : appData[selectedGame].teamCharacterCount
   const [snackBarOpen, setSnackBarOpen] = useState(false)
 
-  console.log("from CharacterSlots selectedCharacters.length=" + selected.length + ", selectedGame=" + selectedGame + ", characterSlots=" + randomizerConfig.characterSlots)
+  log.debug("from CharacterSlots selectedCharacters.length=" + selected.length + ", selectedGame=" + selectedGame + ", characterSlots=" + randomizerConfig.characterSlots)
 
   function handleRandomizeClick() {
     if (randomizerConfig.isRepetitionAllowed) {
@@ -44,7 +45,7 @@ function CharacterSlots() {
         [],
         characterSlots
       )
-      console.log(`randomizedCharacters=${JSON.stringify(randomizedCharacters.map((c) => c.id))}`)
+      log.debug(`randomizedCharacters=${JSON.stringify(randomizedCharacters.map((c) => c.id))}`)
       setSelected(randomizedCharacters)
 
     } else {
@@ -61,7 +62,7 @@ function CharacterSlots() {
         characterSlots
       )
 
-      console.log(`randomizedCharacters=${JSON.stringify(randomizedCharacters.map((c) => c.id))}, new=${JSON.stringify([...(new Set([...updatedSelectionHistory, ...(randomizedCharacters.map((c) => c.id))]))])}`)
+      log.debug(`randomizedCharacters=${JSON.stringify(randomizedCharacters.map((c) => c.id))}, new=${JSON.stringify([...(new Set([...updatedSelectionHistory, ...(randomizedCharacters.map((c) => c.id))]))])}`)
       setSelected(randomizedCharacters)
       setSelectionHistory([...(new Set([...updatedSelectionHistory, ...(randomizedCharacters.map((c) => c.id))]))])
     }

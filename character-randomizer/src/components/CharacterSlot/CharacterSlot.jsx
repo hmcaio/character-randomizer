@@ -6,12 +6,13 @@ import Tooltip from '@mui/material/Tooltip'
 import Skeleton from '@mui/material/Skeleton';
 import profileSvg from '../../assets/user-svgrepo-com.svg'
 import { useState } from 'react'
+import log from 'loglevel'
 
 function CharacterSlot({ character }) {
   const [isLoaded, setIsLoaded] = useState(false)
   const characterName = character ? character.name : "Character"
 
-  console.log(`CharacterSlot ${character}`)
+  log.debug(`CharacterSlot ${character}`)
   
   const characterImg = character
     ? <>
@@ -31,7 +32,7 @@ function CharacterSlot({ character }) {
             display: isLoaded ? 'block' : 'none'
           }}
           onLoad={() => setIsLoaded(true)}
-          onError={() => console.log(`CharacterSlot error ${character.name}`)}
+          onError={() => log.debug(`CharacterSlot error ${character.name}`)}
         />
       </>
     : <CardMedia

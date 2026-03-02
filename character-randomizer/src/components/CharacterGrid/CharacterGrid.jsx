@@ -5,11 +5,12 @@ import Grid from '@mui/material/Grid'
 import Paper from "@mui/material/Paper"
 import appData from "../../data/app-data.json"
 import { AppContext } from '../../store/app-context'
+import log from 'loglevel'
 
 function CharacterGrid() {
   const { selectedGame, owned, setOwned, selectionHistory, randomizerConfig } = useContext(AppContext)
 
-  console.log("from CharacterGrid")
+  log.debug("from CharacterGrid")
 
   function handleClick(characterId) {
     if (owned.includes(characterId)) {
