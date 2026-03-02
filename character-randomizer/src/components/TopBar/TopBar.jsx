@@ -36,15 +36,15 @@ function TopBar() {
 
           {/* <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}> */}
           <Box sx={{ flexGrow: 1, display: 'flex' }}>
-            {Object.keys(appData).map((game) => (
+            {Object.keys(appData).map((gameId) => (
               <Button
-                key={game}
-                onClick={() => setSelectedGame(game)}
+                key={gameId}
+                onClick={() => setSelectedGame(gameId)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
                 variant="text"
                 size="small"
               >
-                {game}
+                {appData[gameId].name}
               </Button>
             ))}
           </Box>

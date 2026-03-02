@@ -1,5 +1,6 @@
 {
-  "Zenless Zone Zero": {
+  "ZZZ": {
+    "name": "Zenless Zone Zero",
     "teamCharacterCount": 3,
     "filters": [
       {
@@ -463,7 +464,8 @@
       }
     ]
   },
-  "Wuthering Waves": {
+  "WUWA": {
+    "name": "Wuthering Waves",
     "teamCharacterCount": 3,
     "filters": [
       {
