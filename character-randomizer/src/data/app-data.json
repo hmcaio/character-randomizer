@@ -67,6 +67,15 @@
         "faction": "Belobog Heavy Industries"
       },
       {
+        "id": "Aria",
+        "name": "Aria",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/2/2d/Agent_Aria_Icon.png",
+        "rank": "S",
+        "attribute": "Ether",
+        "specialty": "Anomaly",
+        "faction": "Angels of Delusion"
+      },
+      {
         "id": "Asaba Harumasa",
         "name": "Asaba Harumasa",
         "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/f/fe/Agent_Asaba_Harumasa_Icon.png",
@@ -739,6 +748,16 @@
         "rarity": "5",
         "affiliation": ["Septimont", "Rinascita"],
         "faction": "House Silva"
+      },
+      {
+        "id": "Luuk Herssen",
+        "name": "Luuk Herssen",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/e/eb/Resonator_Luuk_Herssen.png",
+        "attribute": "Spectro",
+        "weapon": "Gauntlets",
+        "rarity": "5",
+        "affiliation": ["Startorch Academy"],
+        "faction": "Lollo Logistics"
       },
       {
         "id": "Lynae",
