@@ -9,8 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Wuthering Waves resonators: Sigrika, Lucilla
+- Wuthering Waves resonators: Lucilla
 - Zenless Zone Zero agents: Nangong Yu, Cissia
+
+## [1.0.2] - 2026-03-19
+
+### Added
+
+- Wuthering Waves resonators: Sigrika
 
 ## [1.0.1] - 2026-03-04
 

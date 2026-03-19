@@ -880,6 +880,16 @@
         "faction": "Black Shores"
       },
       {
+        "id": "Sigrika",
+        "name": "Sigrika",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/6/67/Resonator_Sigrika.png",
+        "attribute": "Aero",
+        "weapon": "Gauntlets",
+        "rarity": "5",
+        "affiliation": ["Roya Tribe"],
+        "faction": "Startorch Academy"
+      },
+      {
         "id": "Taoqi",
         "name": "Taoqi",
         "img": "https://static.wikia.nocookie.net/wutheringwaves/images/6/66/Resonator_Taoqi.png",
