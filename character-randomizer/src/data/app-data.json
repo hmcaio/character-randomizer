@@ -265,6 +265,15 @@
         "faction": "Sons of Calydon"
       },
       {
+        "id": "Nangong Yu",
+        "name": "Nangong Yu",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a3/Agent_Nangong_Yu_Icon.png",
+        "rank": "S",
+        "attribute": "Ether",
+        "specialty": "Stun",
+        "faction": "Angels of Delusion"
+      },
+      {
         "id": "Nekomiya Mana",
         "name": "Nekomiya Mana",
         "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/d/d0/Agent_Nekomiya_Mana_Icon.png",
