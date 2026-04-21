@@ -139,6 +139,15 @@
         "faction": "Sons of Calydon"
       },
       {
+        "id": "Cissia",
+        "name": "Cissia",
+        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/b/be/Agent_Cissia_Icon.png",
+        "rank": "S",
+        "attribute": "Electric",
+        "specialty": "Attack",
+        "faction": "Metropolitan Order Division"
+      },
+      {
         "id": "Corin Wickes",
         "name": "Corin Wickes",
         "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/e/e4/Agent_Corin_Wickes_Icon.png",
