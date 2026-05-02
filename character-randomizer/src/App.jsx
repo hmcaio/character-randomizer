@@ -1,12 +1,13 @@
-import './App.css'
-import CharacterGrid from './components/CharacterGrid/CharacterGrid'
-import CharacterSlots from './components/CharacterSlots/CharacterSlots'
 import Grid from '@mui/material/Grid';
-import ConfigPanel from './components/ConfigPanel/ConfigPanel'
-import TopBar from './components/TopBar/TopBar'
-import AppTheme from './theme/AppTheme'
-import AppContextProvider from './store/app-context';
+import './App.css';
+import CharacterGrid from './components/CharacterGrid/CharacterGrid';
+import CharacterSlots from './components/CharacterSlots/CharacterSlots';
+import ConfigPanel from './components/ConfigPanel/ConfigPanel';
+import Footer from './components/Footer/Footer';
 import MenuDrawer from './components/MenuDrawer/MenuDrawer';
+import TopBar from './components/TopBar/TopBar';
+import AppContextProvider from './store/app-context';
+import AppTheme from './theme/AppTheme';
 
 function App() {
   return (
@@ -32,6 +33,8 @@ function App() {
             <CharacterGrid />
           </Grid>
         </Grid>
+        
+        <Footer />
       </AppContextProvider>
     </AppTheme>
   )
