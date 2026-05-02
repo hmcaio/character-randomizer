@@ -698,6 +698,16 @@
         "faction": "Septimont"
       },
       {
+        "id": "Hiyuki",
+        "name": "Hiyuki",
+        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/8/8e/Resonator_Hiyuki.png",
+        "attribute": "Glacio",
+        "weapon": "Sword",
+        "rarity": "5",
+        "affiliation": ["Miko of Flaming Sakura"],
+        "faction": "Special Response Force"
+      },
+      {
         "id": "Iuno",
         "name": "Iuno",
         "img": "https://static.wikia.nocookie.net/wutheringwaves/images/8/8c/Resonator_Iuno.png",
