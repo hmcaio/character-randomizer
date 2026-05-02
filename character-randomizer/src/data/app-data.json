@@ -33,7 +33,7 @@
       {
         "id": "Alexandrina Sebastiane",
         "name": "Alexandrina Sebastiane",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a8/Agent_Alexandrina_Sebastiane_Icon.png",
+        "img": "/character-images/zzz/Agent_Alexandrina_Sebastiane_Icon.png",
         "rank": "S",
         "attribute": "Electric",
         "specialty": "Support",
@@ -42,7 +42,7 @@
       {
         "id": "Alice Thymefield",
         "name": "Alice Thymefield",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/7/7e/Agent_Alice_Thymefield_Icon.png",
+        "img": "/character-images/zzz/Agent_Alice_Thymefield_Icon.png",
         "rank": "S",
         "attribute": "Physical",
         "specialty": "Anomaly",
@@ -51,7 +51,7 @@
       {
         "id": "Anby Demara",
         "name": "Anby Demara",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/b/b1/Agent_Anby_Demara_Icon.png",
+        "img": "/character-images/zzz/Agent_Anby_Demara_Icon.png",
         "rank": "A",
         "attribute": "Electric",
         "specialty": "Stun",
@@ -60,7 +60,7 @@
       {
         "id": "Anton Ivanov",
         "name": "Anton Ivanov",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/1/13/Agent_Anton_Ivanov_Icon.png",
+        "img": "/character-images/zzz/Agent_Anton_Ivanov_Icon.png",
         "rank": "A",
         "attribute": "Electric",
         "specialty": "Attack",
@@ -69,7 +69,7 @@
       {
         "id": "Aria",
         "name": "Aria",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/2/2d/Agent_Aria_Icon.png",
+        "img": "/character-images/zzz/Agent_Aria_Icon.png",
         "rank": "S",
         "attribute": "Ether",
         "specialty": "Anomaly",
@@ -78,7 +78,7 @@
       {
         "id": "Asaba Harumasa",
         "name": "Asaba Harumasa",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/f/fe/Agent_Asaba_Harumasa_Icon.png",
+        "img": "/character-images/zzz/Agent_Asaba_Harumasa_Icon.png",
         "rank": "S",
         "attribute": "Electric",
         "specialty": "Attack",
@@ -87,7 +87,7 @@
       {
         "id": "Astra Yao",
         "name": "Astra Yao",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/b/b8/Agent_Astra_Yao_Icon.png",
+        "img": "/character-images/zzz/Agent_Astra_Yao_Icon.png",
         "rank": "S",
         "attribute": "Ether",
         "specialty": "Support",
@@ -96,7 +96,7 @@
       {
         "id": "Banyue",
         "name": "Banyue",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/7/70/Agent_Banyue_Icon.png",
+        "img": "/character-images/zzz/Agent_Banyue_Icon.png",
         "rank": "S",
         "attribute": "Fire",
         "specialty": "Rupture",
@@ -105,7 +105,7 @@
       {
         "id": "Ben Bigger",
         "name": "Ben Bigger",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/b/ba/Agent_Ben_Bigger_Icon.png",
+        "img": "/character-images/zzz/Agent_Ben_Bigger_Icon.png",
         "rank": "A",
         "attribute": "Fire",
         "specialty": "Defense",
@@ -114,7 +114,7 @@
       {
         "id": "Billy Kid",
         "name": "Billy Kid",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/9/99/Agent_Billy_Kid_Icon.png",
+        "img": "/character-images/zzz/Agent_Billy_Kid_Icon.png",
         "rank": "A",
         "attribute": "Physical",
         "specialty": "Attack",
@@ -123,7 +123,7 @@
       {
         "id": "Burnice White",
         "name": "Burnice White",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/f/f9/Agent_Burnice_White_Icon.png",
+        "img": "/character-images/zzz/Agent_Burnice_White_Icon.png",
         "rank": "S",
         "attribute": "Fire",
         "specialty": "Anomaly",
@@ -132,7 +132,7 @@
       {
         "id": "Caesar King",
         "name": "Caesar King",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/af/Agent_Caesar_King_Icon.png",
+        "img": "/character-images/zzz/Agent_Caesar_King_Icon.png",
         "rank": "S",
         "attribute": "Physical",
         "specialty": "Defense",
@@ -141,7 +141,7 @@
       {
         "id": "Cissia",
         "name": "Cissia",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/b/be/Agent_Cissia_Icon.png",
+        "img": "/character-images/zzz/Agent_Cissia_Icon.png",
         "rank": "S",
         "attribute": "Electric",
         "specialty": "Attack",
@@ -150,7 +150,7 @@
       {
         "id": "Corin Wickes",
         "name": "Corin Wickes",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/e/e4/Agent_Corin_Wickes_Icon.png",
+        "img": "/character-images/zzz/Agent_Corin_Wickes_Icon.png",
         "rank": "A",
         "attribute": "Physical",
         "specialty": "Attack",
@@ -159,7 +159,7 @@
       {
         "id": "Dialyn",
         "name": "Dialyn",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/2/25/Agent_Dialyn_Icon.png",
+        "img": "/character-images/zzz/Agent_Dialyn_Icon.png",
         "rank": "S",
         "attribute": "Physical",
         "specialty": "Stun",
@@ -168,7 +168,7 @@
       {
         "id": "Ellen Joe",
         "name": "Ellen Joe",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/e/ed/Agent_Ellen_Joe_Icon.png",
+        "img": "/character-images/zzz/Agent_Ellen_Joe_Icon.png",
         "rank": "S",
         "attribute": "Ice",
         "specialty": "Attack",
@@ -177,7 +177,7 @@
       {
         "id": "Evelyn Chevalier",
         "name": "Evelyn Chevalier",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/1/17/Agent_Evelyn_Chevalier_Icon.png",
+        "img": "/character-images/zzz/Agent_Evelyn_Chevalier_Icon.png",
         "rank": "S",
         "attribute": "Fire",
         "specialty": "Attack",
@@ -186,7 +186,7 @@
       {
         "id": "Grace Howard",
         "name": "Grace Howard",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/e/e6/Agent_Grace_Howard_Icon.png",
+        "img": "/character-images/zzz/Agent_Grace_Howard_Icon.png",
         "rank": "S",
         "attribute": "Electric",
         "specialty": "Anomaly",
@@ -195,7 +195,7 @@
       {
         "id": "Hoshimi Miyabi",
         "name": "Hoshimi Miyabi",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/9/94/Agent_Hoshimi_Miyabi_Icon.png",
+        "img": "/character-images/zzz/Agent_Hoshimi_Miyabi_Icon.png",
         "rank": "S",
         "attribute": "Frost",
         "specialty": "Anomaly",
@@ -204,7 +204,7 @@
       {
         "id": "Hugo Vlad",
         "name": "Hugo Vlad",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/9/99/Agent_Hugo_Vlad_Icon.png",
+        "img": "/character-images/zzz/Agent_Hugo_Vlad_Icon.png",
         "rank": "S",
         "attribute": "Ice",
         "specialty": "Attack",
@@ -213,7 +213,7 @@
       {
         "id": "Jane Doe",
         "name": "Jane Doe",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/e/e7/Agent_Jane_Doe_Icon.png",
+        "img": "/character-images/zzz/Agent_Jane_Doe_Icon.png",
         "rank": "S",
         "attribute": "Physical",
         "specialty": "Anomaly",
@@ -222,7 +222,7 @@
       {
         "id": "Ju Fufu",
         "name": "Ju Fufu",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/4a/Agent_Ju_Fufu_Icon.png",
+        "img": "/character-images/zzz/Agent_Ju_Fufu_Icon.png",
         "rank": "S",
         "attribute": "Fire",
         "specialty": "Stun",
@@ -231,7 +231,7 @@
       {
         "id": "Koleda Belobog",
         "name": "Koleda Belobog",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a8/Agent_Koleda_Belobog_Icon.png",
+        "img": "/character-images/zzz/Agent_Koleda_Belobog_Icon.png",
         "rank": "S",
         "attribute": "Fire",
         "specialty": "Stun",
@@ -240,7 +240,7 @@
       {
         "id": "Komano Manato",
         "name": "Komano Manato",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/7/7c/Agent_Komano_Manato_Icon.png",
+        "img": "/character-images/zzz/Agent_Komano_Manato_Icon.png",
         "rank": "A",
         "attribute": "Fire",
         "specialty": "Rupture",
@@ -249,7 +249,7 @@
       {
         "id": "Lighter",
         "name": "Lighter",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/b/b5/Agent_Lighter_Icon.png",
+        "img": "/character-images/zzz/Agent_Lighter_Icon.png",
         "rank": "S",
         "attribute": "Fire",
         "specialty": "Stun",
@@ -258,7 +258,7 @@
       {
         "id": "Lucia Elowen",
         "name": "Lucia Elowen",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/f/ff/Agent_Lucia_Elowen_Icon.png",
+        "img": "/character-images/zzz/Agent_Lucia_Elowen_Icon.png",
         "rank": "S",
         "attribute": "Ether",
         "specialty": "Support",
@@ -267,7 +267,7 @@
       {
         "id": "Luciana de Montefio",
         "name": "Luciana de Montefio",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/b/b8/Agent_Luciana_de_Montefio_Icon.png",
+        "img": "/character-images/zzz/Agent_Luciana_de_Montefio_Icon.png",
         "rank": "A",
         "attribute": "Fire",
         "specialty": "Support",
@@ -276,7 +276,7 @@
       {
         "id": "Nangong Yu",
         "name": "Nangong Yu",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a3/Agent_Nangong_Yu_Icon.png",
+        "img": "/character-images/zzz/Agent_Nangong_Yu_Icon.png",
         "rank": "S",
         "attribute": "Ether",
         "specialty": "Stun",
@@ -285,7 +285,7 @@
       {
         "id": "Nekomiya Mana",
         "name": "Nekomiya Mana",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/d/d0/Agent_Nekomiya_Mana_Icon.png",
+        "img": "/character-images/zzz/Agent_Nekomiya_Mana_Icon.png",
         "rank": "S",
         "attribute": "Physical",
         "specialty": "Attack",
@@ -294,7 +294,7 @@
       {
         "id": "Nicole Demara",
         "name": "Nicole Demara",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/2/21/Agent_Nicole_Demara_Icon.png",
+        "img": "/character-images/zzz/Agent_Nicole_Demara_Icon.png",
         "rank": "A",
         "attribute": "Ether",
         "specialty": "Support",
@@ -303,7 +303,7 @@
       {
         "id": "Orphie Magnusson & Magus",
         "name": "Orphie Magnusson & Magus",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/6/63/Agent_Orphie_Magnusson_%26_Magus_Icon.png",
+        "img": "/character-images/zzz/Agent_Orphie_Magnusson_And_Magus_Icon.png",
         "rank": "S",
         "attribute": "Fire",
         "specialty": "Attack",
@@ -312,7 +312,7 @@
       {
         "id": "Pan Yinhu",
         "name": "Pan Yinhu",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/ab/Agent_Pan_Yinhu_Icon.png",
+        "img": "/character-images/zzz/Agent_Pan_Yinhu_Icon.png",
         "rank": "A",
         "attribute": "Physical",
         "specialty": "Defense",
@@ -321,7 +321,7 @@
       {
         "id": "Piper Wheel",
         "name": "Piper Wheel",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/c/ca/Agent_Piper_Wheel_Icon.png",
+        "img": "/character-images/zzz/Agent_Piper_Wheel_Icon.png",
         "rank": "A",
         "attribute": "Physical",
         "specialty": "Anomaly",
@@ -330,7 +330,7 @@
       {
         "id": "Pulchra Fellini",
         "name": "Pulchra Fellini",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/8/8c/Agent_Pulchra_Fellini_Icon.png",
+        "img": "/character-images/zzz/Agent_Pulchra_Fellini_Icon.png",
         "rank": "A",
         "attribute": "Physical",
         "specialty": "Stun",
@@ -339,7 +339,7 @@
       {
         "id": "Qingyi",
         "name": "Qingyi",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/3/39/Agent_Qingyi_Icon.png",
+        "img": "/character-images/zzz/Agent_Qingyi_Icon.png",
         "rank": "S",
         "attribute": "Electric",
         "specialty": "Stun",
@@ -348,7 +348,7 @@
       {
         "id": "Seed",
         "name": "Seed",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/f/fb/Agent_Seed_Icon.png",
+        "img": "/character-images/zzz/Agent_Seed_Icon.png",
         "rank": "S",
         "attribute": "Electric",
         "specialty": "Attack",
@@ -357,7 +357,7 @@
       {
         "id": "Seth Lowell",
         "name": "Seth Lowell",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/6/6d/Agent_Seth_Lowell_Icon.png",
+        "img": "/character-images/zzz/Agent_Seth_Lowell_Icon.png",
         "rank": "A",
         "attribute": "Electric",
         "specialty": "Defense",
@@ -366,7 +366,7 @@
       {
         "id": "Soldier 0 - Anby",
         "name": "Soldier 0 - Anby",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/9/95/Agent_Soldier_0_-_Anby_Icon.png",
+        "img": "/character-images/zzz/Agent_Soldier_0_-_Anby_Icon.png",
         "rank": "S",
         "attribute": "Electric",
         "specialty": "Attack",
@@ -375,7 +375,7 @@
       {
         "id": "Soldier 11",
         "name": "Soldier 11",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/6/62/Agent_Soldier_11_Icon.png",
+        "img": "/character-images/zzz/Agent_Soldier_11_Icon.png",
         "rank": "S",
         "attribute": "Fire",
         "specialty": "Attack",
@@ -384,7 +384,7 @@
       {
         "id": "Soukaku",
         "name": "Soukaku",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/8/89/Agent_Soukaku_Icon.png",
+        "img": "/character-images/zzz/Agent_Soukaku_Icon.png",
         "rank": "A",
         "attribute": "Ice",
         "specialty": "Support",
@@ -393,7 +393,7 @@
       {
         "id": "Sunna",
         "name": "Sunna",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/0/0f/Agent_Sunna_Icon.png",
+        "img": "/character-images/zzz/Agent_Sunna_Icon.png",
         "rank": "S",
         "attribute": "Physical",
         "specialty": "Support",
@@ -402,7 +402,7 @@
       {
         "id": "Trigger",
         "name": "Trigger",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/d/df/Agent_Trigger_Icon.png",
+        "img": "/character-images/zzz/Agent_Trigger_Icon.png",
         "rank": "S",
         "attribute": "Electric",
         "specialty": "Stun",
@@ -411,7 +411,7 @@
       {
         "id": "Tsukishiro Yanagi",
         "name": "Tsukishiro Yanagi",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/8/8c/Agent_Tsukishiro_Yanagi_Icon.png",
+        "img": "/character-images/zzz/Agent_Tsukishiro_Yanagi_Icon.png",
         "rank": "S",
         "attribute": "Electric",
         "specialty": "Anomaly",
@@ -420,7 +420,7 @@
       {
         "id": "Ukinami Yuzuha",
         "name": "Ukinami Yuzuha",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/f/fc/Agent_Ukinami_Yuzuha_Icon.png",
+        "img": "/character-images/zzz/Agent_Ukinami_Yuzuha_Icon.png",
         "rank": "S",
         "attribute": "Physical",
         "specialty": "Support",
@@ -429,7 +429,7 @@
       {
         "id": "Vivian Banshee",
         "name": "Vivian Banshee",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/d/d5/Agent_Vivian_Banshee_Icon.png",
+        "img": "/character-images/zzz/Agent_Vivian_Banshee_Icon.png",
         "rank": "S",
         "attribute": "Ether",
         "specialty": "Anomaly",
@@ -438,7 +438,7 @@
       {
         "id": "Von Lycaon",
         "name": "Von Lycaon",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/2/2f/Agent_Von_Lycaon_Icon.png",
+        "img": "/character-images/zzz/Agent_Von_Lycaon_Icon.png",
         "rank": "S",
         "attribute": "Ice",
         "specialty": "Stun",
@@ -447,7 +447,7 @@
       {
         "id": "Ye Shunguang",
         "name": "Ye Shunguang",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/9/94/Agent_Ye_Shunguang_Icon.png",
+        "img": "/character-images/zzz/Agent_Ye_Shunguang_Icon.png",
         "rank": "S",
         "attribute": "Honed Edge",
         "specialty": "Attack",
@@ -456,7 +456,7 @@
       {
         "id": "Yidhari Murphy",
         "name": "Yidhari Murphy",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/6/6f/Agent_Yidhari_Murphy_Icon.png",
+        "img": "/character-images/zzz/Agent_Yidhari_Murphy_Icon.png",
         "rank": "S",
         "attribute": "Ice",
         "specialty": "Rupture",
@@ -465,7 +465,7 @@
       {
         "id": "Yixuan",
         "name": "Yixuan",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/f/f7/Agent_Yixuan_Icon.png",
+        "img": "/character-images/zzz/Agent_Yixuan_Icon.png",
         "rank": "S",
         "attribute": "Auric Ink",
         "specialty": "Rupture",
@@ -474,7 +474,7 @@
       {
         "id": "Zhao",
         "name": "Zhao",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/d/d4/Agent_Zhao_Icon.png",
+        "img": "/character-images/zzz/Agent_Zhao_Icon.png",
         "rank": "S",
         "attribute": "Ice",
         "specialty": "Defense",
@@ -483,7 +483,7 @@
       {
         "id": "Zhu Yuan",
         "name": "Zhu Yuan",
-        "img": "https://static.wikia.nocookie.net/zenless-zone-zero/images/f/fb/Agent_Zhu_Yuan_Icon.png",
+        "img": "/character-images/zzz/Agent_Zhu_Yuan_Icon.png",
         "rank": "S",
         "attribute": "Ether",
         "specialty": "Attack",
@@ -520,7 +520,7 @@
       {
         "id": "Aalto",
         "name": "Aalto",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/1/1c/Resonator_Aalto.png",
+        "img": "/character-images/wuwa/Resonator_Aalto.png",
         "attribute": "Aero",
         "weapon": "Pistols",
         "rarity": "4",
@@ -530,7 +530,7 @@
       {
         "id": "Aemeath",
         "name": "Aemeath",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/e/e8/Resonator_Aemeath.png",
+        "img": "/character-images/wuwa/Resonator_Aemeath.png",
         "attribute": "Fusion",
         "weapon": "Sword",
         "rarity": "5",
@@ -540,7 +540,7 @@
       {
         "id": "Augusta",
         "name": "Augusta",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/a/a5/Resonator_Augusta.png",
+        "img": "/character-images/wuwa/Resonator_Augusta.png",
         "attribute": "Electro",
         "weapon": "Broadblade",
         "rarity": "5",
@@ -550,7 +550,7 @@
       {
         "id": "Baizhi",
         "name": "Baizhi",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/2/2a/Resonator_Baizhi.png",
+        "img": "/character-images/wuwa/Resonator_Baizhi.png",
         "attribute": "Glacio",
         "weapon": "Rectifier",
         "rarity": "4",
@@ -560,7 +560,7 @@
       {
         "id": "Brant",
         "name": "Brant",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/d/df/Resonator_Brant.png",
+        "img": "/character-images/wuwa/Resonator_Brant.png",
         "attribute": "Fusion",
         "weapon": "Sword",
         "rarity": "5",
@@ -570,7 +570,7 @@
       {
         "id": "Buling",
         "name": "Buling",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/7/70/Resonator_Buling.png",
+        "img": "/character-images/wuwa/Resonator_Buling.png",
         "attribute": "Electro",
         "weapon": "Rectifier",
         "rarity": "4",
@@ -580,7 +580,7 @@
       {
         "id": "Calcharo",
         "name": "Calcharo",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/1/16/Resonator_Calcharo.png",
+        "img": "/character-images/wuwa/Resonator_Calcharo.png",
         "attribute": "Electro",
         "weapon": "Broadblade",
         "rarity": "5",
@@ -590,7 +590,7 @@
       {
         "id": "Camellya",
         "name": "Camellya",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/9/9f/Resonator_Camellya.png",
+        "img": "/character-images/wuwa/Resonator_Camellya.png",
         "attribute": "Havoc",
         "weapon": "Sword",
         "rarity": "5",
@@ -600,7 +600,7 @@
       {
         "id": "Cantarella",
         "name": "Cantarella",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/c/cd/Resonator_Cantarella.png",
+        "img": "/character-images/wuwa/Resonator_Cantarella.png",
         "attribute": "Havoc",
         "weapon": "Rectifier",
         "rarity": "5",
@@ -610,7 +610,7 @@
       {
         "id": "Carlotta",
         "name": "Carlotta",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/d/d6/Resonator_Carlotta.png",
+        "img": "/character-images/wuwa/Resonator_Carlotta.png",
         "attribute": "Glacio",
         "weapon": "Pistols",
         "rarity": "5",
@@ -620,7 +620,7 @@
       {
         "id": "Cartethyia",
         "name": "Cartethyia",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/d/d6/Resonator_Cartethyia.png",
+        "img": "/character-images/wuwa/Resonator_Cartethyia.png",
         "attribute": "Aero",
         "weapon": "Sword",
         "rarity": "5",
@@ -630,7 +630,7 @@
       {
         "id": "Changli",
         "name": "Changli",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/1/11/Resonator_Changli.png",
+        "img": "/character-images/wuwa/Resonator_Changli.png",
         "attribute": "Fusion",
         "weapon": "Sword",
         "rarity": "5",
@@ -640,7 +640,7 @@
       {
         "id": "Chisa",
         "name": "Chisa",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/d/d7/Resonator_Chisa.png",
+        "img": "/character-images/wuwa/Resonator_Chisa.png",
         "attribute": "Havoc",
         "weapon": "Broadblade",
         "rarity": "5",
@@ -650,7 +650,7 @@
       {
         "id": "Chixia",
         "name": "Chixia",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/1/10/Resonator_Chixia.png",
+        "img": "/character-images/wuwa/Resonator_Chixia.png",
         "attribute": "Fusion",
         "weapon": "Pistols",
         "rarity": "4",
@@ -660,7 +660,7 @@
       {
         "id": "Ciaccona",
         "name": "Ciaccona",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/2/24/Resonator_Ciaccona.png",
+        "img": "/character-images/wuwa/Resonator_Ciaccona.png",
         "attribute": "Aero",
         "weapon": "Pistols",
         "rarity": "5",
@@ -670,7 +670,7 @@
       {
         "id": "Danjin",
         "name": "Danjin",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/1/1f/Resonator_Danjin.png",
+        "img": "/character-images/wuwa/Resonator_Danjin.png",
         "attribute": "Havoc",
         "weapon": "Sword",
         "rarity": "4",
@@ -680,7 +680,7 @@
       {
         "id": "Encore",
         "name": "Encore",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/4/42/Resonator_Encore.png",
+        "img": "/character-images/wuwa/Resonator_Encore.png",
         "attribute": "Fusion",
         "weapon": "Rectifier",
         "rarity": "5",
@@ -690,7 +690,7 @@
       {
         "id": "Galbrena",
         "name": "Galbrena",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/5/57/Resonator_Galbrena.png",
+        "img": "/character-images/wuwa/Resonator_Galbrena.png",
         "attribute": "Fusion",
         "weapon": "Pistols",
         "rarity": "5",
@@ -700,7 +700,7 @@
       {
         "id": "Hiyuki",
         "name": "Hiyuki",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/8/8e/Resonator_Hiyuki.png",
+        "img": "/character-images/wuwa/Resonator_Hiyuki.png",
         "attribute": "Glacio",
         "weapon": "Sword",
         "rarity": "5",
@@ -710,7 +710,7 @@
       {
         "id": "Iuno",
         "name": "Iuno",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/8/8c/Resonator_Iuno.png",
+        "img": "/character-images/wuwa/Resonator_Iuno.png",
         "attribute": "Aero",
         "weapon": "Gauntlets",
         "rarity": "5",
@@ -720,7 +720,7 @@
       {
         "id": "Jianxin",
         "name": "Jianxin",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/0/00/Resonator_Jianxin.png",
+        "img": "/character-images/wuwa/Resonator_Jianxin.png",
         "attribute": "Aero",
         "weapon": "Gauntlets",
         "rarity": "5",
@@ -730,7 +730,7 @@
       {
         "id": "Jinhsi",
         "name": "Jinhsi",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/f/f5/Resonator_Jinhsi.png",
+        "img": "/character-images/wuwa/Resonator_Jinhsi.png",
         "attribute": "Spectro",
         "weapon": "Broadblade",
         "rarity": "5",
@@ -740,7 +740,7 @@
       {
         "id": "Jiyan",
         "name": "Jiyan",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/d/da/Resonator_Jiyan.png",
+        "img": "/character-images/wuwa/Resonator_Jiyan.png",
         "attribute": "Aero",
         "weapon": "Broadblade",
         "rarity": "5",
@@ -750,7 +750,7 @@
       {
         "id": "Lingyang",
         "name": "Lingyang",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/3/39/Resonator_Lingyang.png",
+        "img": "/character-images/wuwa/Resonator_Lingyang.png",
         "attribute": "Glacio",
         "weapon": "Gauntlets",
         "rarity": "5",
@@ -760,7 +760,7 @@
       {
         "id": "Lumi",
         "name": "Lumi",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/f/f3/Resonator_Lumi.png",
+        "img": "/character-images/wuwa/Resonator_Lumi.png",
         "attribute": "Electro",
         "weapon": "Broadblade",
         "rarity": "4",
@@ -770,7 +770,7 @@
       {
         "id": "Lupa",
         "name": "Lupa",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/d/d1/Resonator_Lupa.png",
+        "img": "/character-images/wuwa/Resonator_Lupa.png",
         "attribute": "Fusion",
         "weapon": "Broadblade",
         "rarity": "5",
@@ -780,7 +780,7 @@
       {
         "id": "Luuk Herssen",
         "name": "Luuk Herssen",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/e/eb/Resonator_Luuk_Herssen.png",
+        "img": "/character-images/wuwa/Resonator_Luuk_Herssen.png",
         "attribute": "Spectro",
         "weapon": "Gauntlets",
         "rarity": "5",
@@ -790,7 +790,7 @@
       {
         "id": "Lynae",
         "name": "Lynae",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/3/34/Resonator_Lynae.png",
+        "img": "/character-images/wuwa/Resonator_Lynae.png",
         "attribute": "Spectro",
         "weapon": "Pistols",
         "rarity": "5",
@@ -800,7 +800,7 @@
       {
         "id": "Mornye",
         "name": "Mornye",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/2/25/Resonator_Mornye.png",
+        "img": "/character-images/wuwa/Resonator_Mornye.png",
         "attribute": "Fusion",
         "weapon": "Broadblade",
         "rarity": "5",
@@ -810,7 +810,7 @@
       {
         "id": "Mortefi",
         "name": "Mortefi",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/4/4f/Resonator_Mortefi.png",
+        "img": "/character-images/wuwa/Resonator_Mortefi.png",
         "attribute": "Fusion",
         "weapon": "Pistols",
         "rarity": "4",
@@ -820,7 +820,7 @@
       {
         "id": "Phoebe",
         "name": "Phoebe",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/b/b7/Resonator_Phoebe.png",
+        "img": "/character-images/wuwa/Resonator_Phoebe.png",
         "attribute": "Spectro",
         "weapon": "Rectifier",
         "rarity": "5",
@@ -830,7 +830,7 @@
       {
         "id": "Phrolova",
         "name": "Phrolova",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/a/a2/Resonator_Phrolova.png",
+        "img": "/character-images/wuwa/Resonator_Phrolova.png",
         "attribute": "Havoc",
         "weapon": "Rectifier",
         "rarity": "5",
@@ -840,7 +840,7 @@
       {
         "id": "Qiuyuan",
         "name": "Qiuyuan",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/d/da/Resonator_Qiuyuan.png",
+        "img": "/character-images/wuwa/Resonator_Qiuyuan.png",
         "attribute": "Aero",
         "weapon": "Sword",
         "rarity": "5",
@@ -850,7 +850,7 @@
       {
         "id": "Roccia",
         "name": "Roccia",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/1/1a/Resonator_Roccia.png",
+        "img": "/character-images/wuwa/Resonator_Roccia.png",
         "attribute": "Havoc",
         "weapon": "Gauntlets",
         "rarity": "5",
@@ -860,7 +860,7 @@
       {
         "id": "Rover-Aero",
         "name": "Rover-Aero",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/4/47/Resonator_Rover.png",
+        "img": "/character-images/wuwa/Resonator_Rover.png",
         "attribute": "Aero",
         "weapon": "Sword",
         "rarity": "5",
@@ -870,7 +870,7 @@
       {
         "id": "Rover-Havoc",
         "name": "Rover-Havoc",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/4/47/Resonator_Rover.png",
+        "img": "/character-images/wuwa/Resonator_Rover.png",
         "attribute": "Havoc",
         "weapon": "Sword",
         "rarity": "5",
@@ -880,7 +880,7 @@
       {
         "id": "Rover-Spectro",
         "name": "Rover-Spectro",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/4/47/Resonator_Rover.png",
+        "img": "/character-images/wuwa/Resonator_Rover.png",
         "attribute": "Spectro",
         "weapon": "Sword",
         "rarity": "5",
@@ -890,7 +890,7 @@
       {
         "id": "Sanhua",
         "name": "Sanhua",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/d/d4/Resonator_Sanhua.png",
+        "img": "/character-images/wuwa/Resonator_Sanhua.png",
         "attribute": "Glacio",
         "weapon": "Sword",
         "rarity": "4",
@@ -900,7 +900,7 @@
       {
         "id": "Shorekeeper",
         "name": "Shorekeeper",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/d/da/Resonator_Shorekeeper.png",
+        "img": "/character-images/wuwa/Resonator_Shorekeeper.png",
         "attribute": "Spectro",
         "weapon": "Rectifier",
         "rarity": "5",
@@ -910,7 +910,7 @@
       {
         "id": "Sigrika",
         "name": "Sigrika",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/6/67/Resonator_Sigrika.png",
+        "img": "/character-images/wuwa/Resonator_Sigrika.png",
         "attribute": "Aero",
         "weapon": "Gauntlets",
         "rarity": "5",
@@ -920,7 +920,7 @@
       {
         "id": "Taoqi",
         "name": "Taoqi",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/6/66/Resonator_Taoqi.png",
+        "img": "/character-images/wuwa/Resonator_Taoqi.png",
         "attribute": "Havoc",
         "weapon": "Broadblade",
         "rarity": "4",
@@ -930,7 +930,7 @@
       {
         "id": "Verina",
         "name": "Verina",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/4/4d/Resonator_Verina.png",
+        "img": "/character-images/wuwa/Resonator_Verina.png",
         "attribute": "Spectro",
         "weapon": "Rectifier",
         "rarity": "5",
@@ -940,7 +940,7 @@
       {
         "id": "Xiangli Yao",
         "name": "Xiangli Yao",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/1/16/Resonator_Xiangli_Yao.png",
+        "img": "/character-images/wuwa/Resonator_Xiangli_Yao.png",
         "attribute": "Electro",
         "weapon": "Gauntlets",
         "rarity": "5",
@@ -950,7 +950,7 @@
       {
         "id": "Yangyang",
         "name": "Yangyang",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/c/cf/Resonator_Yangyang.png",
+        "img": "/character-images/wuwa/Resonator_Yangyang.png",
         "attribute": "Aero",
         "weapon": "Sword",
         "rarity": "4",
@@ -960,7 +960,7 @@
       {
         "id": "Yinlin",
         "name": "Yinlin",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/4/41/Resonator_Yinlin.png",
+        "img": "/character-images/wuwa/Resonator_Yinlin.png",
         "attribute": "Electro",
         "weapon": "Rectifier",
         "rarity": "5",
@@ -970,7 +970,7 @@
       {
         "id": "Youhu",
         "name": "Youhu",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/9/93/Resonator_Youhu.png",
+        "img": "/character-images/wuwa/Resonator_Youhu.png",
         "attribute": "Glacio",
         "weapon": "Gauntlets",
         "rarity": "4",
@@ -980,7 +980,7 @@
       {
         "id": "Yuanwu",
         "name": "Yuanwu",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/d/d6/Resonator_Yuanwu.png",
+        "img": "/character-images/wuwa/Resonator_Yuanwu.png",
         "attribute": "Electro",
         "weapon": "Gauntlets",
         "rarity": "4",
@@ -990,7 +990,7 @@
       {
         "id": "Zani",
         "name": "Zani",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/1/12/Resonator_Zani.png",
+        "img": "/character-images/wuwa/Resonator_Zani.png",
         "attribute": "Spectro",
         "weapon": "Gauntlets",
         "rarity": "5",
@@ -1000,7 +1000,7 @@
       {
         "id": "Zhezhi",
         "name": "Zhezhi",
-        "img": "https://static.wikia.nocookie.net/wutheringwaves/images/a/a0/Resonator_Zhezhi.png",
+        "img": "/character-images/wuwa/Resonator_Zhezhi.png",
         "attribute": "Glacio",
         "weapon": "Rectifier",
         "rarity": "5",
