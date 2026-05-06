@@ -10,7 +10,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Wuthering Waves resonators: Denia, Lucilla
-- Zenless Zone Zero agents: Norma Hollowell, Promeia, Pyrois, Starlight - Billy, Velina Airgid
+- Zenless Zone Zero agents: Norma Hollowell, Pyrois, Starlight - Billy, Velina Airgid
+
+## [1.2.0] - 2026-05-06
+
+### Added
+
+- Zenless Zone Zero agents: Promeia
 
 ## [1.1.0] - 2026-05-02
 
