@@ -328,6 +328,15 @@
         "faction": "Sons of Calydon"
       },
       {
+        "id": "Promeia",
+        "name": "Promeia",
+        "img": "/character-images/zzz/Agent_Promeia_Icon.png",
+        "rank": "S",
+        "attribute": "Ice",
+        "specialty": "Anomaly",
+        "faction": "Krampus Compliance Authority"
+      },
+      {
         "id": "Pulchra Fellini",
         "name": "Pulchra Fellini",
         "img": "/character-images/zzz/Agent_Pulchra_Fellini_Icon.png",
