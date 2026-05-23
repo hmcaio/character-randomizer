@@ -687,6 +687,16 @@
         "faction": "Midnight Rangers"
       },
       {
+        "id": "Denia",
+        "name": "Denia",
+        "img": "/character-images/wuwa/Resonator_Denia.png",
+        "attribute": "Fusion",
+        "weapon": "Rectifier",
+        "rarity": "5",
+        "affiliation": ["Fractsidus"],
+        "faction": "Startorch Academy"
+      },
+      {
         "id": "Encore",
         "name": "Encore",
         "img": "/character-images/wuwa/Resonator_Encore.png",
