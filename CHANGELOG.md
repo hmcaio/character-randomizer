@@ -10,7 +10,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Wuthering Waves resonators: Lucilla, Lucy, Rebecca
-- Zenless Zone Zero agents: Norma Hollowell, Pyrois, Starlight - Billy, Velina Airgid
+- Zenless Zone Zero agents: Norma Hollowell, Pyrois, Velina Airgid
+
+## [1.4.0] - 2026-05-28
+
+### Added
+
+- Zenless Zone Zero agents: Starlight - Billy
 
 ## [1.3.0] - 2026-05-22
 

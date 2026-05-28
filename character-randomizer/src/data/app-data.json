@@ -400,6 +400,15 @@
         "faction": "Hollow Special Operations Section 6"
       },
       {
+        "id": "Starlight - Billy Kid",
+        "name": "Starlight - Billy Kid",
+        "img": "/character-images/zzz/Agent_Starlight_-_Billy_Kid_Icon.png",
+        "rank": "S",
+        "attribute": "Physical",
+        "specialty": "Rupture",
+        "faction": "Cunning Hares"
+      },
+      {
         "id": "Sunna",
         "name": "Sunna",
         "img": "/character-images/zzz/Agent_Sunna_Icon.png",
