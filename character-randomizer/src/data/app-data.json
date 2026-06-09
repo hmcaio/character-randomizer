@@ -786,6 +786,16 @@
         "faction": "Liondance Troupe"
       },
       {
+        "id": "Lucy",
+        "name": "Lucy",
+        "img": "/character-images/wuwa/Resonator_Lucy.png",
+        "attribute": "Spectro",
+        "weapon": "Pistols",
+        "rarity": "5",
+        "affiliation": ["Lahai-Roi"],
+        "faction": "Arasaka"
+      },
+      {
         "id": "Lumi",
         "name": "Lumi",
         "img": "/character-images/wuwa/Resonator_Lumi.png",
@@ -874,6 +884,16 @@
         "rarity": "5",
         "affiliation": ["Mingting", "Huanglong"],
         "faction": "Chongzhou"
+      },
+      {
+        "id": "Rebecca",
+        "name": "Rebecca",
+        "img": "/character-images/wuwa/Resonator_Rebecca.png",
+        "attribute": "Electro",
+        "weapon": "Pistols",
+        "rarity": "5",
+        "affiliation": ["Unknown"],
+        "faction": "Collaboration Resonators"
       },
       {
         "id": "Roccia",
