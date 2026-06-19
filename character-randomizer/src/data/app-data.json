@@ -346,6 +346,15 @@
         "faction": "Sons of Calydon"
       },
       {
+        "id": "Pyrois",
+        "name": "Pyrois",
+        "img": "/character-images/zzz/Agent_Pyrois_Icon.png",
+        "rank": "I",
+        "attribute": "Ether",
+        "specialty": "Attack",
+        "faction": "Phaethon"
+      },
+      {
         "id": "Qingyi",
         "name": "Qingyi",
         "img": "/character-images/zzz/Agent_Qingyi_Icon.png",
@@ -443,6 +452,15 @@
         "attribute": "Physical",
         "specialty": "Support",
         "faction": "Spook Shack"
+      },
+      {
+        "id": "Velina Airgid",
+        "name": "Velina Airgid",
+        "img": "/character-images/zzz/Agent_Velina_Airgid_Icon.png",
+        "rank": "S",
+        "attribute": "Wind",
+        "specialty": "Anomaly",
+        "faction": "External Strategy Department"
       },
       {
         "id": "Vivian Banshee",
@@ -784,6 +802,16 @@
         "rarity": "5",
         "affiliation": ["Jinzhou", "Huanglong"],
         "faction": "Liondance Troupe"
+      },
+      {
+        "id": "Lucilla",
+        "name": "Lucilla",
+        "img": "/character-images/wuwa/Resonator_Lucilla.png",
+        "attribute": "Glacio",
+        "weapon": "Rectifier",
+        "rarity": "5",
+        "affiliation": ["Startorch Academy"],
+        "faction": "Spacetrek Collective"
       },
       {
         "id": "Lucy",
