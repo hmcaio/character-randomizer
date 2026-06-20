@@ -30,6 +30,10 @@ function getRandomizedCharacters(allCharacters, owned, selectedCharacters, n) {
   return shuffleArray(pool).slice(0, n)
 }
 
+function containsAll(mainList, subList) {
+    return subList.every(element => mainList.includes(element));
+}
+
 function CharacterSlots() {
   const { selectedGame, randomizerConfig, owned, selectionHistory, setSelectionHistory, selected, setSelected } = useContext(AppContext)
   const characterSlots = randomizerConfig.characterSlots === "single" ? 1 : appData[selectedGame].teamCharacterCount
@@ -50,7 +54,7 @@ function CharacterSlots() {
 
     } else {
       let updatedSelectionHistory = [...selectionHistory]
-      if (updatedSelectionHistory.length === owned.length) {
+      if (containsAll(updatedSelectionHistory, owned)) {
         updatedSelectionHistory = []
         setSnackBarOpen(true)
       }
