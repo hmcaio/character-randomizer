@@ -12,6 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Wuthering Waves resonators: Hsin, Jingran, Qingxiao, Suisui, Suoming, Yangyang: Xuanling
 - Zenless Zone Zero agents: Norma Hollowell, Remielle Dan, Sigrid de L'Azur
 
+## [1.6.1] - 2026-06-20
+
+### Fixed
+
+- Issue #16: Fix check when all characters are randomized to reset pool
+
 ## [1.6.0] - 2026-06-20
 
 ### Added
