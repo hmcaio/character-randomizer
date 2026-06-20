@@ -9,8 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Wuthering Waves resonators: Hsin, Jingran, Qingxiao, Suisui, Suoming, Yangyang: Xuanling
+- Zenless Zone Zero agents: Norma Hollowell, Remielle Dan, Sigrid de L'Azur
+
+## [1.6.0] - 2026-06-20
+
+### Added
+
 - Wuthering Waves resonators: Lucilla
-- Zenless Zone Zero agents: Norma Hollowell, Pyrois, Velina Airgid
+- Zenless Zone Zero agents: Pyrois, Velina Airgid
 
 ## [1.5.0] - 2026-06-09
 
