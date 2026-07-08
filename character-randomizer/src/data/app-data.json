@@ -301,6 +301,15 @@
         "faction": "Cunning Hares"
       },
       {
+        "id": "Norma Hollowell",
+        "name": "Norma Hollowell",
+        "img": "/character-images/zzz/Agent_Norma_Hollowell_Icon.png",
+        "rank": "S",
+        "attribute": "Fire",
+        "specialty": "Stun",
+        "faction": "External Strategy Department"
+      },
+      {
         "id": "Orphie Magnusson & Magus",
         "name": "Orphie Magnusson & Magus",
         "img": "/character-images/zzz/Agent_Orphie_Magnusson_And_Magus_Icon.png",
