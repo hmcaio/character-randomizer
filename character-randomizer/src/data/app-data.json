@@ -953,6 +953,16 @@
         "faction": "Black Shores"
       },
       {
+        "id": "Rover-Electro",
+        "name": "Rover-Electro",
+        "img": "/character-images/wuwa/Resonator_Rover.png",
+        "attribute": "Electro",
+        "weapon": "Sword",
+        "rarity": "5",
+        "affiliation": ["Unknown"],
+        "faction": "Black Shores"
+      },
+      {
         "id": "Rover-Havoc",
         "name": "Rover-Havoc",
         "img": "/character-images/wuwa/Resonator_Rover.png",
@@ -1041,6 +1051,16 @@
         "rarity": "4",
         "affiliation": ["Jinzhou", "Huanglong"],
         "faction": "Midnight Rangers"
+      },
+      {
+        "id": "Yangyang: Xuanling",
+        "name": "Yangyang: Xuanling",
+        "img": "/character-images/wuwa/Resonator_Yangyang_Xuanling.png",
+        "attribute": "Havoc",
+        "weapon": "Sword",
+        "rarity": "5",
+        "affiliation": ["Ministry of War"],
+        "faction": "Xuanfang Hold"
       },
       {
         "id": "Yinlin",
