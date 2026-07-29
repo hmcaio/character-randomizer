@@ -10,7 +10,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Wuthering Waves resonators: Hsin, Jingran, Qingxiao, Suisui, Suoming
-- Zenless Zone Zero agents: Remielle Dan, Sigrid de L'Azur
+- Zenless Zone Zero agents: Sigrid de L'Azur
+
+## [1.9.0] - 2026-07-29
+
+### Added
+
+- Zenless Zone Zero agents: Remielle Dan
 
 ## [1.8.0] - 2026-07-13
 
