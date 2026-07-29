@@ -373,6 +373,15 @@
         "faction": "Criminal Investigation Special Response Team"
       },
       {
+        "id": "Remielle Dan",
+        "name": "Remielle Dan",
+        "img": "/character-images/zzz/Agent_Remielle_Dan_Icon.png",
+        "rank": "S",
+        "attribute": "Lumiflux",
+        "specialty": "Anomaly",
+        "faction": "Covenant of Dayat"
+      },
+      {
         "id": "Seed",
         "name": "Seed",
         "img": "/character-images/zzz/Agent_Seed_Icon.png",
