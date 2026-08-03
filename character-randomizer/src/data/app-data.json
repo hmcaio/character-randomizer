@@ -1022,6 +1022,16 @@
         "faction": "Startorch Academy"
       },
       {
+        "id": "Suisui",
+        "name": "Suisui",
+        "img": "/character-images/wuwa/Resonator_Suisui.png",
+        "attribute": "Glacio",
+        "weapon": "Rectifier",
+        "rarity": "5",
+        "affiliation": ["Zhaoming Commerce Guild"],
+        "faction": "Mingting"
+      },
+      {
         "id": "Taoqi",
         "name": "Taoqi",
         "img": "/character-images/wuwa/Resonator_Taoqi.png",
