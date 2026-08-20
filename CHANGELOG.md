@@ -9,7 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Wuthering Waves resonators: Hsin, Jingran, Qingxiao, Suoming
+- Wuthering Waves resonators: Hsin, Jingran, Suoming
+- Zenless Zone Zero agents: Claret Flint, Roxy Ifrita Pryce
+
+## [1.11.0] - 2026-08-20
+
+### Added
+
+- Wuthering Waves resonators: Qingxiao
 - Zenless Zone Zero agents: Sigrid de L'Azur
 
 ## [1.10.0] - 2026-08-02
