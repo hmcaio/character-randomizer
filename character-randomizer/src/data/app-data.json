@@ -400,6 +400,15 @@
         "faction": "Criminal Investigation Special Response Team"
       },
       {
+        "id": "Sigrid de L'Azur",
+        "name": "Sigrid de L'Azur",
+        "img": "/character-images/zzz/Agent_Sigrid_de_LAzur_Icon.png",
+        "rank": "S",
+        "attribute": "Ice",
+        "specialty": "Attack",
+        "faction": "Airspace Patrol Department"
+      },
+      {
         "id": "Soldier 0 - Anby",
         "name": "Soldier 0 - Anby",
         "img": "/character-images/zzz/Agent_Soldier_0_-_Anby_Icon.png",
@@ -920,6 +929,16 @@
         "rarity": "5",
         "affiliation": ["Fractsidus"],
         "faction": "NA"
+      },
+      {
+        "id": "Qingxiao",
+        "name": "Qingxiao",
+        "img": "/character-images/wuwa/Resonator_Qingxiao.png",
+        "attribute": "Aero",
+        "weapon": "Sword",
+        "rarity": "5",
+        "affiliation": ["Ministry of War"],
+        "faction": "Xuanfang Wardens"
       },
       {
         "id": "Qiuyuan",
