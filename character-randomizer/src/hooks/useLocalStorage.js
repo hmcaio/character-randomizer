@@ -1,15 +1,12 @@
 import { useState } from 'react'
-import appData from "../data/app-data.json"
 
-function useLocalStorage(key, defaultValue) {
+function useLocalStorage(selectedGame, key, defaultValue) {
   const [value, setValueInternal] = useState(() => {
-    const selectedGame = localStorage.getItem("selectedGame") || Object.keys(appData)[0]
     return JSON.parse(localStorage.getItem(selectedGame + "." + key)) || defaultValue
   })
 
   const setValue = (newValue) => {
     setValueInternal(newValue)
-    const selectedGame = localStorage.getItem("selectedGame") || Object.keys(appData)[0]
     localStorage.setItem(selectedGame + "." + key, JSON.stringify(newValue))
   }
 

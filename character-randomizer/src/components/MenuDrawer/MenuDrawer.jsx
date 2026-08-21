@@ -2,14 +2,13 @@ import Box from "@mui/material/Box"
 import Drawer from "@mui/material/Drawer"
 import List from "@mui/material/List"
 import { useContext } from "react"
-import appData from '../../data/app-data.json'
 import ListItem from "@mui/material/ListItem"
 import ListItemButton from "@mui/material/ListItemButton"
 import ListItemText from "@mui/material/ListItemText"
 import { AppContext } from "../../store/app-context"
 
 function MenuDrawer() {
-  const { isDrawerOpen, setIsDrawerOpen, setSelectedGame } = useContext(AppContext)
+  const { appData, isDrawerOpen, setIsDrawerOpen, setSelectedGame } = useContext(AppContext)
 
   return (
     <Drawer

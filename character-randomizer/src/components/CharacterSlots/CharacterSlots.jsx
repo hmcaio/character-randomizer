@@ -2,7 +2,6 @@ import { useContext, useState } from 'react'
 import Paper from "@mui/material/Paper"
 import Button from '@mui/material/Button';
 import { AppContext } from '../../store/app-context';
-import appData from "../../data/app-data.json"
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
@@ -35,7 +34,7 @@ function containsAll(mainList, subList) {
 }
 
 function CharacterSlots() {
-  const { selectedGame, randomizerConfig, owned, selectionHistory, setSelectionHistory, selected, setSelected } = useContext(AppContext)
+  const { appData, selectedGame, randomizerConfig, owned, selectionHistory, setSelectionHistory, selected, setSelected } = useContext(AppContext)
   const characterSlots = randomizerConfig.characterSlots === "single" ? 1 : appData[selectedGame].teamCharacterCount
   const [snackBarOpen, setSnackBarOpen] = useState(false)
 

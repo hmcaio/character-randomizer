@@ -1,6 +1,5 @@
 import { useContext, useState } from 'react'
 import Paper from "@mui/material/Paper"
-import appData from "../../data/app-data.json"
 import { AppContext } from '../../store/app-context'
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
@@ -10,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
 function FilterConfig() {
-  const { selectedGame } = useContext(AppContext)
+  const { appData, selectedGame } = useContext(AppContext)
   const [attributes, setAttributes] = useState([]);
 
   const handleAttributesChange = (filterName, selectedAttributes) => {
