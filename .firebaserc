@@ -1,5 +1,18 @@
 {
   "projects": {
     "default": "character-randomizer"
-  }
+  },
+  "targets": {
+    "character-randomizer": {
+      "hosting": {
+        "app": [
+          "character-randomizer"
+        ],
+        "data": [
+          "character-randomizer-data"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

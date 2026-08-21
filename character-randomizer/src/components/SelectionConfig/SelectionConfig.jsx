@@ -10,14 +10,13 @@ import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
 import { AppContext } from '../../store/app-context'
 import ButtonGroup from '@mui/material/ButtonGroup'
-import appData from "../../data/app-data.json"
 import Accordion from '@mui/material/Accordion'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 function SelectionConfig() {
-  const { selectedGame, randomizerConfig, setRandomizerConfig, setSelectionHistory, setSelected, setOwned } = useContext(AppContext)
+  const { appData, selectedGame, randomizerConfig, setRandomizerConfig, setSelectionHistory, setSelected, setOwned } = useContext(AppContext)
 
   const handleCharacterQuantityChange = (event, newCharacterQuantity) => {
     if (newCharacterQuantity !== null) {

@@ -12,6 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Wuthering Waves resonators: Hsin, Jingran, Suoming
 - Zenless Zone Zero agents: Claret Flint, Roxy Ifrita Pryce
 
+## [1.12.0] - 2026-08-21
+
+### Changed
+
+- Character/game data is now fetched at runtime from a separate Firebase Hosting site instead of being bundled into the app build, so adding or updating characters no longer requires rebuilding and redeploying the app
+
 ## [1.11.0] - 2026-08-20
 
 ### Added
