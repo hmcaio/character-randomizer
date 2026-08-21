@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "character-randomizer-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "character-randomizer", "run", "dev"],
+      "port": 5173
+    }
+  ]
+}
