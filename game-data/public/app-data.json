@@ -391,6 +391,15 @@
         "faction": "Covenant of Dayat"
       },
       {
+        "id": "Roxy Ifrita Pryce",
+        "name": "Roxy Ifrita Pryce",
+        "img": "/character-images/zzz/Agent_Roxy_Ifrita_Pryce_Icon.png",
+        "rank": "S",
+        "attribute": "Wind",
+        "specialty": "Stun",
+        "faction": "Flint Workshop"
+      },
+      {
         "id": "Seed",
         "name": "Seed",
         "img": "/character-images/zzz/Agent_Seed_Icon.png",
@@ -788,6 +797,16 @@
         "rarity": "5",
         "affiliation": ["Miko of Flaming Sakura"],
         "faction": "Special Response Force"
+      },
+      {
+        "id": "Hsin",
+        "name": "Hsin",
+        "img": "/character-images/wuwa/Resonator_Hsin.png",
+        "attribute": "Electro",
+        "weapon": "Rectifier",
+        "rarity": "5",
+        "affiliation": ["Sentinels"],
+        "faction": "Mengzhou"
       },
       {
         "id": "Iuno",
