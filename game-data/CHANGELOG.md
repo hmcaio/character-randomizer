@@ -4,6 +4,13 @@ All notable changes to the game data served from `game-data/public` (characters,
 
 Game data is deployed independently of the app whenever it changes on `main`, so entries are grouped by date rather than by app version. App changes are tracked in the root [CHANGELOG.md](../CHANGELOG.md). Character additions up to app version 1.12.0 are recorded there.
 
+## [Unreleased]
+
+### Added
+
+- Wuthering Waves resonators: Suoming
+- Zenless Zone Zero agents: Phoenix Reffaella, Severian Lowell
+
 ## 2026-09-30
 
 ### Added

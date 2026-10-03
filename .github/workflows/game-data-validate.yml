@@ -2,7 +2,7 @@ name: Validate Game Data on PR
 on:
   pull_request:
     paths:
-      - 'game-data/**'
+      - 'game-data/public/**'
 jobs:
   validate_data:
     runs-on: ubuntu-latest
