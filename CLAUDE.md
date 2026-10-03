@@ -49,7 +49,8 @@ Everything about a supported game (currently ZZZ = Zenless Zone Zero, WUWA = Wut
 
 - `character.id` is the character's name and is used as the key across owned lists, selection history, and localStorage.
 - Character images are stored in `game-data/public/character-images/<zzz|wuwa>/...` and referenced by absolute path (`img` field) in the JSON.
-- Adding a new character/game is a data change (edit `game-data/public/app-data.json` + add the image under `game-data/public/character-images/`; run `npx vitest run src/test/data` to validate), not a code change. Check [CHANGELOG.md](CHANGELOG.md) for the pattern used when characters are added (one changelog entry per addition, under `[Unreleased]` until released).
+- Adding a new character/game is a data change (edit `game-data/public/app-data.json` + add the image under `game-data/public/character-images/`; run `npx vitest run src/test/data` to validate), not a code change. Data changes deploy on their own when they reach `main` and do not need an app release or version bump. Record them in [game-data/CHANGELOG.md](game-data/CHANGELOG.md) under a dated heading (`## YYYY-MM-DD`, then `### Added` with one line per game). Do not add them to the root [CHANGELOG.md](CHANGELOG.md), which tracks app code changes only and follows SemVer: bug fixes are a patch release, new features a minor release.
+- If a data change needs app support (a new field, or a new game with different rules), ship the app change first. The data tests catch a broken file, not a format the app cannot read yet.
 
 ### State management
 

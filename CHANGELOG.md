@@ -5,12 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+Since 1.12.0, game data (character additions and updates) is deployed independently of the app and tracked in [game-data/CHANGELOG.md](game-data/CHANGELOG.md).
+
 ## [Unreleased]
 
-### Added
+## [1.12.1] - 2026-10-03
 
-- Wuthering Waves resonators: Hsin, Jingran, Suoming
-- Zenless Zone Zero agents: Claret Flint, Roxy Ifrita Pryce
+### Fixed
+
+- Issue #26: Corrupt saved data no longer leaves a blank page on load, and saved values such as `false` or `0` are no longer replaced by defaults
+- The app no longer crashes when the previously selected game has been removed from the game data
+- Settings saved by older versions are filled in with defaults for any missing options
 
 ## [1.12.0] - 2026-08-21
 
