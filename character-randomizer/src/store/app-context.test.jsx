@@ -68,6 +68,34 @@ describe('AppContextProvider', () => {
     expect(readStored('ALPHA.selectionHistory')).toEqual([])
   })
 
+  it('falls back to the first game when the saved game no longer exists', async () => {
+    seedLocalStorage({ selectedGame: 'REMOVED' })
+    renderApp()
+
+    expect(await screen.findByText('Alpha 1')).toBeInTheDocument()
+    expect(localStorage.getItem('selectedGame')).toBe('ALPHA')
+  })
+
+  it('fills fields missing from an older saved config', async () => {
+    const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {})
+    seedLocalStorage({ 'ALPHA.config': { characterSlots: 'single' } })
+    const user = userEvent.setup()
+    renderApp()
+    await screen.findByText('Alpha 1')
+
+    expect(screen.getAllByText('Character')).toHaveLength(1)
+    const allowRepetition = screen.getAllByRole('switch', { name: 'Allow repetition', hidden: true })[0]
+    expect(allowRepetition).not.toBeChecked()
+
+    await user.click(allowRepetition)
+    expect(readStored('ALPHA.config')).toEqual({ characterSlots: 'single', isRepetitionAllowed: true })
+
+    // Without the merge, the Switch starts with checked={undefined} and React
+    // warns about an uncontrolled input becoming controlled.
+    const messages = consoleError.mock.calls.map((args) => args.map(String).join(' '))
+    expect(messages.filter((m) => m.includes('uncontrolled'))).toEqual([])
+  })
+
   it('initializes owned for a game with no saved state on first switch', async () => {
     const user = userEvent.setup()
     renderApp()
