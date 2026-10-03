@@ -53,6 +53,21 @@ describe('AppContextProvider', () => {
     expect(readStored('BETA.owned')).toEqual(['Beta 2'])
   })
 
+  it('renders with defaults when saved state is corrupt', async () => {
+    seedLocalStorage({
+      'ALPHA.owned': 'undefined',
+      'ALPHA.config': '{not json',
+      'ALPHA.selectionHistory': '[',
+      'ALPHA.selected': 'undefined',
+    })
+    renderApp()
+
+    expect(await screen.findByRole('button', { name: 'Randomize' })).toBeInTheDocument()
+    expect(readStored('ALPHA.owned')).toEqual(alphaIds)
+    expect(readStored('ALPHA.config')).toEqual({ characterSlots: 'team', isRepetitionAllowed: false })
+    expect(readStored('ALPHA.selectionHistory')).toEqual([])
+  })
+
   it('initializes owned for a game with no saved state on first switch', async () => {
     const user = userEvent.setup()
     renderApp()

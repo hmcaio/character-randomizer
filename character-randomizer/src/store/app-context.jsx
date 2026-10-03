@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { GameDataContext } from "./game-data-context";
 import useLocalStorage from "../hooks/useLocalStorage";
+import { readStored } from "../utils/storage";
 import log from 'loglevel'
 
 export const AppContext = createContext({
@@ -31,19 +32,19 @@ export default function AppContextProvider({ children }) {
   useEffect(() => {
     localStorage.setItem("selectedGame", selectedGame)
 
-    const newRandomizedConfig = JSON.parse(localStorage.getItem(selectedGame + ".config")) || { characterSlots: "team", isRepetitionAllowed: false }
+    const newRandomizedConfig = readStored(selectedGame + ".config", { characterSlots: "team", isRepetitionAllowed: false })
     log.debug("selectedGame=" + selectedGame + ", newRandomizedConfig=" + newRandomizedConfig)
     setRandomizerConfig(newRandomizedConfig)
 
-    const newOwned = JSON.parse(localStorage.getItem(selectedGame + ".owned")) || appData[selectedGame].characters.map((c) => c.id)
+    const newOwned = readStored(selectedGame + ".owned", appData[selectedGame].characters.map((c) => c.id))
     log.debug("selectedGame=" + selectedGame + ", newOwned=" + newOwned)
     setOwned(newOwned)
 
-    const newSelectionHistory = JSON.parse(localStorage.getItem(selectedGame + ".selectionHistory")) || []
+    const newSelectionHistory = readStored(selectedGame + ".selectionHistory", [])
     log.debug("selectedGame=" + selectedGame + ", newSelectionHistory=" + newSelectionHistory)
     setSelectionHistory(newSelectionHistory)
 
-    const newSelected = JSON.parse(localStorage.getItem(selectedGame + ".selected")) || []
+    const newSelected = readStored(selectedGame + ".selected", [])
     log.debug("selectedGame=" + selectedGame + ", newSelected=" + newSelected)
     setSelected(newSelected)
 

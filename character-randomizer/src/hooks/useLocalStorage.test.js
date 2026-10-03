@@ -27,11 +27,51 @@ describe('useLocalStorage', () => {
     expect(result.current[0]).toEqual([])
   })
 
-  // TODO: falsy stored values (false, 0) fall back to the default because the
-  // hook uses `|| defaultValue`. This pins current behavior; fix separately.
-  it('falls back to the default for a stored falsy value', () => {
-    localStorage.setItem('ZZZ.flag', 'false')
-    const { result } = renderHook(() => useLocalStorage('ZZZ', 'flag', true))
-    expect(result.current[0]).toBe(true)
+  it.each([
+    ['false', false],
+    ['0', 0],
+    ['""', ''],
+  ])('keeps a stored falsy value %s instead of the default', (raw, expected) => {
+    localStorage.setItem('ZZZ.flag', raw)
+    const { result } = renderHook(() => useLocalStorage('ZZZ', 'flag', 'default'))
+    expect(result.current[0]).toBe(expected)
+  })
+
+  it('falls back to the default for a stored null', () => {
+    localStorage.setItem('ZZZ.owned', 'null')
+    const { result } = renderHook(() => useLocalStorage('ZZZ', 'owned', ['A']))
+    expect(result.current[0]).toEqual(['A'])
+  })
+
+  it.each(['undefined', '{not json', '['])('falls back to the default for corrupt value %s', (raw) => {
+    localStorage.setItem('ZZZ.owned', raw)
+    const { result } = renderHook(() => useLocalStorage('ZZZ', 'owned', ['A']))
+    expect(result.current[0]).toEqual(['A'])
+  })
+
+  it('applies functional updates to the latest value', () => {
+    const { result } = renderHook(() => useLocalStorage('ZZZ', 'owned', ['A']))
+    act(() => {
+      result.current[1]((prev) => [...prev, 'B'])
+      result.current[1]((prev) => [...prev, 'C'])
+    })
+    expect(result.current[0]).toEqual(['A', 'B', 'C'])
+    expect(JSON.parse(localStorage.getItem('ZZZ.owned'))).toEqual(['A', 'B', 'C'])
+  })
+
+  it('ignores undefined instead of storing an unreadable value', () => {
+    const { result } = renderHook(() => useLocalStorage('ZZZ', 'owned', ['A']))
+    act(() => result.current[1](undefined))
+    expect(result.current[0]).toEqual(['A'])
+    expect(localStorage.getItem('ZZZ.owned')).toBeNull()
+  })
+
+  it('stores false and reads it back', () => {
+    const first = renderHook(() => useLocalStorage('ZZZ', 'flag', true))
+    act(() => first.result.current[1](false))
+    first.unmount()
+
+    const second = renderHook(() => useLocalStorage('ZZZ', 'flag', true))
+    expect(second.result.current[0]).toBe(false)
   })
 })
