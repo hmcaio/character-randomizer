@@ -1,12 +1,28 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { GameDataContext } from "./game-data-context";
 import useLocalStorage from "../hooks/useLocalStorage";
+import { readStored } from "../utils/storage";
 import log from 'loglevel'
+
+const DEFAULT_RANDOMIZER_CONFIG = { characterSlots: "team", isRepetitionAllowed: false }
+
+// "selectedGame" is stored as a raw string, not JSON. Falls back to the first
+// game when the stored id is missing or no longer exists in appData.
+function readSelectedGame(appData) {
+  const fallback = Object.keys(appData)[0]
+  try {
+    const stored = localStorage.getItem("selectedGame")
+    return stored !== null && Object.hasOwn(appData, stored) ? stored : fallback
+  } catch (err) {
+    log.warn(`readSelectedGame failed: ${err}`)
+    return fallback
+  }
+}
 
 export const AppContext = createContext({
   appData: {},
   selectedGame: "",
-  randomizerConfig: { characterSlots: "team", isRepetitionAllowed: false },
+  randomizerConfig: DEFAULT_RANDOMIZER_CONFIG,
   owned: [],
   selectionHistory: [],
   selected: [],
@@ -21,29 +37,35 @@ export const AppContext = createContext({
 
 export default function AppContextProvider({ children }) {
   const { appData } = useContext(GameDataContext)
-  const [selectedGame, setSelectedGame] = useState(() => localStorage.getItem("selectedGame") || Object.keys(appData)[0])
-  const [randomizerConfig, setRandomizerConfig] = useLocalStorage(selectedGame, "config", { characterSlots: "team", isRepetitionAllowed: false })
+  const [selectedGame, setSelectedGame] = useState(() => readSelectedGame(appData))
+  const [storedRandomizerConfig, setRandomizerConfig] = useLocalStorage(selectedGame, "config", DEFAULT_RANDOMIZER_CONFIG)
+  // Fills fields missing from configs saved by older versions.
+  const randomizerConfig = { ...DEFAULT_RANDOMIZER_CONFIG, ...storedRandomizerConfig }
   const [owned, setOwned] = useLocalStorage(selectedGame, "owned", appData[selectedGame].characters.map((c) => c.id))
   const [selectionHistory, setSelectionHistory] = useLocalStorage(selectedGame, "selectionHistory", [])
   const [selected, setSelected] = useLocalStorage(selectedGame, "selected", [])
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
   useEffect(() => {
-    localStorage.setItem("selectedGame", selectedGame)
+    try {
+      localStorage.setItem("selectedGame", selectedGame)
+    } catch (err) {
+      log.warn(`Saving selectedGame failed: ${err}`)
+    }
 
-    const newRandomizedConfig = JSON.parse(localStorage.getItem(selectedGame + ".config")) || { characterSlots: "team", isRepetitionAllowed: false }
+    const newRandomizedConfig = readStored(selectedGame + ".config", DEFAULT_RANDOMIZER_CONFIG)
     log.debug("selectedGame=" + selectedGame + ", newRandomizedConfig=" + newRandomizedConfig)
     setRandomizerConfig(newRandomizedConfig)
 
-    const newOwned = JSON.parse(localStorage.getItem(selectedGame + ".owned")) || appData[selectedGame].characters.map((c) => c.id)
+    const newOwned = readStored(selectedGame + ".owned", appData[selectedGame].characters.map((c) => c.id))
     log.debug("selectedGame=" + selectedGame + ", newOwned=" + newOwned)
     setOwned(newOwned)
 
-    const newSelectionHistory = JSON.parse(localStorage.getItem(selectedGame + ".selectionHistory")) || []
+    const newSelectionHistory = readStored(selectedGame + ".selectionHistory", [])
     log.debug("selectedGame=" + selectedGame + ", newSelectionHistory=" + newSelectionHistory)
     setSelectionHistory(newSelectionHistory)
 
-    const newSelected = JSON.parse(localStorage.getItem(selectedGame + ".selected")) || []
+    const newSelected = readStored(selectedGame + ".selected", [])
     log.debug("selectedGame=" + selectedGame + ", newSelected=" + newSelected)
     setSelected(newSelected)
 

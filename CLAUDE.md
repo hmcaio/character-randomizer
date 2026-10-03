@@ -17,15 +17,24 @@ npm run dev       # start Vite dev server
 npm run build     # production build to dist/
 npm run lint      # ESLint
 npm run preview   # preview a production build
+npm test          # run the Vitest suite once
+npm run test:watch
 ```
 
-There is no test suite configured in this project.
+## Tests
+
+Vitest + React Testing Library + jsdom, configured in the `test` block of [character-randomizer/vite.config.js](character-randomizer/vite.config.js). Setup lives in [character-randomizer/src/test/setup.js](character-randomizer/src/test/setup.js) (clears `localStorage` and silences `loglevel` between tests).
+
+- Unit tests sit next to their source as `*.test.js` (randomizer, `useLocalStorage`, game-data utils).
+- Component/integration tests (`*.test.jsx`) render the full `<App />` via [character-randomizer/src/test/renderApp.jsx](character-randomizer/src/test/renderApp.jsx), which stubs `fetch` with a small fixture (games `ALPHA`/`BETA`) and asserts on `localStorage`. They do not use the production data.
+- [character-randomizer/src/test/data/app-data.test.js](character-randomizer/src/test/data/app-data.test.js) validates the real `game-data/public/app-data.json`: unique ids, image files exist, no orphan images, filter fields present. Run it alone with `npx vitest run src/test/data`.
+- SelectionConfig renders its controls twice (desktop + mobile accordion), and the loading/error Backdrop is `aria-hidden`, so some queries need `getAllBy…` and `hidden: true`.
 
 ## Architecture
 
 ### Data-driven games
 
-Everything about a supported game (currently ZZZ = Zenless Zone Zero, WUWA = Wuthering Waves) lives in [character-randomizer/src/data/app-data.json](character-randomizer/src/data/app-data.json), keyed by game code:
+Everything about a supported game (currently ZZZ = Zenless Zone Zero, WUWA = Wuthering Waves) lives in [game-data/public/app-data.json](game-data/public/app-data.json), keyed by game code. The app fetches it at runtime from `${VITE_DATA_BASE_URL}/app-data.json` in `GameDataProvider` ([character-randomizer/src/store/game-data-context.jsx](character-randomizer/src/store/game-data-context.jsx)) and caches it in `localStorage`. In dev, the `serveGameData` middleware in `vite.config.js` serves `game-data/public` at the site root; in production the data comes from the separate Firebase Hosting `data` site:
 
 ```json
 {
@@ -39,8 +48,9 @@ Everything about a supported game (currently ZZZ = Zenless Zone Zero, WUWA = Wut
 ```
 
 - `character.id` is the character's name and is used as the key across owned lists, selection history, and localStorage.
-- Character images are served from `character-randomizer/public/character-images/<zzz|wuwa>/...` and referenced by absolute path (`img` field) in the JSON.
-- Adding a new character/game is a data change (edit `app-data.json` + add the image under `public/character-images/`), not a code change. Check [CHANGELOG.md](CHANGELOG.md) for the pattern used when characters are added (one changelog entry per addition, under `[Unreleased]` until released).
+- Character images are stored in `game-data/public/character-images/<zzz|wuwa>/...` and referenced by absolute path (`img` field) in the JSON.
+- Adding a new character/game is a data change (edit `game-data/public/app-data.json` + add the image under `game-data/public/character-images/`; run `npx vitest run src/test/data` to validate), not a code change. Data changes deploy on their own when they reach `main` and do not need an app release or version bump. Record them in [game-data/CHANGELOG.md](game-data/CHANGELOG.md) under `## [Unreleased]` (`### Added`, one line per game) until they reach `main`. Then move them under a dated heading (`## YYYY-MM-DD`, the deploy date). Do not add them to the root [CHANGELOG.md](CHANGELOG.md), which tracks app code changes only and follows SemVer: bug fixes are a patch release, new features a minor release.
+- If a data change needs app support (a new field, or a new game with different rules), ship the app change first. The data tests catch a broken file, not a format the app cannot read yet.
 
 ### State management
 
@@ -50,7 +60,7 @@ State is persisted via `useLocalStorage` ([character-randomizer/src/hooks/useLoc
 
 ### Randomization logic
 
-Lives in [character-randomizer/src/components/CharacterSlots/CharacterSlots.jsx](character-randomizer/src/components/CharacterSlots/CharacterSlots.jsx) (`getRandomizedCharacters` + Fisher–Yates `shuffleArray`). The candidate pool is `owned` characters minus already-selected ones. Two modes:
+Lives in [character-randomizer/src/utils/randomizer.js](character-randomizer/src/utils/randomizer.js) (`nextDraw`, `getRandomizedCharacters`, Fisher–Yates `shuffleArray` with an injectable RNG). `CharacterSlots.jsx` calls `nextDraw` and applies the result. The candidate pool is `owned` characters minus already-selected ones. Two modes:
 - **Repetition allowed**: pool excludes nothing from history; every randomize draws fresh from all owned characters.
 - **Repetition disallowed**: drawn characters accumulate in `selectionHistory` (excluded from future draws) until history covers all owned characters, at which point history resets (a Snackbar notifies the user).
 
@@ -62,4 +72,4 @@ Logging uses `loglevel` (`log.debug(...)`) throughout for state-change tracing r
 
 ## Deployment
 
-CI (`.github/workflows/firebase-hosting-merge.yml`) builds (`cd character-randomizer && npm ci && npm run build`) and deploys `character-randomizer/dist` to Firebase Hosting on push to `main`; PRs get preview channel deploys via `firebase-hosting-pull-request.yml`. Firebase project config is at the repo root ([firebase.json](firebase.json), [.firebaserc](.firebaserc)).
+CI (`.github/workflows/firebase-hosting-merge.yml`) tests and builds (`cd character-randomizer && npm ci && npm test && npm run build`) and deploys `character-randomizer/dist` to Firebase Hosting on push to `main`; PRs get preview channel deploys via `firebase-hosting-pull-request.yml`, also gated on `npm test`. Changes under `game-data/**` skip those workflows. The data workflows run only for changes under `game-data/public/**`: `firebase-hosting-data-deploy.yml` runs the data tests before deploying the `data` site, and `game-data-validate.yml` runs them on PRs. Editing only `game-data/CHANGELOG.md` triggers no workflow. Firebase project config is at the repo root ([firebase.json](firebase.json), [.firebaserc](.firebaserc)).

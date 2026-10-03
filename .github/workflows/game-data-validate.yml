@@ -1,0 +1,11 @@
+name: Validate Game Data on PR
+on:
+  pull_request:
+    paths:
+      - 'game-data/public/**'
+jobs:
+  validate_data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: cd character-randomizer && npm ci && npx vitest run src/test/data

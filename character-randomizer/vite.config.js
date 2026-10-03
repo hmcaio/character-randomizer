@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 import path from 'node:path'
 import fs from 'node:fs'
@@ -44,4 +44,12 @@ function serveGameData() {
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), serveGameData()],
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: ['./src/test/setup.js'],
+    // MUI-heavy integration tests render the full app and can exceed 5s on slow machines.
+    testTimeout: 20000,
+    css: { modules: { classNameStrategy: 'non-scoped' } },
+  },
 })

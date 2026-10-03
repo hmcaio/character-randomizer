@@ -4,12 +4,13 @@ on:
     branches:
       - main
     paths:
-      - 'game-data/**'
+      - 'game-data/public/**'
 jobs:
   deploy_data:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: cd character-randomizer && npm ci && npx vitest run src/test/data
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
