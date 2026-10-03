@@ -9,29 +9,7 @@ import Stack from '@mui/material/Stack';
 import CharacterSlot from '../CharacterSlot/CharacterSlot';
 import Container from '@mui/material/Container';
 import log from 'loglevel'
-
-function shuffleArray(array) {
-  for (let i = array.length - 1; i >= 1; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
-
-function getRandomizedCharacters(allCharacters, owned, selectedCharacters, n) {
-  log.debug(`getRandomizedCharacters allCharacters=${JSON.stringify(allCharacters.map((c) => c.id))}, owned=${JSON.stringify(owned)}, selectedCharacters=${JSON.stringify(selectedCharacters)}, n=${n}`)
-
-  const pool = allCharacters
-    .filter((character) => owned.includes(character.id) && !selectedCharacters.includes(character.id))
-
-  log.debug(`getRandomizedCharacters pool=${JSON.stringify(pool.map((c) => c.id))}`)
-
-  return shuffleArray(pool).slice(0, n)
-}
-
-function containsAll(mainList, subList) {
-    return subList.every(element => mainList.includes(element));
-}
+import { nextDraw } from '../../utils/randomizer'
 
 function CharacterSlots() {
   const { appData, selectedGame, randomizerConfig, owned, selectionHistory, setSelectionHistory, selected, setSelected } = useContext(AppContext)
@@ -41,33 +19,21 @@ function CharacterSlots() {
   log.debug("from CharacterSlots selectedCharacters.length=" + selected.length + ", selectedGame=" + selectedGame + ", characterSlots=" + randomizerConfig.characterSlots)
 
   function handleRandomizeClick() {
-    if (randomizerConfig.isRepetitionAllowed) {
-      const randomizedCharacters = getRandomizedCharacters(
-        appData[selectedGame].characters,
-        owned,
-        [],
-        characterSlots
-      )
-      log.debug(`randomizedCharacters=${JSON.stringify(randomizedCharacters.map((c) => c.id))}`)
-      setSelected(randomizedCharacters)
+    const { drawn, newHistory, poolReset } = nextDraw({
+      characters: appData[selectedGame].characters,
+      owned,
+      selectionHistory,
+      isRepetitionAllowed: randomizerConfig.isRepetitionAllowed,
+      n: characterSlots
+    })
 
-    } else {
-      let updatedSelectionHistory = [...selectionHistory]
-      if (containsAll(updatedSelectionHistory, owned)) {
-        updatedSelectionHistory = []
-        setSnackBarOpen(true)
-      }
-
-      const randomizedCharacters = getRandomizedCharacters(
-        appData[selectedGame].characters,
-        owned,
-        updatedSelectionHistory,
-        characterSlots
-      )
-
-      log.debug(`randomizedCharacters=${JSON.stringify(randomizedCharacters.map((c) => c.id))}, new=${JSON.stringify([...(new Set([...updatedSelectionHistory, ...(randomizedCharacters.map((c) => c.id))]))])}`)
-      setSelected(randomizedCharacters)
-      setSelectionHistory([...(new Set([...updatedSelectionHistory, ...(randomizedCharacters.map((c) => c.id))]))])
+    log.debug(`randomizedCharacters=${JSON.stringify(drawn.map((c) => c.id))}`)
+    if (poolReset) {
+      setSnackBarOpen(true)
+    }
+    setSelected(drawn)
+    if (!randomizerConfig.isRepetitionAllowed) {
+      setSelectionHistory(newHistory)
     }
   }
 

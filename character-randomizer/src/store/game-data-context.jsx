@@ -5,42 +5,9 @@ import Stack from "@mui/material/Stack"
 import Typography from "@mui/material/Typography"
 import Button from "@mui/material/Button"
 import log from 'loglevel'
-
-const DATA_BASE_URL = import.meta.env.VITE_DATA_BASE_URL || ""
-const CACHE_KEY = "appDataCache"
+import { DATA_BASE_URL, normalizeAppData, readCache, writeCache } from "./game-data-utils"
 
 export const GameDataContext = createContext({ appData: null })
-
-function resolveImageUrl(img) {
-  return img.startsWith("http") ? img : `${DATA_BASE_URL}${img}`
-}
-
-function normalizeAppData(rawAppData) {
-  const normalized = {}
-  for (const [gameId, game] of Object.entries(rawAppData)) {
-    normalized[gameId] = {
-      ...game,
-      characters: game.characters.map((character) => ({
-        ...character,
-        img: resolveImageUrl(character.img),
-      })),
-    }
-  }
-  return normalized
-}
-
-function readCache() {
-  try {
-    const cached = JSON.parse(localStorage.getItem(CACHE_KEY))
-    return cached?.appData ?? null
-  } catch {
-    return null
-  }
-}
-
-function writeCache(appData) {
-  localStorage.setItem(CACHE_KEY, JSON.stringify({ appData, cachedAt: Date.now() }))
-}
 
 export default function GameDataProvider({ children }) {
   const [appData, setAppData] = useState(null)
