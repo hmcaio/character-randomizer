@@ -8,8 +8,15 @@ Game data is deployed independently of the app whenever it changes on `main`, so
 
 ### Added
 
+- Wuthering Waves resonators: Lily
+- Zenless Zone Zero agents: Severian Lowell, Sunbringer
+
+## 2026-10-23
+
+### Added
+
 - Wuthering Waves resonators: Suoming
-- Zenless Zone Zero agents: Phoenix Reffaella, Severian Lowell
+- Zenless Zone Zero agents: Phoenix Reffaella
 
 ## 2026-09-30
 
