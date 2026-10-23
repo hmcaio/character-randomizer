@@ -337,6 +337,15 @@
         "faction": "Yunkui Summit"
       },
       {
+        "id": "Phoenix Reffaella",
+        "name": "Phoenix Reffaella",
+        "img": "/character-images/zzz/Agent_Phoenix_Reffaella_Icon.png",
+        "rank": "S",
+        "attribute": "Fire",
+        "specialty": "Anomaly",
+        "faction": "Krampus Compliance Authority"
+      },
+      {
         "id": "Piper Wheel",
         "name": "Piper Wheel",
         "img": "/character-images/zzz/Agent_Piper_Wheel_Icon.png",
@@ -1087,6 +1096,16 @@
         "rarity": "5",
         "affiliation": ["Zhaoming Commerce Guild"],
         "faction": "Mingting"
+      },
+      {
+        "id": "Suoming",
+        "name": "Suoming",
+        "img": "/character-images/wuwa/Resonator_Suoming.png",
+        "attribute": "Electro",
+        "weapon": "Sword",
+        "rarity": "5",
+        "affiliation": ["Mengzhou"],
+        "faction": "Ministry of Sentinel Affairs"
       },
       {
         "id": "Taoqi",
