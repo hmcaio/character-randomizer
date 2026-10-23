@@ -17,7 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: cd character-randomizer && npm ci && npm test && npm run build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      # Dependabot PRs cannot read repo secrets, so skip the preview deploy for them
+      - if: ${{ github.actor != 'dependabot[bot]' }}
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CHARACTER_RANDOMIZER }}
