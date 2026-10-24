@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react'
 import Paper from "@mui/material/Paper"
 import Button from '@mui/material/Button';
-import { AppContext } from '../../store/app-context';
+import { AppContext } from '../../store/contexts';
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';

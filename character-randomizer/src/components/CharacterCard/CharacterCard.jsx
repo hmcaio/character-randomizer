@@ -1,4 +1,3 @@
-import classes from './CharacterCard.module.css';
 import Box from '@mui/material/Box';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import Card from '@mui/material/Card';

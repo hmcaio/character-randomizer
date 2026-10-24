@@ -54,7 +54,7 @@ Everything about a supported game (currently ZZZ = Zenless Zone Zero, WUWA = Wut
 
 ### State management
 
-`AppContext` ([character-randomizer/src/store/app-context.jsx](character-randomizer/src/store/app-context.jsx)) is the single source of truth, providing: `selectedGame`, `randomizerConfig` (`characterSlots`: `"single"|"team"`, `isRepetitionAllowed`), `owned`, `selectionHistory`, `selected`, and `isDrawerOpen`, plus setters.
+`AppContext` is the single source of truth, providing: `selectedGame`, `randomizerConfig` (`characterSlots`: `"single"|"team"`, `isRepetitionAllowed`), `owned`, `selectionHistory`, `selected`, and `isDrawerOpen`, plus setters. The context objects (`AppContext`, `GameDataContext`) and `DEFAULT_RANDOMIZER_CONFIG` live in [character-randomizer/src/store/contexts.js](character-randomizer/src/store/contexts.js), and components import them from there. The providers ([app-context.jsx](character-randomizer/src/store/app-context.jsx), [game-data-context.jsx](character-randomizer/src/store/game-data-context.jsx)) export only components, as the `react-refresh/only-export-components` lint rule requires.
 
 State is persisted via `useLocalStorage` ([character-randomizer/src/hooks/useLocalStorage.js](character-randomizer/src/hooks/useLocalStorage.js)), which namespaces keys as `<selectedGame>.<key>` (e.g. `WUWA.owned`). When `selectedGame` changes, `AppContextProvider`'s effect re-reads all per-game keys directly from `localStorage` (bypassing the hook's own setter) to swap in that game's saved state — this dual-read pattern is intentional, not redundant, since `useLocalStorage`'s internal state doesn't know when the active game changed.
 

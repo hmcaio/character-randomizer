@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
 import Paper from "@mui/material/Paper"
-import { AppContext } from '../../store/app-context'
+import { AppContext } from '../../store/contexts'
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 import ToggleButton from '@mui/material/ToggleButton';
