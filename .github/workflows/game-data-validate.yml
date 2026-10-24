@@ -7,5 +7,5 @@ jobs:
   validate_data:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: cd character-randomizer && npm ci && npx vitest run src/test/data
