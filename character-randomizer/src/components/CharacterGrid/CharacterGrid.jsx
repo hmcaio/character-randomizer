@@ -22,7 +22,7 @@ function CharacterGrid() {
     <Paper variant="elevation" elevation={3} sx={{ padding: '16px' }} >
       <Grid 
         container
-        justifyContent="center"
+        sx={{ justifyContent: 'center' }}
         spacing={2}
         columns={60}
       >

@@ -50,7 +50,7 @@ function CharacterSlots() {
         <Stack
           direction="row"
           spacing={2}
-          justifyContent="center"
+          sx={{ justifyContent: 'center' }}
         >
           {Array.from({ length: characterSlots }, (v, i) => i).map((i) => i < selected.length
             ? <CharacterSlot key={selected[i].id} character={selected[i]} />

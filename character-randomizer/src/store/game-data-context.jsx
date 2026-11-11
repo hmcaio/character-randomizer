@@ -42,7 +42,7 @@ export default function GameDataProvider({ children }) {
   if (error) {
     return (
       <Backdrop open sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}>
-        <Stack spacing={2} alignItems="center" sx={{ maxWidth: 400, textAlign: 'center', paddingX: 2 }}>
+        <Stack spacing={2} sx={{ alignItems: 'center', maxWidth: 400, textAlign: 'center', paddingX: 2 }}>
           <Typography variant="h6">Couldn&apos;t load character data</Typography>
           <Typography variant="body2">
             Please check your internet connection and try again.

@@ -40,7 +40,7 @@ function FilterToggleButtons({ filterName, allValues, selectedValues, handleSele
         {filterName}
       </Typography>
       
-      <Grid container spacing={1} margin={1} sx={{ justifyContent: 'center' }}>
+      <Grid container spacing={1} sx={{ margin: 1, justifyContent: 'center' }}>
         {allValues.map(value => (
           <Grid key={value}>
             <ToggleButton

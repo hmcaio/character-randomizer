@@ -21,7 +21,7 @@ function App() {
           <Grid
             container
             spacing={2}
-            marginY={2}
+            sx={{ marginY: 2 }}
           >
             <Grid size={12}>
               <CharacterSlots />
