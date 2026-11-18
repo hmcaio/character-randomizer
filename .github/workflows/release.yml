@@ -1,0 +1,96 @@
+name: Release
+
+# Pushing a vX.Y.Z tag deploys the app to Firebase Hosting (live) and creates the
+# GitHub release. Re-run with workflow_dispatch and an existing tag to redeploy
+# or roll back. Game data deploys on its own (firebase-hosting-data-deploy.yml).
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing tag to (re)deploy, e.g. v1.12.2
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.tag.outputs.tag }}
+    steps:
+      - id: tag
+        env:
+          TAG: ${{ inputs.tag || github.ref_name }}
+        run: |
+          [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "::error::'$TAG' is not a vX.Y.Z tag"; exit 1; }
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ steps.tag.outputs.tag }}
+          fetch-depth: 0
+      - name: Tag is on main and matches package.json
+        env:
+          TAG: ${{ steps.tag.outputs.tag }}
+        run: |
+          git merge-base --is-ancestor HEAD origin/main \
+            || { echo "::error::$TAG is not reachable from main"; exit 1; }
+          version=$(jq -r .version character-randomizer/package.json)
+          [ "v$version" = "$TAG" ] \
+            || { echo "::error::package.json is $version but the tag is $TAG"; exit 1; }
+          grep -q "^## \[$version\]" CHANGELOG.md \
+            || { echo "::error::CHANGELOG.md has no section for $version"; exit 1; }
+
+  ci:
+    needs: verify
+    uses: ./.github/workflows/ci.yml
+    # ci.yml declares the PR preview job's permissions, and a called workflow may
+    # not ask for more than its caller grants, even for jobs that are skipped here.
+    permissions:
+      contents: read
+      checks: write
+      pull-requests: write
+    with:
+      ref: ${{ needs.verify.outputs.tag }}
+
+  deploy:
+    needs: [verify, ci]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      TAG: ${{ needs.verify.outputs.tag }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.verify.outputs.tag }}
+      - uses: actions/download-artifact@v8
+        with:
+          name: dist
+          path: character-randomizer/dist
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CHARACTER_RANDOMIZER }}
+          channelId: live
+          projectId: character-randomizer
+          target: app
+      - name: Create the GitHub release
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release $TAG already exists, skipping"
+            exit 0
+          fi
+          version="${TAG#v}"
+          awk -v v="$version" '
+            $0 ~ "^## \\[" v "\\]" { found = 1; next }
+            found && /^## \[/ { exit }
+            found { print }
+          ' CHANGELOG.md > notes.md
+          [ -s notes.md ] || { echo "::error::empty changelog section for $version"; exit 1; }
+          gh release create "$TAG" --title "$TAG" --notes-file notes.md --verify-tag
