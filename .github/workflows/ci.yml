@@ -6,7 +6,8 @@ name: CI
 # and would block the PR.
 #
 #   app  = any file outside game-data/            -> app.yml  (lint, test, build, preview)
-#   data = any file under game-data/public/       -> data.yml (data tests, data preview)
+#   data = any file under game-data/public/       -> data.yml (data tests, data preview),
+#          then app.yml (build and preview only) against that data preview channel
 #
 # Push to main always runs the app pipeline. Tags go through release.yml.
 on:
@@ -59,11 +60,20 @@ jobs:
           echo "app=$app" >> "$GITHUB_OUTPUT"
           echo "data=$data" >> "$GITHUB_OUTPUT"
 
+  # Runs for app changes (lint, test, build, preview) and for data changes (build and
+  # preview only), after `data` so the preview can be built against the data channel.
   app:
-    needs: changes
-    if: needs.changes.outputs.app == 'true'
+    needs: [changes, data]
+    if: >-
+      !cancelled() &&
+      needs.changes.result == 'success' &&
+      needs.data.result != 'failure' &&
+      (needs.changes.outputs.app == 'true' || needs.changes.outputs.data == 'true')
     uses: ./.github/workflows/app.yml
     secrets: inherit   # the preview jobs need the Firebase service account
+    with:
+      checks: ${{ needs.changes.outputs.app == 'true' }}
+      data_url: ${{ needs.data.outputs.url }}
     # A called workflow may not ask for more than its caller grants.
     permissions:
       contents: read

@@ -5,6 +5,10 @@ name: Data
 # on merge through firebase-hosting-data-deploy.yml.
 on:
   workflow_call:
+    outputs:
+      url:
+        description: URL of the data preview channel (empty when no preview was deployed)
+        value: ${{ jobs.preview.outputs.url }}
 
 permissions:
   contents: read
@@ -32,13 +36,16 @@ jobs:
       github.actor != 'dependabot[bot]'
     needs: validate
     runs-on: ubuntu-latest
+    outputs:
+      url: ${{ steps.deploy.outputs.details_url }}
     permissions:
       contents: read
       checks: write
       pull-requests: write
     steps:
       - uses: actions/checkout@v7
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - id: deploy
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CHARACTER_RANDOMIZER }}

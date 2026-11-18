@@ -83,14 +83,14 @@ GitHub flow: `main` is the only long-lived branch and is always releasable. The 
 `.github/workflows/ci.yml` runs on every PR and on push to `main`. It only decides what to run and holds the required check: a `changes` job lists the PR's files (anything outside `game-data/` means app, anything under `game-data/public/` means data), then it calls the reusable pipelines and ends with a gate job named `ci`, the required check on `main`. Skipped pipelines count as passed. Do not put `paths` filters on a workflow's own triggers: a workflow skipped by a filter leaves its check pending and blocks the PR. Push to `main` always runs the app pipeline.
 
 - `.github/workflows/app.yml` (reusable): lint, `npm test` (the whole Vitest suite, game-data tests included), the build, and for PRs from this repo (not Dependabot, which cannot read secrets) a Firebase preview channel of the `app` site from the built `dist`.
-- `.github/workflows/data.yml` (reusable): the data tests (`npx vitest run src/test/data`) and, with the same Dependabot/fork exclusion, a Firebase preview channel of the `data` site. The app preview does not read it (it is built against production data), so inspect the raw `app-data.json` and images there.
+- `.github/workflows/data.yml` (reusable): the data tests (`npx vitest run src/test/data`) and, with the same Dependabot/fork exclusion, a Firebase preview channel of the `data` site. It outputs the channel URL, and the app preview for that PR is built against it (`VITE_DATA_BASE_URL`, set only when the URL is non-empty because even an empty value overrides `.env.production`), so a data PR's new characters show up in its app preview.
 
 | PR touches | Runs |
 |---|---|
-| app code only | `app.yml` |
-| `game-data/public/**` only | `data.yml` |
+| app code only | `app.yml` (lint, test, build, preview on production data) |
+| `game-data/public/**` only | `data.yml`, then `app.yml` with build and preview only (no lint or tests) against the data channel |
 | `game-data/CHANGELOG.md` only | nothing, `ci` still passes |
-| both | both |
+| both | `data.yml`, then the full `app.yml` against the data channel |
 
 `.github/workflows/release.yml` runs when a `vX.Y.Z` tag is pushed. It checks that the tag is on `main`, that it matches `character-randomizer/package.json` and that `CHANGELOG.md` has a section for it, runs `app.yml` on the tag, deploys `dist` to the Firebase `app` target on the `live` channel, and creates the GitHub release from that changelog section. To redeploy or roll back, run it from the Actions tab (`workflow_dispatch`) with an existing tag.
 
