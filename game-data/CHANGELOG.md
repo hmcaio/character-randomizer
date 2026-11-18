@@ -6,6 +6,8 @@ Game data is deployed independently of the app whenever it changes on `main`, so
 
 ## [Unreleased]
 
+## 2026-11-18
+
 ### Added
 
 - Wuthering Waves resonators: Lily
