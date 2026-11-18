@@ -9,6 +9,14 @@ on:
         description: Git ref to check out (the release workflow passes the tag)
         type: string
         default: ''
+      checks:
+        description: Run lint and tests. False for a data-only PR, which only needs the build for its preview.
+        type: boolean
+        default: true
+      data_url:
+        description: Data preview channel URL to build the app against (empty means production data)
+        type: string
+        default: ''
 
 permissions:
   contents: read
@@ -27,11 +35,21 @@ jobs:
           cache-dependency-path: character-randomizer/package-lock.json
       - run: npm ci
         working-directory: character-randomizer
-      - run: npm run lint
+      - if: inputs.checks
+        run: npm run lint
         working-directory: character-randomizer
-      - run: npm test
+      - if: inputs.checks
+        run: npm test
         working-directory: character-randomizer
-      - run: npm run build
+      # Set VITE_DATA_BASE_URL only when there is a channel URL: even an empty value
+      # overrides .env.production and would drop the production data URL.
+      - if: inputs.data_url == ''
+        run: npm run build
+        working-directory: character-randomizer
+      - if: inputs.data_url != ''
+        env:
+          DATA_URL: ${{ inputs.data_url }}
+        run: VITE_DATA_BASE_URL="${DATA_URL%/}" npm run build
         working-directory: character-randomizer
       - uses: actions/upload-artifact@v7
         with:
