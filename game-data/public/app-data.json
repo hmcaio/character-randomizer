@@ -427,6 +427,15 @@
         "faction": "Criminal Investigation Special Response Team"
       },
       {
+        "id": "Severian Lowell",
+        "name": "Severian Lowell",
+        "img": "/character-images/zzz/Agent_Severian_Lowell_Icon.png",
+        "rank": "S",
+        "attribute": "Wind",
+        "specialty": "Attack",
+        "faction": "Metropolitan Order Division"
+      },
+      {
         "id": "Sigrid de L'Azur",
         "name": "Sigrid de L'Azur",
         "img": "/character-images/zzz/Agent_Sigrid_de_LAzur_Icon.png",
@@ -866,6 +875,16 @@
         "rarity": "5",
         "affiliation": ["Jinzhou", "Huanglong"],
         "faction": "Midnight Rangers"
+      },
+      {
+        "id": "Lily",
+        "name": "Lily",
+        "img": "/character-images/wuwa/Resonator_Lily.png",
+        "attribute": "Spectro",
+        "weapon": "Pistols",
+        "rarity": "5",
+        "affiliation": ["Somnoire"],
+        "faction": "Train of Souls"
       },
       {
         "id": "Lingyang",
