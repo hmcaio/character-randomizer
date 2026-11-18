@@ -72,16 +72,20 @@ Logging uses `loglevel` (`log.debug(...)`) throughout for state-change tracing r
 
 ## Workflow
 
-GitHub flow: `main` is the only long-lived branch and is always deployable.
+GitHub flow: `main` is the only long-lived branch and is always releasable. The app deploys only on a release, game data deploys on merge.
 
 - Branch off `main` (`feat/…`, `fix/…`, `chore/…`), open a PR into `main`, squash merge, and the branch is deleted on merge. There is no `develop` branch.
 - One PR per change. Put the changelog entry in the same PR: app code changes under `## [Unreleased]` in the root [CHANGELOG.md](CHANGELOG.md), data changes in [game-data/CHANGELOG.md](game-data/CHANGELOG.md) (see Data-driven games).
-- Every merge to `main` deploys. A release is a manual version marker: bump the version in `character-randomizer/package.json`, move `[Unreleased]` under the new version in the root changelog, then tag `vX.Y.Z` on `main` and cut a GitHub release.
+- Releasing the app deploys it. Open a "release vX.Y.Z" PR that bumps the version in `character-randomizer/package.json` and moves `[Unreleased]` under `## [X.Y.Z] - YYYY-MM-DD` in the root [CHANGELOG.md](CHANGELOG.md). After it merges, tag that commit on `main` (`git tag vX.Y.Z && git push origin vX.Y.Z`). The tag triggers `release.yml`, which deploys and creates the GitHub release. Merging to `main` alone does not deploy the app.
 
 ## Deployment
 
-CI (`.github/workflows/firebase-hosting-merge.yml`) tests and builds (`cd character-randomizer && npm ci && npm test && npm run build`) and deploys `character-randomizer/dist` to Firebase Hosting on push to `main`; PRs get preview channel deploys via `firebase-hosting-pull-request.yml`, also gated on `npm test`. Changes under `game-data/**` skip those workflows. The data workflows run only for changes under `game-data/public/**`: `firebase-hosting-data-deploy.yml` runs the data tests before deploying the `data` site, and `game-data-validate.yml` runs them on PRs. Editing only `game-data/CHANGELOG.md` triggers no workflow. Firebase project config is at the repo root ([firebase.json](firebase.json), [.firebaserc](.firebaserc)).
+`.github/workflows/ci.yml` runs on every PR and on push to `main`: lint, `npm test` (the whole Vitest suite, game-data tests included) and the build, all as one job named `ci`, which is the required check on `main`. For PRs from this repo (not Dependabot, which cannot read secrets) it then deploys a Firebase preview channel from the built `dist`. A game-data-only PR runs the same job.
+
+`.github/workflows/release.yml` runs when a `vX.Y.Z` tag is pushed. It checks that the tag is on `main`, that it matches `character-randomizer/package.json` and that `CHANGELOG.md` has a section for it, runs `ci.yml` on the tag, deploys `dist` to the Firebase `app` target on the `live` channel, and creates the GitHub release from that changelog section. To redeploy or roll back, run it from the Actions tab (`workflow_dispatch`) with an existing tag.
+
+`firebase-hosting-data-deploy.yml` runs on push to `main` for changes under `game-data/public/**`, runs the data tests (`npx vitest run src/test/data`) and deploys the `data` site, so data changes go live on merge without a release. Editing only `game-data/CHANGELOG.md` deploys nothing. Firebase project config is at the repo root ([firebase.json](firebase.json), [.firebaserc](.firebaserc)).
 
 ### Dependency updates
 
-Dependabot ([.github/dependabot.yml](.github/dependabot.yml)) checks npm (`character-randomizer/`) and GitHub Actions monthly and opens PRs against `main`. npm updates are grouped (`mui`, `react`, `testing`, `eslint`, plus a catch-all for minor/patch); major bumps get their own PR. Dependabot PRs cannot read repo secrets, so `firebase-hosting-pull-request.yml` still runs tests and the build for them but skips the preview deploy. Dependency bumps are not recorded in the root [CHANGELOG.md](CHANGELOG.md) unless they change app behavior.
+Dependabot ([.github/dependabot.yml](.github/dependabot.yml)) checks npm (`character-randomizer/`) and GitHub Actions monthly and opens PRs against `main`. npm updates are grouped (`mui`, `react`, `testing`, `eslint`, plus a catch-all for minor/patch); major bumps get their own PR. Dependabot PRs cannot read repo secrets, so `ci.yml` still runs lint, tests and the build for them but skips the preview deploy. Dependency bumps are not recorded in the root [CHANGELOG.md](CHANGELOG.md) unless they change app behavior.
