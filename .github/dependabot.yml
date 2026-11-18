@@ -2,7 +2,6 @@ version: 2
 updates:
   - package-ecosystem: "npm"
     directory: "/character-randomizer"
-    target-branch: "develop"
     schedule:
       interval: "monthly"
     open-pull-requests-limit: 5
@@ -38,7 +37,6 @@ updates:
 
   - package-ecosystem: "github-actions"
     directory: "/"
-    target-branch: "develop"
     schedule:
       interval: "monthly"
     labels:

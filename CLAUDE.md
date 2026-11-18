@@ -49,7 +49,7 @@ Everything about a supported game (currently ZZZ = Zenless Zone Zero, WUWA = Wut
 
 - `character.id` is the character's name and is used as the key across owned lists, selection history, and localStorage.
 - Character images are stored in `game-data/public/character-images/<zzz|wuwa>/...` and referenced by absolute path (`img` field) in the JSON.
-- Adding a new character/game is a data change (edit `game-data/public/app-data.json` + add the image under `game-data/public/character-images/`; run `npx vitest run src/test/data` to validate), not a code change. Data changes deploy on their own when they reach `main` and do not need an app release or version bump. Record them in [game-data/CHANGELOG.md](game-data/CHANGELOG.md) under `## [Unreleased]` (`### Added`, one line per game) until they reach `main`. Then move them under a dated heading (`## YYYY-MM-DD`, the deploy date). Do not add them to the root [CHANGELOG.md](CHANGELOG.md), which tracks app code changes only and follows SemVer: bug fixes are a patch release, new features a minor release.
+- Adding a new character/game is a data change (edit `game-data/public/app-data.json` + add the image under `game-data/public/character-images/`; run `npx vitest run src/test/data` to validate), not a code change. Data changes deploy on their own when they reach `main` and do not need an app release or version bump. Record them in [game-data/CHANGELOG.md](game-data/CHANGELOG.md) under `## [Unreleased]` (`### Added`, one line per game) in the same PR as the data change. The deploy date is not known until merge, so the next PR that edits that file moves the entries of already-merged PRs under a dated heading (`## YYYY-MM-DD`, the deploy date). Do not add them to the root [CHANGELOG.md](CHANGELOG.md), which tracks app code changes only and follows SemVer: bug fixes are a patch release, new features a minor release.
 - If a data change needs app support (a new field, or a new game with different rules), ship the app change first. The data tests catch a broken file, not a format the app cannot read yet.
 
 ### State management
@@ -70,10 +70,18 @@ Lives in [character-randomizer/src/utils/randomizer.js](character-randomizer/src
 
 Logging uses `loglevel` (`log.debug(...)`) throughout for state-change tracing rather than `console.log`.
 
+## Workflow
+
+GitHub flow: `main` is the only long-lived branch and is always deployable.
+
+- Branch off `main` (`feat/…`, `fix/…`, `chore/…`), open a PR into `main`, squash merge, and the branch is deleted on merge. There is no `develop` branch.
+- One PR per change. Put the changelog entry in the same PR: app code changes under `## [Unreleased]` in the root [CHANGELOG.md](CHANGELOG.md), data changes in [game-data/CHANGELOG.md](game-data/CHANGELOG.md) (see Data-driven games).
+- Every merge to `main` deploys. A release is a manual version marker: bump the version in `character-randomizer/package.json`, move `[Unreleased]` under the new version in the root changelog, then tag `vX.Y.Z` on `main` and cut a GitHub release.
+
 ## Deployment
 
 CI (`.github/workflows/firebase-hosting-merge.yml`) tests and builds (`cd character-randomizer && npm ci && npm test && npm run build`) and deploys `character-randomizer/dist` to Firebase Hosting on push to `main`; PRs get preview channel deploys via `firebase-hosting-pull-request.yml`, also gated on `npm test`. Changes under `game-data/**` skip those workflows. The data workflows run only for changes under `game-data/public/**`: `firebase-hosting-data-deploy.yml` runs the data tests before deploying the `data` site, and `game-data-validate.yml` runs them on PRs. Editing only `game-data/CHANGELOG.md` triggers no workflow. Firebase project config is at the repo root ([firebase.json](firebase.json), [.firebaserc](.firebaserc)).
 
 ### Dependency updates
 
-Dependabot ([.github/dependabot.yml](.github/dependabot.yml)) checks npm (`character-randomizer/`) and GitHub Actions monthly and opens PRs against `develop`, not `main`. npm updates are grouped (`mui`, `react`, `testing`, `eslint`, plus a catch-all for minor/patch); major bumps get their own PR. Dependabot PRs cannot read repo secrets, so `firebase-hosting-pull-request.yml` still runs tests and the build for them but skips the preview deploy. Dependency bumps are not recorded in the root [CHANGELOG.md](CHANGELOG.md) unless they change app behavior. Dependabot only reads its config from the default branch, so it starts working once this reaches `main`.
+Dependabot ([.github/dependabot.yml](.github/dependabot.yml)) checks npm (`character-randomizer/`) and GitHub Actions monthly and opens PRs against `main`. npm updates are grouped (`mui`, `react`, `testing`, `eslint`, plus a catch-all for minor/patch); major bumps get their own PR. Dependabot PRs cannot read repo secrets, so `firebase-hosting-pull-request.yml` still runs tests and the build for them but skips the preview deploy. Dependency bumps are not recorded in the root [CHANGELOG.md](CHANGELOG.md) unless they change app behavior.
