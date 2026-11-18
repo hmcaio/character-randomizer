@@ -9,6 +9,12 @@ Since 1.12.0, game data (character additions and updates) is deployed independen
 
 ## [Unreleased]
 
+## [1.12.2] - 2026-11-18
+
+### Changed
+
+- Upgraded the UI library to MUI 9 (layout props moved into `sx`) and the build and lint tooling to Vite 8 and ESLint 10, along with routine dependency updates
+
 ## [1.12.1] - 2026-10-03
 
 ### Fixed
