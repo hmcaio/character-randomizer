@@ -1,75 +1,96 @@
 name: CI
 
+# Orchestrator. Decides which pipeline a PR needs and exposes one always-running
+# job named "ci", the required check on main. Path filters live here, never on a
+# workflow's own triggers: a workflow skipped by a filter leaves its check pending
+# and would block the PR.
+#
+#   app  = any file outside game-data/            -> app.yml  (lint, test, build, preview)
+#   data = any file under game-data/public/       -> data.yml (data tests, data preview)
+#
+# Push to main always runs the app pipeline. Tags go through release.yml.
 on:
   pull_request:
   push:
     branches:
       - main
-  workflow_call:
-    inputs:
-      ref:
-        description: Git ref to check out (the release workflow passes the tag)
-        type: string
-        default: ''
 
 concurrency:
-  group: ci-${{ github.workflow }}-${{ github.ref }}
+  group: ci-${{ github.ref }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 permissions:
   contents: read
 
 jobs:
-  # Always runs and is the required check on main. Lint, the full Vitest suite
-  # (which includes the game-data tests) and the production build.
-  ci:
+  changes:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    outputs:
+      app: ${{ steps.filter.outputs.app }}
+      data: ${{ steps.filter.outputs.data }}
     steps:
-      - uses: actions/checkout@v7
-        with:
-          ref: ${{ inputs.ref }}
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 24
-          cache: npm
-          cache-dependency-path: character-randomizer/package-lock.json
-      - run: npm ci
-        working-directory: character-randomizer
-      - run: npm run lint
-        working-directory: character-randomizer
-      - run: npm test
-        working-directory: character-randomizer
-      - run: npm run build
-        working-directory: character-randomizer
-      - uses: actions/upload-artifact@v7
-        with:
-          name: dist
-          path: character-randomizer/dist
-          if-no-files-found: error
-          retention-days: 7
+      - id: filter
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT: ${{ github.event_name }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.number }}
+        run: |
+          app=false
+          data=false
+          if [ "$EVENT" != pull_request ]; then
+            app=true
+          else
+            files=$(gh api "repos/$REPO/pulls/$PR/files" --paginate \
+              --jq '.[] | .filename, (.previous_filename // empty)')
+            echo "$files"
+            while IFS= read -r f; do
+              case "$f" in
+                game-data/public/*) data=true ;;
+                game-data/*) ;;
+                *) app=true ;;
+              esac
+            done <<<"$files"
+          fi
+          echo "app=$app data=$data"
+          echo "app=$app" >> "$GITHUB_OUTPUT"
+          echo "data=$data" >> "$GITHUB_OUTPUT"
 
-  # Preview channel for PRs from this repo. Dependabot PRs cannot read secrets,
-  # and forks never can.
-  preview:
-    if: >-
-      github.event_name == 'pull_request' &&
-      github.event.pull_request.head.repo.full_name == github.repository &&
-      github.actor != 'dependabot[bot]'
-    needs: ci
-    runs-on: ubuntu-latest
+  app:
+    needs: changes
+    if: needs.changes.outputs.app == 'true'
+    uses: ./.github/workflows/app.yml
+    secrets: inherit   # the preview jobs need the Firebase service account
+    # A called workflow may not ask for more than its caller grants.
     permissions:
       contents: read
       checks: write
       pull-requests: write
+
+  data:
+    needs: changes
+    if: needs.changes.outputs.data == 'true'
+    uses: ./.github/workflows/data.yml
+    secrets: inherit   # the preview jobs need the Firebase service account
+    permissions:
+      contents: read
+      checks: write
+      pull-requests: write
+
+  # Required check. Skipped pipelines count as passed; a failed or cancelled one,
+  # or a failed `changes` job, fails the gate.
+  ci:
+    needs: [changes, app, data]
+    if: always()
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/download-artifact@v8
-        with:
-          name: dist
-          path: character-randomizer/dist
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CHARACTER_RANDOMIZER }}
-          projectId: character-randomizer
-          target: app
+      - env:
+          RESULTS: ${{ join(needs.*.result, ' ') }}
+        run: |
+          echo "results: $RESULTS"
+          case " $RESULTS " in
+            *" failure "*|*" cancelled "*) exit 1 ;;
+          esac

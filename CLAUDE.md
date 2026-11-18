@@ -80,9 +80,19 @@ GitHub flow: `main` is the only long-lived branch and is always releasable. The 
 
 ## Deployment
 
-`.github/workflows/ci.yml` runs on every PR and on push to `main`: lint, `npm test` (the whole Vitest suite, game-data tests included) and the build, all as one job named `ci`, which is the required check on `main`. For PRs from this repo (not Dependabot, which cannot read secrets) it then deploys a Firebase preview channel from the built `dist`. A game-data-only PR runs the same job.
+`.github/workflows/ci.yml` runs on every PR and on push to `main`. It only decides what to run and holds the required check: a `changes` job lists the PR's files (anything outside `game-data/` means app, anything under `game-data/public/` means data), then it calls the reusable pipelines and ends with a gate job named `ci`, the required check on `main`. Skipped pipelines count as passed. Do not put `paths` filters on a workflow's own triggers: a workflow skipped by a filter leaves its check pending and blocks the PR. Push to `main` always runs the app pipeline.
 
-`.github/workflows/release.yml` runs when a `vX.Y.Z` tag is pushed. It checks that the tag is on `main`, that it matches `character-randomizer/package.json` and that `CHANGELOG.md` has a section for it, runs `ci.yml` on the tag, deploys `dist` to the Firebase `app` target on the `live` channel, and creates the GitHub release from that changelog section. To redeploy or roll back, run it from the Actions tab (`workflow_dispatch`) with an existing tag.
+- `.github/workflows/app.yml` (reusable): lint, `npm test` (the whole Vitest suite, game-data tests included), the build, and for PRs from this repo (not Dependabot, which cannot read secrets) a Firebase preview channel of the `app` site from the built `dist`.
+- `.github/workflows/data.yml` (reusable): the data tests (`npx vitest run src/test/data`) and, with the same Dependabot/fork exclusion, a Firebase preview channel of the `data` site. The app preview does not read it (it is built against production data), so inspect the raw `app-data.json` and images there.
+
+| PR touches | Runs |
+|---|---|
+| app code only | `app.yml` |
+| `game-data/public/**` only | `data.yml` |
+| `game-data/CHANGELOG.md` only | nothing, `ci` still passes |
+| both | both |
+
+`.github/workflows/release.yml` runs when a `vX.Y.Z` tag is pushed. It checks that the tag is on `main`, that it matches `character-randomizer/package.json` and that `CHANGELOG.md` has a section for it, runs `app.yml` on the tag, deploys `dist` to the Firebase `app` target on the `live` channel, and creates the GitHub release from that changelog section. To redeploy or roll back, run it from the Actions tab (`workflow_dispatch`) with an existing tag.
 
 `firebase-hosting-data-deploy.yml` runs on push to `main` for changes under `game-data/public/**`, runs the data tests (`npx vitest run src/test/data`) and deploys the `data` site, so data changes go live on merge without a release. Editing only `game-data/CHANGELOG.md` deploys nothing. Firebase project config is at the repo root ([firebase.json](firebase.json), [.firebaserc](.firebaserc)).
 
