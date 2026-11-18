@@ -5,7 +5,7 @@ import { useContext } from "react"
 import ListItem from "@mui/material/ListItem"
 import ListItemButton from "@mui/material/ListItemButton"
 import ListItemText from "@mui/material/ListItemText"
-import { AppContext } from "../../store/app-context"
+import { AppContext } from "../../store/contexts"
 
 function MenuDrawer() {
   const { appData, isDrawerOpen, setIsDrawerOpen, setSelectedGame } = useContext(AppContext)

@@ -1,10 +1,8 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { GameDataContext } from "./game-data-context";
+import { useContext, useEffect, useState } from "react";
+import { AppContext, DEFAULT_RANDOMIZER_CONFIG, GameDataContext } from "./contexts";
 import useLocalStorage from "../hooks/useLocalStorage";
 import { readStored } from "../utils/storage";
 import log from 'loglevel'
-
-const DEFAULT_RANDOMIZER_CONFIG = { characterSlots: "team", isRepetitionAllowed: false }
 
 // "selectedGame" is stored as a raw string, not JSON. Falls back to the first
 // game when the stored id is missing or no longer exists in appData.
@@ -18,22 +16,6 @@ function readSelectedGame(appData) {
     return fallback
   }
 }
-
-export const AppContext = createContext({
-  appData: {},
-  selectedGame: "",
-  randomizerConfig: DEFAULT_RANDOMIZER_CONFIG,
-  owned: [],
-  selectionHistory: [],
-  selected: [],
-  isDrawerOpen: false,
-  setSelectedGame: () => {},
-  setRandomizerConfig: () => {},
-  setOwned: () => {},
-  setSelectionHistory: () => {},
-  setSelected: () => {},
-  setIsDrawerOpen: () => {}
-})
 
 export default function AppContextProvider({ children }) {
   const { appData } = useContext(GameDataContext)
@@ -69,6 +51,9 @@ export default function AppContextProvider({ children }) {
     log.debug("selectedGame=" + selectedGame + ", newSelected=" + newSelected)
     setSelected(newSelected)
 
+    // Runs only when the game changes. The setters are recreated every render
+    // (they close over selectedGame), so listing them would re-run this each render.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedGame])
 
   function handleGameChange(selectedGame) {

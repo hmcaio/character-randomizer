@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import Backdrop from "@mui/material/Backdrop"
 import CircularProgress from "@mui/material/CircularProgress"
 import Stack from "@mui/material/Stack"
@@ -6,8 +6,7 @@ import Typography from "@mui/material/Typography"
 import Button from "@mui/material/Button"
 import log from 'loglevel'
 import { DATA_BASE_URL, normalizeAppData, readCache, writeCache } from "./game-data-utils"
-
-export const GameDataContext = createContext({ appData: null })
+import { GameDataContext } from "./contexts"
 
 export default function GameDataProvider({ children }) {
   const [appData, setAppData] = useState(null)
@@ -43,7 +42,7 @@ export default function GameDataProvider({ children }) {
   if (error) {
     return (
       <Backdrop open sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}>
-        <Stack spacing={2} alignItems="center" sx={{ maxWidth: 400, textAlign: 'center', paddingX: 2 }}>
+        <Stack spacing={2} sx={{ alignItems: 'center', maxWidth: 400, textAlign: 'center', paddingX: 2 }}>
           <Typography variant="h6">Couldn&apos;t load character data</Typography>
           <Typography variant="body2">
             Please check your internet connection and try again.

@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import GameDataProvider, { GameDataContext } from './game-data-context'
+import GameDataProvider from './game-data-context'
+import { GameDataContext } from './contexts'
 import { useContext } from 'react'
 import { CACHE_KEY } from './game-data-utils'
 import { fixtureAppData, stubFetch } from '../test/renderApp'

@@ -9,7 +9,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import { AppContext } from '../../store/app-context'
+import { AppContext } from '../../store/contexts'
 
 function TopBar() {
   const { appData, setSelectedGame, setIsDrawerOpen } = useContext(AppContext)

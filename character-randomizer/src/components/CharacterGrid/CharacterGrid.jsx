@@ -1,9 +1,8 @@
 import { useContext } from 'react'
-import classes from './CharacterGrid.module.css'
 import CharacterCard from '../CharacterCard/CharacterCard'
 import Grid from '@mui/material/Grid'
 import Paper from "@mui/material/Paper"
-import { AppContext } from '../../store/app-context'
+import { AppContext } from '../../store/contexts'
 import log from 'loglevel'
 
 function CharacterGrid() {
@@ -23,7 +22,7 @@ function CharacterGrid() {
     <Paper variant="elevation" elevation={3} sx={{ padding: '16px' }} >
       <Grid 
         container
-        justifyContent="center"
+        sx={{ justifyContent: 'center' }}
         spacing={2}
         columns={60}
       >

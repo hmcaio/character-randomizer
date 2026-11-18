@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
 import Paper from "@mui/material/Paper"
-import { AppContext } from '../../store/app-context'
+import { AppContext } from '../../store/contexts'
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 import ToggleButton from '@mui/material/ToggleButton';
@@ -40,7 +40,7 @@ function FilterToggleButtons({ filterName, allValues, selectedValues, handleSele
         {filterName}
       </Typography>
       
-      <Grid container spacing={1} margin={1} sx={{ justifyContent: 'center' }}>
+      <Grid container spacing={1} sx={{ margin: 1, justifyContent: 'center' }}>
         {allValues.map(value => (
           <Grid key={value}>
             <ToggleButton

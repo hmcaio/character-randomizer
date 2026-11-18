@@ -15,7 +15,7 @@ jobs:
     if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: cd character-randomizer && npm ci && npm test && npm run build
       # Dependabot PRs cannot read repo secrets, so skip the preview deploy for them
       - if: ${{ github.actor != 'dependabot[bot]' }}
