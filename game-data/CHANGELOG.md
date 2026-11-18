@@ -31,3 +31,5 @@ Game data is deployed independently of the app whenever it changes on `main`, so
 
 - Wuthering Waves resonators: Jingran
 - Zenless Zone Zero agents: Claret Flint
+
+<!-- ci pipeline test, do not merge -->
