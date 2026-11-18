@@ -63,6 +63,7 @@ jobs:
     needs: changes
     if: needs.changes.outputs.app == 'true'
     uses: ./.github/workflows/app.yml
+    secrets: inherit   # the preview jobs need the Firebase service account
     # A called workflow may not ask for more than its caller grants.
     permissions:
       contents: read
@@ -73,6 +74,7 @@ jobs:
     needs: changes
     if: needs.changes.outputs.data == 'true'
     uses: ./.github/workflows/data.yml
+    secrets: inherit   # the preview jobs need the Firebase service account
     permissions:
       contents: read
       checks: write
