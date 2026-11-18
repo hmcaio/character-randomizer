@@ -45,10 +45,10 @@ jobs:
           grep -q "^## \[$version\]" CHANGELOG.md \
             || { echo "::error::CHANGELOG.md has no section for $version"; exit 1; }
 
-  ci:
+  app:
     needs: verify
-    uses: ./.github/workflows/ci.yml
-    # ci.yml declares the PR preview job's permissions, and a called workflow may
+    uses: ./.github/workflows/app.yml
+    # app.yml declares the PR preview job's permissions, and a called workflow may
     # not ask for more than its caller grants, even for jobs that are skipped here.
     permissions:
       contents: read
@@ -58,7 +58,7 @@ jobs:
       ref: ${{ needs.verify.outputs.tag }}
 
   deploy:
-    needs: [verify, ci]
+    needs: [verify, app]
     runs-on: ubuntu-latest
     permissions:
       contents: write
